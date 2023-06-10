@@ -4,19 +4,26 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import './App.css'
 
 function App() {
-  const position = [51.505, -0.09]
+  const krui = [-5.194566051150071, 103.93286477606588]
+  const uin = [-5.383028328866196, 105.30267654831273]
   return(
   <>
-  <Heading>Hello</Heading>
-  <Alert>Map</Alert>
-  <MapContainer center={position} zoom={13} scrollWheelZoom={false} className="h-100">
+  <div className="p-5">
+    <Heading>Pantai Krui</Heading>
+  </div>
+  <MapContainer center={krui} zoom={8} scrollWheelZoom={true}>
     <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    <Marker position={position}>
+    <Marker position={krui}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
+        Pantai Krui
+      </Popup>
+    </Marker>
+    <Marker position={uin}>
+      <Popup>
+        Uin
       </Popup>
     </Marker>
   </MapContainer>
