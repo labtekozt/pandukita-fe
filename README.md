@@ -9,6 +9,9 @@ https://react-leaflet.js.org/
 ## CSS Framework
 https://tailwindcss.com/
 
+## Icons
+https://tabler-icons.io/
+
 # Installation
 npm install
 
