@@ -2,7 +2,7 @@ import '../App.css'
 
 function NavbarComponent() {
     return (
-        <h1>navbar</h1>
+        <h1>NAVBAR</h1>
     )
 }
 
