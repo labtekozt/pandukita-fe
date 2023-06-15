@@ -1,8 +1,30 @@
-html,
+* {
+    font-family: "Plus Jakarta Sans", sans-serif!important;
+}
+/* Set the body to occupy the full viewport */
 body {
-  height: 50%!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee;
+}
+
+.container {
+  height: 100%;
+  background-color: #fff;
+}
+
+form.container{
+  height: 100vh;
 }
 
 .leaflet-container {
   height: 100vh;
+}
+
+/*mobile*/
+@media screen and (max-width: 1024px) {
+  .container{
+    
+  }
 }

@@ -1,38 +1,39 @@
-import Container from 'react-bootstrap/Container';
+import {
+  Button,
+  InputField,
+  Text,
+  Heading,
+  ButtonLink,
+  Stack,
+  TextLink
+} from "@kiwicom/orbit-components/lib/";
+import { IconAt,IconEye,IconKey,IconEyeOff  } from '@tabler/icons-react';
 import { useState } from 'react';
 
 function LoginPage() {
 
-    const [show, setShow] = useState(false)
-    const handleShow = () => {
-        setShow(!show)
-    }
+    const [showPassword, setShowPassword] = useState(false)
 
     return (
-        <div>
-            <Container className='regis place-content-center' style={{ boxShadow: '0 2px 8px #888888' }}>
-                <div className='register p-2'>
-                    <h4 className='font-bold' style={{ marginTop: '30px' }}>Selamat Datang!</h4>
-                    <h5 className='font-bold mt-2 fs-6' style={{ color: '#888888' }}>Masukkan Email dan Password</h5>
-
-                    <form method='' action="" className='form mt-6' style={{ marginBottom: '220px' }}>
-
-                        <label><b>Email</b></label>
-                        <input name='' className='put' type="email" placeholder='Masukkan Email' />
-                        <i className='fa-regular fa-envelope'></i>
-                        <br /><br />
-                        <label><b>Password</b></label>
-                        <input name='' type={show ? "text" : "password"} placeholder='************' />
-                        <label onClick={handleShow}>
-                            {show ? <i className='pwl fa-regular fa-eye'></i> : <i className='pwl fa-regular fa-eye-slash'></i>}
-                        </label>
-
-                        <button className='btn mt-4 w-100 text-light' style={{ backgroundColor: '#01b6a7' }}>Masuk ke Aplikasi</button>
-                        <p className='mt-2'>Tidak Punya Akun? <a href='/register' style={{ color: '#01b6a7' }}>Daftar</a></p>
-                    </form>
-                </div>
-            </Container>
-        </div>
+        <form className="container p-[20px]" required={true}>
+            <div className="pb-2 pt-2">
+                <h1 className="text-2xl font-bold text-black">Selamat datang!</h1>
+            </div>
+            <div className="pb-[27px]">
+                <p className="text-1xl text-black-light">Masukkan email dan password</p>
+            </div>
+            <Stack spacing="medium">
+                <InputField label="Email" type="email" placeholder="Masukkan email" prefix={<IconAt />}/>
+                <InputField type={showPassword?"text":"password"} label="Password" placeholder="Masukkan password" prefix={<IconKey/>} suffix={
+                    <ButtonLink onClick={()=>{
+                        setShowPassword(!showPassword)
+                    }}>
+                        { showPassword?<IconEye />:<IconEyeOff/> }
+                    </ButtonLink>}/>
+                <Button fullWidth="true" submit={true} centered={true} href="/">Masuk ke Aplikasi</Button>
+                <Text>Tidak punya akun? <TextLink href="/register">Daftar</TextLink></Text>
+            </Stack>
+        </form>
     )
 }
 

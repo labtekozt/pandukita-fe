@@ -5,7 +5,6 @@ import './index.css'
 import 'leaflet/dist/leaflet.css'
 import { BrowserRouter } from 'react-router-dom'
 import './disk/css/main.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
