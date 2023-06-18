@@ -29,12 +29,12 @@ function TourGuideProfile() {
                         columnGap="10px"
                         inline={true}>
                     <span className='text-[20px]'>I Ketut Pugeg</span>
-                    <span className='mt-1'><IconShieldCheckFilled /></span>
+                    <span className='mt-1' style={{color : 'blue'}}><IconShieldCheckFilled /></span>
                 </Grid>
-                <div type='primarySubtle' className="bg-[rgba(0,116,100,.3)] flex w-[250px] p-3 mt-4 rounded-[7px] items-center mb-10">
+                <div type='primarySubtle' className="bg-[rgba(0,116,100,.3)] flex w-[230px] p-2 mt-4 rounded-[7px] items-center mb-10" style={{color : 'rgb(0,116,100)', fontSize : '15px'}}>
                         <IconMapPinFilled/>
                     <div className='ml-2'>
-                        <span style={{color : 'rgb(0,116,100)'}}>Kab, Pesawaran, Lampung</span>
+                        <span>Kab, Pesawaran, Lampung</span>
                     </div>
                 </div>
                 <span size="extraLarge" className="font-bold">

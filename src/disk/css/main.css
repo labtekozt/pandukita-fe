@@ -9,6 +9,9 @@
 .relative input{
     width: 390px;
 }
+.guide input{
+    width: 390px;
+}
 .containers {
     height: 100%;
     background-color: #ffffff;
