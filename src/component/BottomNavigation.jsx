@@ -1,10 +1,10 @@
 import '../App.css'
 
-function NavbarComponent() {
+function BottomNavigation() {
     return (
         <h1>NAVBAR</h1>
     )
 }
 
-export default NavbarComponent
+export default BottomNavigation
 

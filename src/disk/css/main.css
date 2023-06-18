@@ -1,15 +1,6 @@
 * {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
-
-:root {
-    --primary-color: #f6f8fd;
-    --secondary-color: #dc3545;
-    --color-text: #231942;
-    --navbar-color: #01b6a7;
-    --navbar-color-text: #000000;
-}
-
 .container {
     width: 50%;
     margin: auto;
@@ -20,17 +11,26 @@
 }
 .containers {
     height: 100%;
+    background-color: #ffffff;
+}
+.containerGuide{
+    max-width: 30%;
+    margin: auto;
     background-color: #fff;
 }
 
 .login{
     margin-bottom: 100%;
 }
-
 @media screen and (max-width : 1024px){
     .container {
         width: 100%;
-       
+        margin: auto;
+    }
+    .containerGuide{
+        max-width: 100%;
+        margin: auto;
+        background-color: #fff;
     }
     .relative input{
         width: 300px;
@@ -40,8 +40,23 @@
 @media screen and (max-width : 762px){
     .container {
         width: 100%;
+        margin: auto;
+    }
+    .containerGuide{
+        max-width: 100%;
+        margin: auto;
+        background-color: #fff;
     }
     .relative input{
         width: 290px;
+    }
+    .text-profile{
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    .text-profiles{
+        margin-top: 10px;
+        font-size: 15px;
+        margin-left: 10px;
     }
 }
