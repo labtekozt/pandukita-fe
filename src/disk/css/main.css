@@ -10,63 +10,38 @@
     --navbar-color-text: #000000;
 }
 
-.container.regis {
-    width: 27%;
+.container {
+    width: 50%;
+    margin: auto;
+    background-color: #fff;
 }
-.tittle {
-    font-weight: bold;
+.relative input{
+    width: 390px;
 }
-.register{
-    margin-top: 33px;
-}
-.register h5 {
-    color: rgba(0, 0, 0, 0.9);
-}
-.form .put{
-    padding-left : 35px; 
-}
-.form input{
-    background: #f1f6f8;
-    height: 40px;
-    padding: 7px;
-    width: 100%;
-    border-radius: 3px;
-}
-.form input:focus{
-    outline-color: #01b6a7;
-    border-color: #01b6a7;
-}
-.form{
-    position: relative;
-}
-.form i{
-    position: absolute;
-    left: 10px;
-    top: 35px;
-    color:#01b6a7;
-}
-i.pwl{
-    position: absolute; 
-    left: 90%;
-    top: 122px;
-    color:#01b6a7;
-}
-i.pwr{
-    position: absolute; 
-    left: 90%;
-    top: 212px;
-    color:#01b6a7;
+.containers {
+    height: 100%;
+    background-color: #fff;
 }
 
+.login{
+    margin-bottom: 100%;
+}
 
 @media screen and (max-width : 1024px){
-    .container.regis {
-        width: 90%;
+    .container {
+        width: 100%;
+       
+    }
+    .relative input{
+        width: 300px;
     }
 }
 
 @media screen and (max-width : 762px){
-    .container.regis {
-        width: 90%;
+    .container {
+        width: 100%;
+    }
+    .relative input{
+        width: 290px;
     }
 }

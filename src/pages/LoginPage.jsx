@@ -15,7 +15,8 @@ function LoginPage() {
     const [showPassword, setShowPassword] = useState(false)
 
     return (
-        <form className="container p-[20px]" required={true}>
+        <form className="containers p-[20px]" required={true}>
+            <div className="login">
             <div className="pb-2 pt-2">
                 <h1 className="text-2xl font-bold text-black">Selamat datang!</h1>
             </div>
@@ -33,6 +34,7 @@ function LoginPage() {
                 <Button fullWidth="true" submit={true} centered={true} href="/">Masuk ke Aplikasi</Button>
                 <Text>Tidak punya akun? <TextLink href="/register">Daftar</TextLink></Text>
             </Stack>
+            </div>
         </form>
     )
 }
