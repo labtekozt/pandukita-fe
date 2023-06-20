@@ -12,7 +12,7 @@ import {
 function SearchPage() {
     return (
         <div className="container">
-            <div className='p-2 shadow-sm sticky top-0 bg-white'>
+            <div className='p-2 z-50 shadow-sm sticky top-0 bg-white'>
                 <div className="flex">
                     <div className="grow h-6"><TextLink href='/'><IconArrowNarrowLeft /></TextLink></div>
                     <div className="grow-0 mr-8">Cari Wisata</div>

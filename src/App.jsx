@@ -6,6 +6,7 @@ import SearchPage from './pages/SearchPage';
 import ProfilePage from './pages/ProfilePage';
 import TourGuideProfile from './pages/TourGuideProfile';
 import ToureGuidePage from './pages/ToureGuidePage';
+import RegisterToureGuide from './pages/RegisterToureGuide';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/profile" Component={ProfilePage} />
           <Route path="/tourguideprofile" Component={TourGuideProfile} />
           <Route path="/toureguide" Component={ToureGuidePage} />
+          <Route path="/registertoureguide" Component={RegisterToureGuide} />
         </Routes>
       </div>
     </>

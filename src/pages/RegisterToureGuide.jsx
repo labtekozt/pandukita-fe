@@ -15,7 +15,7 @@ import { IconArrowNarrowLeft,
 import Profil from '../disk/image/Profil.png'
 
 
-function ProfilePage() {
+function RegisterToureGuide() {
     return (
         <div style={{width : '100%', backgroundColor : 'white'}}>
             <div className='p-2 shadow-sm sticky top-0 bg-white'>
@@ -26,13 +26,6 @@ function ProfilePage() {
                 </div>
             </div>
             <div className="m-5 mt-6 pb-[31%]">
-                <div className="flex items-center mb-10">
-                    <img width={'70px'} src={Profil} className="rounded-[100%]"/> 
-                    <div className='ml-3'>
-                        <strong>Andrean Rahmatan</strong><br />
-                        <span className='text-gray'>lilrahmat@gmail.com</span>
-                    </div>
-                </div>
 
                 <Card>
                     <div style={{border : '1px solid #eeeeee'}} className='p-3'>
@@ -71,7 +64,7 @@ function ProfilePage() {
                                 <a href=""><IconUserPlus /></a>
                             </div>
                             <div className="flex-none mt-0.5">
-                                <a href="/registertoureguide"className='ml-2'>Bergabung Menjadi Pemandu Wisata <br />
+                                <a href=""className='ml-2'>Bergabung Menjadi Pemandu Wisata <br />
                                     <span className='text-[10px] ml-2'>Jadilah Tour Guide yang berpengalaman dan</span> <br />
                                     <span className='text-[10px] ml-2'>bergabunglah dengan aplikasi kami untuk berbagi</span> <br />
                                     <span className='text-[10px] ml-2'>keindahan destinasi dengan orang-orang dari seluruh</span>
@@ -90,5 +83,5 @@ function ProfilePage() {
     )
 }
 
-export default ProfilePage
+export default RegisterToureGuide
 
