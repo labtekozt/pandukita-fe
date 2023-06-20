@@ -1,4 +1,4 @@
-import NavbarComponent from '../component/BottomNavigation';
+import BottomNavigation from '../component/BottomNavigation';
 import React from 'react';
 import HomeHeaderImage from '../disk/image/HeaderHome.png'
 import PlannerAds from '../disk/image/PlannerAds.png'
@@ -36,6 +36,7 @@ function HomePage() {
                     <img src={TourGuideAds} className="relative w-[100%] object-cover rounded-2xl"/>
                 </div>
             </div>
+            <BottomNavigation />
         </div>
     )
 }

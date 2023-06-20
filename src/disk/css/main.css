@@ -21,7 +21,6 @@
     margin: auto;
     background-color: #fff;
 }
-
 .login{
     margin-bottom: 100%;
 }
@@ -62,4 +61,11 @@
         font-size: 15px;
         margin-left: 10px;
     }
+    .text-tour{
+        font-size: 9px;
+    }
+    .text-nav{
+        font-size: 10px;
+    }
+
 }
