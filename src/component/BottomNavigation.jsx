@@ -17,7 +17,7 @@ function BottomNavigation() {
 <div className="sticky bottom-0 left-0 right-0 h-16 bg-white" style={{boxShadow : '0 -8px 6px -9px gray'}}>
     <div className="grid h-full max-w-lg grid-cols-4 mx-auto">
     
-    {Menus.map((menu, i) => (
+    {Menus.map((menu) => (
         <button type="button" className="text-gray inline-flex flex-col items-center justify-center px-5 group">
             <a href={menu.href} className='inline-flex flex-col items-center justify-center'>
                 {menu.icon}
@@ -25,6 +25,7 @@ function BottomNavigation() {
             </a>
         </button>
     ))}
+    
     </div>
 </div>
 
