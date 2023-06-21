@@ -15,7 +15,7 @@ function TourGuideProfile() {
         <div className="containerGuide">
             <div className='p-2 z-50 shadow-sm sticky top-0 bg-white'>
                 <div className="flex">
-                    <div className="grow h-6"><TextLink href='/'><IconArrowNarrowLeft /></TextLink></div>
+                    <div className="grow h-6"><TextLink href='/'><IconArrowNarrowLeft color='black' /></TextLink></div>
                     <div className="grow-0 mr-8">Profile</div>
                     <div className="grow h-1"></div>
                 </div>
@@ -26,11 +26,9 @@ function TourGuideProfile() {
                     <span className='text-[20px]'>Hartono</span>
                     <span className='mt-0.5 ml-3' style={{color : '#1667C2'}}><IconShieldCheckFilled width={22}/></span>
                 </div>
-                <div type='primarySubtle' className="bg-[rgba(0,163,136,0.25)] flex w-[220px] p-1 mt-4 rounded-[7px] items-center mb-10" style={{color : '#00A388', fontSize : '15px'}}>
-                        <IconMapPinFilled width={20}/>
-                    <div className='ml-1 mt-0.5'>
-                        <span>Kab, Pesawaran, Lampung</span>
-                    </div>
+                <div type='primarySubtle' className="bg-[rgba(0,163,136,0.25)] flex w-[260px] p-1 mt-4 rounded-[7px] items-center mb-10" style={{color : '#00A388', fontSize : '15px'}}>
+                    <IconMapPinFilled width={20}/>
+                    <span className='ml-1 mt-0.5'>Kab, Pesawaran, Lampung</span>
                 </div>
                 <span size="extraLarge" className="font-bold">
                     Deskripsi

@@ -20,7 +20,7 @@ function ProfilePage() {
         <div style={{width : '100%', backgroundColor : 'white'}}>
             <div className='p-2 shadow-sm sticky top-0 bg-white'>
                 <div className="flex">
-                    <div className="grow h-6"><TextLink href='/'><IconArrowNarrowLeft /></TextLink></div>
+                    <div className="grow h-6"><TextLink href='/'><IconArrowNarrowLeft color='black'  /></TextLink></div>
                     <div className="grow-0 mr-7">Profile</div>
                     <div className="grow h-1"></div>
                 </div>

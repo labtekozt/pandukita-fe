@@ -24,6 +24,29 @@
 .login{
     margin-bottom: 100%;
 }
+
+
+.swiper {
+    width: 405px;
+}
+.mySwiper{
+    width: 380px;
+}
+.swiper-slide {
+    margin-left: 10px;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
 @media screen and (max-width : 1024px){
     .container {
         width: 100%;
@@ -52,6 +75,9 @@
     .share{
         margin-top: 20px;
         margin-left: 90%;
+    }
+    .swiper {
+        width: 730px;
     }
 }
 
@@ -92,5 +118,11 @@
     }
     .share{
         margin-left: 85%;
+    }
+    .swiper {
+        width: 330px;
+    }
+    .text-jelajah{
+        margin-left: 27px;
     }
 }

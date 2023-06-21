@@ -16,7 +16,7 @@ function BottomNavigation() {
       
     return (
         
-<div className="sticky bottom-0 left-0 right-0 h-16 bg-white" style={{boxShadow : '0 -8px 6px -9px gray'}}>
+<div className="sticky z-50 bottom-0 left-0 right-0 h-16 bg-white" style={{boxShadow : '0 -8px 6px -9px gray'}}>
     <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
     
         {Menus.map((menu) => (
