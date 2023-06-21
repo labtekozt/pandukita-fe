@@ -25,7 +25,7 @@ function ProfilePage() {
                     <div className="grow h-1"></div>
                 </div>
             </div>
-            <div className="m-5 mt-6 pb-[31%]">
+            <div className="m-5 mt-8 pb-[31%]">
                 <div className="flex items-center mb-10">
                     <img width={'70px'} src={Profil} className="rounded-[100%]"/> 
                     <div className='ml-3'>
@@ -35,48 +35,32 @@ function ProfilePage() {
                 </div>
 
                 <Card>
-                    <div style={{border : '1px solid #eeeeee'}} className='p-3'>
-                        <div className="flex" style={{color : 'grey', fontSize : '13px'}}>
-                            <div className="flex-none">
-                                <p><a href="/"><IconPencil /></a></p>
-                            </div>
-                            <div className="flex-none mt-0.5">
-                                <a href="/" className='ml-2'>Edit Profil</a>
-                            </div>
+                    <div style={{border : '1px solid #eeeeee', color : 'gray', fontSize : '13px'}} className='p-3'>
+                        <div className="flex">
+                            <p><a href="/"><IconPencil /></a></p>
+                            <a href="/" className='ml-2 mt-0.5'>Edit Profil</a>
                             <div className="grow"></div>
-                            <div className="flex-none w-100"><a href="/"><IconChevronRight /></a></div>
+                            <a href="/"><IconChevronRight /></a>
                         </div>
-                        <div className="flex mt-6" style={{color : 'grey', fontSize : '13px'}}>
-                            <div className="flex-none">
-                                <a href=""><IconMapPinShare /></a>
-                            </div>
-                            <div className="flex-none mt-0.5">
-                                <a href="" className='ml-2'>Ubah Lokasi</a>
-                            </div>
+                        <div className="flex mt-6">
+                            <a href=""><IconMapPinShare /></a>
+                            <a href="" className='ml-2 mt-0.5'>Ubah Lokasi</a>
                             <div className="grow"></div>
-                            <div className="flex-none w-100"><a href="/"><IconChevronRight /></a></div>
+                            <div className="flex-none"><a href="/"><IconChevronRight /></a></div>
                         </div>
-                        <div className="flex mt-6" style={{color : 'grey', fontSize : '13px'}}>
-                            <div className="flex-none">
+                        <div className="flex mt-6">
                                 <a href=""><IconAlertCircle /></a>
-                            </div>
-                            <div className="flex-none mt-0.5">
-                                <a href="" className='ml-2'>Tentang PanduKita</a>
-                            </div>
+                                <a href="" className='ml-2 mt-0.5'>Tentang PanduKita</a>
                             <div className="grow"></div>
                             <div className="flex-none w-100"><a href="/"><IconChevronRight /></a></div>
                         </div>
-                        <div className="flex mt-6" style={{color : 'grey', fontSize : '13px'}}>
-                            <div className="flex-none">
+                        <div className="flex mt-6">
                                 <a href=""><IconUserPlus /></a>
-                            </div>
-                            <div className="flex-none mt-0.5">
-                                <a href="/registertoureguide"className='ml-2'>Bergabung Menjadi Pemandu Wisata <br />
+                                <a href="/registertoureguide"className='ml-2 mt-0.5'>Bergabung Menjadi Pemandu Wisata <br />
                                     <span className='text-[10px] ml-2'>Jadilah Tour Guide yang berpengalaman dan</span> <br />
                                     <span className='text-[10px] ml-2'>bergabunglah dengan aplikasi kami untuk berbagi</span> <br />
                                     <span className='text-[10px] ml-2'>keindahan destinasi dengan orang-orang dari seluruh</span>
                                 </a>
-                            </div>
                             <div className="grow"></div>
                             <div className="flex-none w-100"><a href="/"><IconChevronRight /></a></div>
                         </div>

@@ -37,6 +37,22 @@
     .relative input{
         width: 300px;
     }
+    .img-guide{
+        width: 180px;
+    }
+    .guide input{
+        width: 380px!important;
+    }
+    .relative input{
+        width: 410px;
+    }
+    .tour-guide{
+        width: 185px;
+    }
+    .share{
+        margin-top: 20px;
+        margin-left: 90%;
+    }
 }
 
 @media screen and (max-width : 762px){
@@ -63,5 +79,18 @@
     }
     .text-nav{
         font-size: 9px;
+    }
+    .tour-guide{
+        width: 90%;
+    }
+    .img-guide{
+        width: 150px;
+        margin-top: 60px;
+    }
+    .guide input{
+        width: 330px!important;
+    }
+    .share{
+        margin-left: 85%;
     }
 }

@@ -1,6 +1,5 @@
 import React from 'react'
-import BottomNavigation from '../component/BottomNavigation'
-import HomeHeaderImage from '../disk/image/HeaderHome.png'
+import Tguide from '../disk/image/tguide.jpg'
 import {
     TextLink,
     Grid,
@@ -14,26 +13,22 @@ import {
 function TourGuideProfile() {
     return (
         <div className="containerGuide">
-            <div className='p-2 shadow-sm sticky top-0 bg-white'>
+            <div className='p-2 z-50 shadow-sm sticky top-0 bg-white'>
                 <div className="flex">
                     <div className="grow h-6"><TextLink href='/'><IconArrowNarrowLeft /></TextLink></div>
                     <div className="grow-0 mr-8">Profile</div>
                     <div className="grow h-1"></div>
                 </div>
             </div>
-            <img src={HomeHeaderImage} className="relative w-[100%] object-cover"/>
-            <div className="m-5 pb-6">
-                <Grid columns="repeat(2, 1fr)"
-                        rows="repeat(1, 1fr)"
-                        rowGap="10px"
-                        columnGap="10px"
-                        inline={true}>
-                    <span className='text-[20px]'>I Ketut Pugeg</span>
-                    <span className='mt-1' style={{color : 'blue'}}><IconShieldCheckFilled /></span>
-                </Grid>
-                <div type='primarySubtle' className="bg-[rgba(0,116,100,.3)] flex w-[230px] p-2 mt-4 rounded-[7px] items-center mb-10" style={{color : 'rgb(0,116,100)', fontSize : '15px'}}>
-                        <IconMapPinFilled/>
-                    <div className='ml-2'>
+            <img src={Tguide} className="relative w-[100%] object-cover"/>
+            <div className="m-5 pb-[20%]">
+                <div className="flex">
+                    <span className='text-[20px]'>Hartono</span>
+                    <span className='mt-0.5 ml-3' style={{color : '#1667C2'}}><IconShieldCheckFilled width={22}/></span>
+                </div>
+                <div type='primarySubtle' className="bg-[rgba(0,163,136,0.25)] flex w-[220px] p-1 mt-4 rounded-[7px] items-center mb-10" style={{color : '#00A388', fontSize : '15px'}}>
+                        <IconMapPinFilled width={20}/>
+                    <div className='ml-1 mt-0.5'>
                         <span>Kab, Pesawaran, Lampung</span>
                     </div>
                 </div>
@@ -42,7 +37,7 @@ function TourGuideProfile() {
                 </span>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel, eius, tempore esse, perferendis similique minus veniam dolorem aliquam praesentium ut totam nisi vitae? Consequuntur rerum saepe consequatur voluptatem earum.</p>
             </div>
-            <div className='p-4'>
+            <div className='p-4 z-50 shadow-sm sticky bottom-0'>
                 <Button type="primary" fullWidth="true" submit={true} centered={true} href="/">Mulai Chat</Button>
             </div>
         </div>

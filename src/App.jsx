@@ -7,6 +7,7 @@ import ProfilePage from './pages/ProfilePage';
 import TourGuideProfile from './pages/TourGuideProfile';
 import ToureGuidePage from './pages/ToureGuidePage';
 import RegisterToureGuide from './pages/RegisterToureGuide';
+import InformasiWisataPage from './pages/InformasiWisataPage';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/tourguideprofile" Component={TourGuideProfile} />
           <Route path="/toureguide" Component={ToureGuidePage} />
           <Route path="/registertoureguide" Component={RegisterToureGuide} />
+          <Route path="/informasiwisata" Component={InformasiWisataPage} />
         </Routes>
       </div>
     </>
