@@ -26,13 +26,14 @@ function TourGuideProfile() {
                     <span className='text-[20px]'>Hartono</span>
                     <span className='mt-0.5 ml-3' style={{color : '#1667C2'}}><IconShieldCheckFilled width={22}/></span>
                 </div>
-                <div type='primarySubtle' className="bg-[rgba(0,163,136,0.25)] flex w-[260px] p-1 mt-4 rounded-[7px] items-center mb-10" style={{color : '#00A388', fontSize : '15px'}}>
-                    <IconMapPinFilled width={20}/>
-                    <span className='ml-1 mt-0.5'>Kab, Pesawaran, Lampung</span>
+                <div className='flex  mt-0.5'>
+                    <h1 className='flex p-1 mt-2 text-md mb-[20px] text-[#00A388] bg-[rgba(0,163,136,0.25)] rounded-lg'>
+                        <IconMapPinFilled width={20}/> <span className='ml-1 mt-0.5'>Kab, Pesawaran, Lampung</span>
+                    </h1>
                 </div>
-                <span size="extraLarge" className="font-bold">
+                <h1 size="extraLarge" className="font-bold mb-2">
                     Deskripsi
-                </span>
+                </h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae vel, eius, tempore esse, perferendis similique minus veniam dolorem aliquam praesentium ut totam nisi vitae? Consequuntur rerum saepe consequatur voluptatem earum.</p>
             </div>
             <div className='p-4 z-50 shadow-sm sticky bottom-0'>

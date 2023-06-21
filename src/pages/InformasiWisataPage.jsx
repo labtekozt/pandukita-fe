@@ -48,7 +48,7 @@ function InformasiWisataPage() {
                     </div>
                 </div>
                 <div type='primarySubtle'>
-                    <div className='ml-1 flex  mt-0.5'>
+                    <div className='ml-1 flex mt-0.5'>
                         <h1 className='ml-2 p-2 text-md border mb-[15px] mt-4 text-[#00A388] bg-[rgba(0,163,136,0.25)] rounded-md'>Pantai</h1>
                         <h1 className='ml-2 p-2 text-md border mb-[15px] mt-4 text-[#00A388] bg-[rgba(0,163,136,0.25)] rounded-md'>Camping</h1>
                         <h1 className='ml-2 p-2 text-md border mb-[15px] mt-4 text-[#00A388] bg-[rgba(0,163,136,0.25)] rounded-md'>Snorkeling</h1>
