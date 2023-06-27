@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeHeaderImage from '../disk/image/HeaderHome.png'
+import HeaderSearch from '../disk/image/HeaderSearch.png'
 import TripBanner from '../disk/image/tripbanner.jpg'
 import {
     Stack,
@@ -18,12 +18,12 @@ function WisataSearch() {
                     <div className="grow h-1"></div>
                 </div>
             </div>
-            <img src={HomeHeaderImage} className="relative w-[100%] object-cover"/>
+            <img src={HeaderSearch} className="relative w-[100%] object-cover"/>
             <div className="absolute top-0 m-5 w-100">
                 <Stack spacing="large" direction="column">
-                    <div className="relative flex mt-[60px]">
+                    <div className="relative search flex mt-[60px]">
                         <input className="input t-3 p-3 bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
-                        <IconSearch className="text-black relative-icon absolute right-5 top-3"/>
+                        <IconSearch className="text-black search-icon absolute right-5 top-3"/>
                     </div>
                 </Stack>
             </div>

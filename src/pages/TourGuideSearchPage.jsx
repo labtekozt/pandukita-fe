@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeHeaderImage from '../disk/image/HeaderHome.png'
+import HeaderSearch from '../disk/image/HeaderSearch.png'
 import { Illustration } from "@kiwicom/orbit-components";
 import {
     Stack,
@@ -21,19 +21,19 @@ function TourGuideSearch() {
                     <div className="grow h-1"></div>
                 </div>
             </div>
-            <img src={HomeHeaderImage} className="relative w-[100%] object-cover"/>
+            <img src={HeaderSearch} className="relative w-[100%] object-cover"/>
             <div className="absolute top-0 m-5 w-100">
                 <Stack spacing="large" direction="column">
-                    <div className="relative flex mt-[60px]">
+                    <div className="relative search flex mt-[60px]">
                         <input className="t-3 p-3 bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
-                        <IconSearch className="text-black relative-icon absolute right-5 top-3"/>
+                        <IconSearch className="text-black search-icon absolute right-5 top-3"/>
                     </div>
                 </Stack>
             </div>
             <div className="m-5 mt-[40px] pb-[100%]">
                 <div className='pb-10'>
                     <div className='p-5 flex items-center justify-center'>
-                        <div className='img-guide'><Illustration name="NoResults" size="small"/></div>
+                        <div><Illustration name="NoResults" size="small"/></div>
                     </div>
                     <div className='flex items-center justify-center p-1'>
                         <Text align="center">Maaf, halaman tidak ditemukan. <br /> Yok bantu kami menambah informasi wisata</Text>
