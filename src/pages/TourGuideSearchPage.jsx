@@ -25,7 +25,7 @@ function TourGuideSearch() {
             <div className="absolute top-0 m-5 w-100">
                 <Stack spacing="large" direction="column">
                     <div className="relative search flex mt-[60px]">
-                        <input className="t-3 p-3 bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
+                        <input className="t-3 input p-3 bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
                         <IconSearch className="text-black search-icon absolute right-5 top-3"/>
                     </div>
                 </Stack>
