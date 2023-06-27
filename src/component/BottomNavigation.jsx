@@ -9,9 +9,9 @@ function BottomNavigation() {
     const Menus = [
         { name: "Home", icon: <IconHome />, href: '/'},
         { name: "Toure Guide", icon: <IconSend />, href: '/toureguide' },
-        { name: "Jurney", icon: <IconTimeline /> },
+        { name: "Jurney", icon: <IconTimeline />, href: '/tripplannerhome'},
         { name: "Message", icon: <IconMessageDots /> },
-        { name: "profile", icon: <IconUserCircle />, href: '/profile'}
+        { name: "profile", icon: <IconUserCircle />, href: '/profileuser'}
       ];
       
     return (

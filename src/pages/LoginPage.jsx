@@ -2,7 +2,6 @@ import {
   Button,
   InputField,
   Text,
-  Heading,
   ButtonLink,
   Stack,
   TextLink

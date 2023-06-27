@@ -13,7 +13,8 @@ const RegisterPage = () => {
     const [showPassword, setShowPassword] = useState(false)
 
     return (
-        <form className="containers p-[20px]" required={true}>
+    <div className="containers">
+        <form className="p-[20px]" required={true}>
             <div className="login">
             <div className="pb-2 pt-2">
                 <h1 className="text-2xl font-bold text-black">Buat Akun!</h1>
@@ -35,6 +36,7 @@ const RegisterPage = () => {
             </Stack>
             </div>
         </form>
+    </div>
     )
 }
 

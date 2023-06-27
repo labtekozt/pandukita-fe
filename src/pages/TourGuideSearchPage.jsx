@@ -1,15 +1,17 @@
 import React from 'react'
-import BottomNavigation from '../component/BottomNavigation'
 import HomeHeaderImage from '../disk/image/HeaderHome.png'
+import { Illustration } from "@kiwicom/orbit-components";
 import {
     Stack,
-    TextLink
+    TextLink,
+    Button,
+    Text
   } from "@kiwicom/orbit-components/lib/";
   import { IconSearch,IconArrowNarrowLeft } from '@tabler/icons-react';
   
 
 
-function SearchPage() {
+function TourGuideSearch() {
     return (
         <div className="container">
             <div className='p-2 z-50 shadow-sm sticky top-0 bg-white'>
@@ -24,16 +26,26 @@ function SearchPage() {
                 <Stack spacing="large" direction="column">
                     <div className="relative flex mt-[60px]">
                         <input className="t-3 p-3 bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
-                        <IconSearch className="text-black absolute right-5 top-3"/>
+                        <IconSearch className="text-black relative-icon absolute right-5 top-3"/>
                     </div>
                 </Stack>
             </div>
-            <div className="m-5 pb-[100%]">
-                
+            <div className="m-5 mt-[40px] pb-[100%]">
+                <div className='pb-10'>
+                    <div className='p-5 flex items-center justify-center'>
+                        <div className='img-guide'><Illustration name="NoResults" size="small"/></div>
+                    </div>
+                    <div className='flex items-center justify-center p-1'>
+                        <Text align="center">Maaf, halaman tidak ditemukan. <br /> Yok bantu kami menambah informasi wisata</Text>
+                    </div>
+                    <div className='flex items-center justify-center p-1'>
+                        <Button size="small" type="primary"><span>Tambah Tujuan</span></Button>
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
 
-export default SearchPage
+export default TourGuideSearch
 

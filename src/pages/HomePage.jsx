@@ -25,8 +25,8 @@ function HomePage() {
                         <p className="text-md text-white">Selamat datang di PanduKita</p>
                     </div>
                     <div className="relative flex">
-                        <input className="p-3 bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
-                        <IconSearch className="text-black absolute right-5 top-3"/>
+                        <input className="input p-3 bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
+                        <IconSearch className="text-black relative-icon absolute right-5 top-3"/>
                     </div>
                 </Stack>
             </div>
@@ -38,28 +38,30 @@ function HomePage() {
                     freeMode={true}
                     modules={[FreeMode]}
                     className="mySwiper mt-4">
-                    <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                    <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                    <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                    <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
                 </Swiper>
             </div>
             <div className="m-5">
                 <div>
                     <h1 className="text-2xl font-bold text-black mb-2 ml-1">Bingung Mau Kemana?</h1>
-                    <img src={PlannerAds} className="relative w-[100%] object-cover rounded-2xl mb-[35px]"/>
+                    <a href="/tripplannerhome">
+                        <img src={PlannerAds} className="relative w-[100%] object-cover rounded-2xl mb-[35px]"/>
+                    </a>
                 </div>
             <div>
                 <div>
                     <h1 className='text-2xl font-bold text-black mb-3 ml-1'>Kategori</h1>
                     <div className='flex'>
-                        <h1 className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Pantai</h1>
-                        <h1 className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Alam Hijau</h1>
-                        <h1 className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Belanja</h1>
+                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Pantai</button>
+                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Alam Hijau</button>
+                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Belanja</button>
                     </div>
                     <div className='flex mt-3'>
-                        <h1 className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Adat & Budaya</h1>
-                        <h1 className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Pendidikan</h1>
+                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Adat & Budaya</button>
+                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{padding : '1px 10px 1px 10px',border : '1px solid #D1D1D1'}}>Pendidikan</button>
                     </div>
                 </div>
                 <div className="mt-[20px] pb-5">
@@ -69,10 +71,10 @@ function HomePage() {
                         freeMode={true}
                         modules={[FreeMode]}
                         className="mySwiper mt-4">
-                        <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                        <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                        <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                        <SwiperSlide><a href=""><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
                     </Swiper>
                 </div>
             </div>
