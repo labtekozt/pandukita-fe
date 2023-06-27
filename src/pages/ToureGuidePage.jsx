@@ -42,7 +42,7 @@ function ToureGuidePage() {
                 <div className='m-5'>
                     <h1 className='text-md mb-2 ml-1'>Filter berdasarkan lokasi</h1>
                     <div onClick={() => setIsOpen((prev) => !prev)} 
-                        className='bg-[#f0ecec] cursor-pointer flex p-3 rounded-lg shadow'>
+                        className='bg-[#e8edf1] cursor-pointer flex p-3 rounded-lg shadow'>
                             <span className='text-md'>Pilih Lokasi</span>
                             <div className="grow"></div>
                             {isOpen ? (
