@@ -4,6 +4,7 @@ import HomeHeaderImage from '../disk/image/HeaderHome.png'
 import PlannerAds from '../disk/image/PlannerAds.png'
 import TourGuideAds from '../disk/image/TourGuideAds.png'
 import Slider from '../disk/image/slider.jpg'
+import Sebalang from '../disk/image/sebalang.jpg'
 import {
   Stack
 } from "@kiwicom/orbit-components/lib/";
@@ -38,10 +39,42 @@ function HomePage() {
                     freeMode={true}
                     modules={[FreeMode]}
                     className="mySwiper mt-4">
-                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                    <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                    <SwiperSlide>
+                        <div className='flex'>
+                            <a href="/informasiwisata">
+                                <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                            </a>
+                            <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                            <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='flex'>
+                            <a href="/informasiwisata">
+                                <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                            </a>
+                            <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                            <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='flex'>
+                            <a href="/informasiwisata">
+                                <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                            </a>
+                            <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                            <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='flex'>
+                            <a href="/informasiwisata">
+                                <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                            </a>
+                            <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                            <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                        </div>
+                    </SwiperSlide>
                 </Swiper>
             </div>
             <div className="m-5">
@@ -71,10 +104,42 @@ function HomePage() {
                         freeMode={true}
                         modules={[FreeMode]}
                         className="mySwiper mt-4">
-                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
-                        <SwiperSlide><a href="/informasiwisata"><img src={Slider} className="rounded-lg relative w-[100%] object-cover"/></a></SwiperSlide>
+                        <SwiperSlide>
+                            <div className='flex'>
+                                <a href="/informasiwisata">
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                                </a>
+                                <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                                <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='flex'>
+                                <a href="/informasiwisata">
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                                </a>
+                                <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                                <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='flex'>
+                                <a href="/informasiwisata">
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                                </a>
+                                <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                                <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className='flex'>
+                                <a href="/informasiwisata">
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover"/>
+                                </a>
+                                <span className='absolute m-2 text-white mt-[200px] font-bold z-50'>Pantai Sebalang</span>
+                                <span className='text-left text-sm absolute m-2 text-white mt-[230px] z-50'>Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</span>
+                            </div>
+                        </SwiperSlide>
                     </Swiper>
                 </div>
             </div>
