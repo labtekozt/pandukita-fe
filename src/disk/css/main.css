@@ -179,7 +179,7 @@
         width: 370px!important;
     }
     .relative .input{
-        width: 350px;
+        width: 330px;
     }
     .text-slider{
         margin-top: -40px;
@@ -202,9 +202,14 @@
     .tour-guide{
         width: 90%;
     }
+    .leaflet-container2 {
+        height: 430px;
+        z-index: 0;
+    }
     .img-guide{
         width: 150px;
-        margin-top: 40px;
+        margin-left: 0;
+        margin-top: 50px;
     }
     .guide input{
         width: 330px!important;
