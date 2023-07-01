@@ -90,6 +90,55 @@
     background-color: #fff;
 }
 
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.wrapper .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;    
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 1px 10px 1px 10px;
+    border: 1px solid #D1D1D1;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#option-1:checked:checked~.option-1,
+#option-2:checked:checked~.option-2,
+#option-3:checked:checked~.option-3,
+#option-4:checked:checked~.option-4,
+#option-5:checked:checked~.option-5{
+    border-color: #03c7a6;
+    padding: 1px 10px 1px 10px;
+    border-radius: 5px;
+    background: #00A388;
+}
+
+.wrapper .option span {
+    font-size: 15px;
+    color: black;
+}
+
+#option-1:checked:checked~.option-1 span,
+#option-2:checked:checked~.option-2 span,
+#option-3:checked:checked~.option-3 span,
+#option-4:checked:checked~.option-4 span,
+#option-5:checked:checked~.option-5 span
+{
+    color: #fff;
+}
+
 /* Responsive tablet */
 @media screen and (max-width : 1024px) {
     .container {

@@ -12,6 +12,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 function WisataAdd() {
     const [fileName, setFileName] = React.useState("");
+    const [Kategori, setKategori] = useState()
 
     const sebalang = [-5.5828711, 105.3776283]
     const kedu = [-5.7185981, 105.5667259]
@@ -72,16 +73,42 @@ function WisataAdd() {
                         <textarea className='w-full h-[100px] bg-[#e8edf1]  p-2 rounded-sm border border border-[#bfc3cb] focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 md:text-md' placeholder='Deskripsi Tempat Wisata....' name="catatan"></textarea>
                     </div>
                 </div>
+
+                {/* Kategri */}
                 <div className='m-5 mb-[20%]'>
                     <h1 className='text-2xl font-bold text-black mb-3 ml-1'>Kategori</h1>
-                    <div className='flex'>
-                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{ padding: '1px 10px 1px 10px', border: '1px solid #D1D1D1' }}>Pantai</button>
-                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{ padding: '1px 10px 1px 10px', border: '1px solid #D1D1D1' }}>Alam Hijau</button>
-                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{ padding: '1px 10px 1px 10px', border: '1px solid #D1D1D1' }}>Belanja</button>
+                    <div class="wrapper">
+                        <input type="radio" name="kategori" id="option-1" value="Pantai" onChange={e=>setKategori(e.target.value)}/>
+                        <input type="radio" name="kategori" id="option-2" value="Alam Hijau" onChange={e=>setKategori(e.target.value)}/>
+                        <input type="radio" name="kategori" id="option-3" value="Belanja" onChange={e=>setKategori(e.target.value)}/>
+
+                        <label for="option-1" className="option bg-[#F2F2F2] shadow-md option-1">
+                            <div class="dot"></div>
+                            <span>Pantai</span>
+                        </label>
+                        <label for="option-2" className="ml-2 bg-[#F2F2F2] shadow-md option option-2">
+                            <div class="dot"></div>
+                            <span>Alam Hijau</span>
+                        </label>
+                        <label for="option-3" className="ml-2 bg-[#F2F2F2] shadow-md option option-3">
+                            <div class="dot"></div>
+                            <span>Belanja</span>
+                        </label>
                     </div>
                     <div className='flex mt-3'>
-                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{ padding: '1px 10px 1px 10px', border: '1px solid #D1D1D1' }}>Adat & Budaya</button>
-                        <button className='ml-1 bg-[#F2F2F2] shadow-md rounded-full' style={{ padding: '1px 10px 1px 10px', border: '1px solid #D1D1D1' }}>Pendidikan</button>
+                        <div class="wrapper">
+                            <input type="radio" name="kategori" id="option-4" value="Adat & Budaya" onChange={e=>setKategori(e.target.value)}/>
+                            <input type="radio" name="kategori" id="option-5" value="Pendidikan" onChange={e=>setKategori(e.target.value)}/>
+
+                            <label for="option-4" className="option bg-[#F2F2F2] shadow-md option-4">
+                                <div class="dot"></div>
+                                <span>Adata & Budaya</span>
+                            </label>
+                            <label for="option-5" className="ml-2 bg-[#F2F2F2] shadow-md option option-5">
+                                <div class="dot"></div>
+                                <span>pendidikan</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 

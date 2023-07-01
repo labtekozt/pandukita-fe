@@ -55,6 +55,7 @@ function HomePage() {
                                 freeMode={true}
                                 modules={[FreeMode]}
                                 className="mySwiper mt-4">
+                                    
                                 <SwiperSlide>
                                     <div className='flex'>
                                         <a href="/informasiwisata">
@@ -64,6 +65,7 @@ function HomePage() {
                                         <span className='text-slider text-left text-sm absolute m-2 text-white mt-[230px] z-50'><a href="/informasiwisata"> Pantai Sebalang adalah pantai yang terkenal dengan keindahan alam serta tempat yang bersih</a></span>
                                     </div>
                                 </SwiperSlide>
+
                                 <SwiperSlide>
                                     <div className='flex'>
                                         <a href="/informasiwisata">
