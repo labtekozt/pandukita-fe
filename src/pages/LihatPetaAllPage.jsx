@@ -12,8 +12,10 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-function LihatPeta() {
+function LihatPetaAll() {
     const sebalang = [-5.5828711, 105.3776283]
+    const pasirPutih = [-5.5396053, 105.3368923]
+
 
     return (
         <div className="containerWisata">
@@ -32,6 +34,9 @@ function LihatPeta() {
                         <Marker position={sebalang}>
                             <Popup>Pantai Sebalang</Popup>
                         </Marker>
+                        <Marker position={pasirPutih}>
+                            <Popup>Pantai Pasir Putih</Popup>
+                        </Marker>
                     </MapContainer>
                 </div>
             </div>
@@ -47,7 +52,7 @@ function LihatPeta() {
                     </div>
                 </div>
                 <div className='flex mt-10 z-50 bottom-0'>
-                    <Button fullWidth="true" submit={true} centered={true} href="/informasiwisata">Lihat Wisata</Button>
+                    <Button fullWidth="true" submit={true} centered={true} href="/">Lihat Wisata</Button>
                     <IconChevronRight color='white' className='planner-ai mr-2 absolute ml-[350px] mt-[10px]' />
                 </div>
             </div>
@@ -55,5 +60,5 @@ function LihatPeta() {
     )
 }
 
-export default LihatPeta
+export default LihatPetaAll
 

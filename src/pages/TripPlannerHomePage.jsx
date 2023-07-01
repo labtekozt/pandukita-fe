@@ -4,7 +4,7 @@ import TripBanner from '../disk/image/tripbanner.jpg'
 import Illustration from "@kiwicom/orbit-components/lib/Illustration";
 import { TextLink } from "@kiwicom/orbit-components/lib/";
 import { IconArrowNarrowLeft } from '@tabler/icons-react';
-  
+
 function tripPlannerHome() {
     return (
         <div className="container">
@@ -19,10 +19,10 @@ function tripPlannerHome() {
                 <div class="grid gap-4 grid-cols-2">
                     <div className='mt-[45px] m-5'>
                         <span className='text-[24px] font-bold'>Atur<br />
-                        Perjalanan <br />
-                        Disini</span>
+                            Perjalanan <br />
+                            Disini</span>
                     </div>
-                    
+
                     <div className='m-2 mt-[30px]'>
                         <Illustration name="CompassPoints" size='medium' />
                     </div>
@@ -32,39 +32,39 @@ function tripPlannerHome() {
                     <div className='flex-grow'></div>
                     <span className="text-[#00A388] mt-0.5 text-trip font-bold text-md mr-[30px]"><a href="/plannerform">Tambah +</a></span>
                 </div>
-                <div className='m-6'>    
+                <div className='m-6'>
                     <div className='mt-[175px]'>
                         <a href="/plannerai">
                             <div className='trip-text mb-[-210px]'>
-                                <img className='rounded-lg' width={'100%'} src={TripBanner}/>
+                                <img className='rounded-lg' width={'100%'} src={TripBanner} />
                             </div>
                             <div className='z-50 text-white m-6'>
                                 <h1 className='font-bold mb-[-3px]'>Lampung</h1>
                                 <h1 className='text-md'>6 - 7 Mei 2023</h1>
                             </div>
-                        </a> 
+                        </a>
                     </div>
                     <div className='mt-[175px]'>
                         <a href="/plannerai">
                             <div className='trip-text mb-[-210px]'>
-                                <img className='rounded-lg' width={'100%'} src={TripBanner}/>
+                                <img className='rounded-lg' width={'100%'} src={TripBanner} />
                             </div>
                             <div className='z-50 text-white m-6'>
                                 <h1 className='font-bold mb-[-3px]'>Lampung</h1>
                                 <h1 className='text-md'>6 - 7 Mei 2023</h1>
                             </div>
-                        </a> 
+                        </a>
                     </div>
                     <div className='mt-[175px]'>
                         <a href="/plannerai">
                             <div className='trip-text mb-[-210px]'>
-                                <img className='rounded-lg' width={'100%'} src={TripBanner}/>
+                                <img className='rounded-lg' width={'100%'} src={TripBanner} />
                             </div>
                             <div className='z-50 text-white m-6'>
                                 <h1 className='font-bold mb-[-3px]'>Lampung</h1>
                                 <h1 className='text-md'>6 - 7 Mei 2023</h1>
                             </div>
-                        </a> 
+                        </a>
                     </div>
                 </div>
             </div>

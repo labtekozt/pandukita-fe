@@ -1,31 +1,42 @@
 * {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
+
 .container {
     width: 55%;
     margin: auto;
     background-color: #fff;
 }
-.relative input{
+
+.text-nav {
+    font-size: 15px;
+}
+
+.relative input {
     width: 390px;
 }
-.guide input{
+
+.guide input {
     width: 370px;
 }
+
 .containers {
     height: 100%;
     background-color: #ffff;
 }
-.containerGuide{
+
+.containerGuide {
     max-width: 30%;
     margin: auto;
     background-color: #fff;
 }
-.containerWisata{
+
+.containerWisata {
     width: 430px;
     background-color: #fff;
 }
-.login{
+
+.login {
     margin-bottom: 100%;
 }
 
@@ -33,12 +44,15 @@
 .swiper {
     width: 405px;
 }
-.mySwiper{
+
+.mySwiper {
     width: 430px;
 }
-.MySwiper{
+
+.MySwiper {
     width: 350px;
 }
+
 .swiper-slide {
     margin-left: 10px;
     text-align: center;
@@ -47,19 +61,23 @@
     justify-content: center;
     align-items: center;
 }
+
 .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.text-hr{
+
+.text-hr {
     margin: auto;
     display: flex;
     padding: 15px;
     margin-top: -20px;
 }
-.text-hr:before, .text-hr::after{
+
+.text-hr:before,
+.text-hr::after {
     color: white;
     content: "";
     flex: 1;
@@ -68,178 +86,224 @@
     box-shadow: 0 -2px;
 }
 
-.timeline{
+.timeline {
     background-color: #fff;
 }
 
 /* Responsive tablet */
-@media screen and (max-width : 1024px){
+@media screen and (max-width : 1024px) {
     .container {
         width: 100%;
         margin: auto;
     }
-    .containers{
+
+    .containers {
         width: 730px;
     }
-    .containerGuide{
+
+    .containerGuide {
         max-width: 100%;
         margin: auto;
         background-color: #fff;
     }
-    .containerWisata{
+
+    .containerWisata {
         width: 760px;
         background-color: #fff;
     }
-    .relative input{
+
+    .relative input {
         width: 300px;
     }
-    .img-guide{
+
+    .img-guide {
         width: 150px;
         margin-left: 0;
         margin-top: 50px;
     }
-    .guide input{
-        width: 380px!important;
+
+    .guide input {
+        width: 380px !important;
     }
-    .relative .input{
+
+    .relative .input {
         width: 500px;
     }
-    .relative-icon{
+
+    .relative-icon {
         margin-top: 0;
     }
+
     .leaflet-container {
         height: 200px;
         z-index: 0;
     }
+
     .leaflet-container2 {
         height: 700px;
         z-index: 0;
     }
-    .tour-guide{
+
+    .tour-guide {
         width: 185px;
     }
-    .share{
+
+    .share {
         margin-top: 30px;
         margin-left: 92%;
     }
+
     .swiper {
         width: 730px;
     }
-    .trip-text{
+
+    .trip-text {
         margin-bottom: -120px;
     }
-    .planner-icon{
+
+    .planner-icon {
         margin-left: 680px;
     }
-    .date-picker{
+
+    .date-picker {
         width: 720px;
     }
-    .date-picker-icon{
+
+    .date-picker-icon {
         margin-left: 670px;
     }
-    .date-plan{
+
+    .date-plan {
         width: 355px;
     }
-    .date-icon{
+
+    .date-icon {
         margin-left: 310px;
     }
-    .search input{
+
+    .search input {
         margin-top: 30px;
         width: 650px;
     }
-    .search-icon{
+
+    .search-icon {
         margin-top: 30px;
     }
-    .text-slider{
+
+    .text-slider {
         padding-top: 190px;
     }
 }
 
 /* responsive mobile */
-@media screen and (max-width : 762px){
+@media screen and (max-width : 762px) {
     .container {
         width: 100%;
         margin: auto;
     }
-    .containers{
+
+    .containers {
         width: 370px;
     }
-    .containerGuide{
+
+    .containerGuide {
         max-width: 100%;
         margin: auto;
         background-color: #fff;
     }
-    .containerWisata{
+
+    .containerWisata {
         width: 380px;
         background-color: #fff;
     }
-    .empty{
-        width: 370px!important;
+
+    .empty {
+        width: 370px !important;
     }
-    .relative .input{
+
+    .relative .input {
         width: 330px;
     }
-    .text-slider{
+
+    .text-slider {
         margin-top: -40px;
     }
-    .slider-tittle{
+
+    .slider-tittle {
         margin-top: -70px;
     }
-    .text-profile{
+
+    .text-profile {
         margin-top: 10px;
         font-size: 15px;
     }
-    .text-profiles{
+
+    .text-profiles {
         margin-top: 10px;
         font-size: 15px;
         margin-left: 10px;
     }
-    .text-nav{
-        font-size: 9px;
+
+    .text-nav {
+        font-size: 13px;
     }
-    .tour-guide{
+
+    .tour-guide {
         width: 90%;
     }
+
     .leaflet-container2 {
         height: 430px;
         z-index: 0;
     }
-    .img-guide{
+
+    .img-guide {
         width: 150px;
         margin-left: 0;
         margin-top: 50px;
     }
-    .guide input{
-        width: 330px!important;
+
+    .guide input {
+        width: 330px !important;
     }
-    .share{
+
+    .share {
         margin-left: 85%;
     }
+
     .swiper {
         width: 330px;
     }
-    .text-jelajah{
+
+    .text-jelajah {
         margin-left: 27px;
     }
-    .text-trip{
+
+    .text-trip {
         margin-right: 20px;
     }
-    .trip-text{
+
+    .trip-text {
         margin-bottom: -195px;
     }
-    .planner-ai{
+
+    .planner-ai {
         right: 0;
         margin-right: 29px;
     }
-    .planner-icon{
+
+    .planner-icon {
         margin-left: 300px;
     }
-    .date-picker{
+
+    .date-picker {
         width: 340px;
     }
-    .date-picker-icon{
+
+    .date-picker-icon {
         margin-left: 300px;
     }
+
     .date-icon {
         margin-left: 130px;
     }

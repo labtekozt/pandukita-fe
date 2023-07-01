@@ -19,6 +19,8 @@ import ProfileUpdate from './pages/ProfileUpdatePage';
 import ProfileTourGuide from './pages/ProfileTourGuidePage';
 import LihatPeta from './pages/LihatPetaPage';
 import EmptyState from './pages/EmptyStatePage';
+import LihatPetaAll from './pages/LihatPetaAllpage';
+import SewaPemandu from './pages/SewaPemanduPage';
 
 function App() {
 
@@ -46,7 +48,9 @@ function App() {
           <Route path="/profiltoureguide" Component={ProfileTourGuide} />
           <Route path="/lihatpeta" Component={LihatPeta} />
           <Route path="/emptystate" Component={EmptyState} />
-         
+          <Route path="/lihatpetaall" Component={LihatPetaAll} />
+          <Route path="/sewapemandu" Component={SewaPemandu} />
+
         </Routes>
       </div>
     </>

@@ -3,13 +3,14 @@ import {
     TextLink,
     Button,
     Text
-  } from "@kiwicom/orbit-components/lib/";
+} from "@kiwicom/orbit-components/lib/";
 import Card from "@kiwicom/orbit-components/lib/Card";
-import { IconArrowNarrowLeft,
+import {
+    IconArrowNarrowLeft,
     IconPencil,
     IconAlertCircle,
     IconChevronRight
- } from '@tabler/icons-react';
+} from '@tabler/icons-react';
 
 
 function ProfileTourGuide() {
@@ -27,7 +28,7 @@ function ProfileTourGuide() {
                     <div className='ml-3'>
                         <div className='flex'>
                             <strong>Andrean Rahmatan</strong>
-                            <div className='ml-3 rounded-full p-1' style={{backgroundColor : 'rgba(36, 242, 79, 0.1)'}}>
+                            <div className='ml-3 rounded-full p-1' style={{ backgroundColor: 'rgba(36, 242, 79, 0.1)' }}>
                                 <Text type='success' size='small'>Pemandu Wisata</Text>
                             </div>
                         </div>
@@ -37,7 +38,7 @@ function ProfileTourGuide() {
 
                 <div className='shadow'>
                     <Card>
-                        <div style={{border : '1px solid #eeeeee', color : 'gray', fontSize : '13px'}} className='p-3'>
+                        <div style={{ border: '1px solid #eeeeee', color: 'gray', fontSize: '13px' }} className='p-3'>
                             <div className="flex">
                                 <p><a href="/"><IconPencil /></a></p>
                                 <a href="/profilupdate" className='ml-2 mt-0.5'>Edit Profil</a>
@@ -45,8 +46,8 @@ function ProfileTourGuide() {
                                 <a href="/profilupdate"><IconChevronRight /></a>
                             </div>
                             <div className="flex mt-6">
-                                    <a href=""><IconAlertCircle /></a>
-                                    <a href="" className='ml-2 mt-0.5'>Tentang PanduKita</a>
+                                <a href=""><IconAlertCircle /></a>
+                                <a href="" className='ml-2 mt-0.5'>Tentang PanduKita</a>
                                 <div className="grow"></div>
                                 <div className="flex-none w-100"><a href="/"><IconChevronRight /></a></div>
                             </div>
