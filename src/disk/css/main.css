@@ -236,7 +236,7 @@ input[type="radio"] {
     }
 
     .search-icon {
-        margin-top: 30px;
+        margin-top: 0;
     }
 
     .text-slider {
@@ -272,6 +272,7 @@ input[type="radio"] {
 
     .relative .input {
         width: 330px;
+        margin-top: 0;
     }
 
     .text-slider {

@@ -13,7 +13,7 @@ import PlannerFormPage from './pages/PlannerFormPage';
 import PlannerAdd from './pages/PlannerAddPage';
 import plannerAi from './pages/PlannerAiPage';
 import TourGuideSearch from './pages/TourGuideSearchPage';
-import WisataAdd from './pages/WisataAdd.page';
+import WisataAdd from './pages/WisataAddPage';
 import PlannerUpdate from './pages/PlannerUpdatePage';
 import ProfileUpdate from './pages/ProfileUpdatePage';
 import ProfileTourGuide from './pages/ProfileTourGuidePage';

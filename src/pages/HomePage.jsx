@@ -42,7 +42,7 @@ function HomePage() {
                                     <p className="text-md text-white">Selamat datang di PanduKita</p>
                                 </div>
                                 <div className="relative flex">
-                                    <input className="p-3 input bg-white-100 rounded-full" placeholder="Cari tempat wisata" />
+                                   <a href="/wisatasearch"> <input className="p-3 input bg-white-100 rounded-full" placeholder="Cari tempat wisata" /></a>
                                     <IconSearch className="text-black relative-icon absolute right-5 top-3" />
                                 </div>
                             </Stack>

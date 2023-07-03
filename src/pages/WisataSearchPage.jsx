@@ -18,7 +18,7 @@ function WisataSearch() {
                     <div className="grow h-1"></div>
                 </div>
             </div>
-            <img src={HeaderSearch} className="relative w-[100%] object-cover"/>
+            <img src={HeaderSearch} className="relative w-[100%] h-[110px] object-cover"/>
             <div className="absolute top-0 m-5 w-100">
                 <Stack spacing="large" direction="column">
                     <div className="relative search flex mt-[60px]">
