@@ -19,7 +19,7 @@ import ProfileUpdate from './pages/ProfileUpdatePage';
 import ProfileTourGuide from './pages/ProfileTourGuidePage';
 import LihatPeta from './pages/LihatPetaPage';
 import EmptyState from './pages/EmptyStatePage';
-import LihatPetaAll from './pages/LihatPetaAllpage';
+import LihatPetaAll from './pages/LihatPetaAllPage';
 import SewaPemandu from './pages/SewaPemanduPage';
 
 function App() {
