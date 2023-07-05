@@ -91,10 +91,18 @@ function InformasiWisataPage() {
                                 freeMode={true}
                                 modules={[FreeMode]}
                                 className="mySwiper MySwiper mt-4">
-                                <SwiperSlide><img src={Slider} className="rounded-lg relative w-[100%] object-cover" /></SwiperSlide>
-                                <SwiperSlide><img src={Slider} className="rounded-lg relative w-[100%] object-cover" /></SwiperSlide>
-                                <SwiperSlide><img src={Slider} className="rounded-lg relative w-[100%] object-cover" /></SwiperSlide>
-                                <SwiperSlide><img src={Slider} className="rounded-lg relative w-[100%] object-cover" /></SwiperSlide>
+                                <SwiperSlide className='img-box'>
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover" />
+                                </SwiperSlide>
+                                <SwiperSlide className='img-box'>
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover" />
+                                </SwiperSlide>
+                                <SwiperSlide className='img-box'>
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover" />
+                                </SwiperSlide>
+                                <SwiperSlide className='img-box'>
+                                    <img src={Slider} className="rounded-lg relative w-[100%] object-cover" />
+                                </SwiperSlide>
                             </Swiper>
                         </div>
                     )}
