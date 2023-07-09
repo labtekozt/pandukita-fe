@@ -11,8 +11,11 @@ import {
 } from '@tabler/icons-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import DatePicker from 'react-datepicker'
+import { useLocation } from 'react-router-dom';
 
 function PlannerUpdate() {
+    const location = useLocation()
+    
     const [startDate, setStartDate] = useState(new Date());
 
     const sebalang = [-5.5828711, 105.3776283]
