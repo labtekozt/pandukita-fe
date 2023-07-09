@@ -98,6 +98,7 @@ function InformasiWisataPage(props) {
                 href={`https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longtitude}`}
                 className="mt-1 ml-2 text-md text-[#00A388]"
                 target="_blank"
+                rel="noreferrer"
               >
                 Buka di Google Maps
               </a>
