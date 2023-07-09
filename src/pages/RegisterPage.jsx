@@ -20,37 +20,12 @@ import useFormData from "../hooks/useFormData";
 import { getUser, setCredentials } from "../helpers/setCredentials";
 import axiosAuth from "../services/axios";
 import validate from "../helpers/validateData";
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const { dispatch } = useContext(GlobalContext);
-
-  const register = async (data) => {
-    try {
-      // validate data here
-      const isValid = validate(data);
-      if (!isValid) return;
-      await axiosAuth.post("/register", data);
-      //   login request and set credentials
-      dispatch({
-        type: "SHOW_TOAST",
-        payload: { message: "Register Success", type: "success" },
-      });
-
-      const loginResponse = await axiosAuth.post("/login", {
-        email: data.email,
-        password: data.password,
-      });
-
-      setCredentials(loginResponse.data);
-      dispatch({
-        type: "SET_USER",
-        payload: await getUser(),
-      });
-    } catch (error) {
-      return;
-    }
-  };
   const { data, handleChange } = useFormData({
     username: "",
     email: "",
@@ -58,6 +33,55 @@ const RegisterPage = () => {
     password: "",
     password2: "",
   });
+  const register = async () => {
+    try {
+      console.log();
+      // validate data here
+      const isValid = validate(data);
+      if (isValid) {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: {
+            message: `Gagal Registrasi , ${isValid}`,
+            type: "error",
+          },
+        });
+        return;
+      }
+      await axiosAuth.post("/register", data);
+      //   login request and set credentials
+      
+      const loginResponse = await axiosAuth.post("/login", {
+        email: data.email,
+        password: data.password,
+      });
+      dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Register Success", type: "success" },
+      });
+      dispatch({
+        type: "LOGIN",
+      });
+
+      setCredentials(loginResponse.data);
+      dispatch({
+        type: "SET_USER",
+        payload: await getUser(),
+      });
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      if (error.name == "AxiosError") {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: {
+            message: `Gagal Registrasi , ${error.response.data.message}`,
+            type: "error",
+          },
+        });
+      }
+    }
+  };
 
   return (
     <div className="containers">
@@ -138,8 +162,10 @@ const RegisterPage = () => {
             />
             <Button
               fullWidth="true"
-              type="submit"
-              onClick={async () => register(data)}
+              size="large"
+              // color
+
+              onClick={() => register()}
               centered={true}
             >
               Buat Akun

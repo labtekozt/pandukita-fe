@@ -3,7 +3,7 @@ import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import useFecthData from "../hooks/useInfinityFetch";
 import { useCallback, useRef, useState } from "react";
 import SearchBar from "../component/SearchBarComponent";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NotFoundComponent from "../component/NotFoundComponent";
 import LoadingComponent from "../component/loadingComponent";
 
@@ -11,11 +11,12 @@ function WisataSearch() {
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
+
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  const { data, hasMore, loading, total, searchHandle } = useFecthData(
+  const { data, hasMore, loading, searchHandle } = useFecthData(
     `/destinations?perPage=10`,
     search,
     page
@@ -76,9 +77,8 @@ function WisataSearch() {
                   {/* link widh and hight fit with parent  */}
                   <div className="trip-text mb-[-200px]">
                     <img
+                      loading="lazy"
                       className="rounded-lg"
-                      width={800}
-                      height={800}
                       src={item.image[0].url}
                     />
                   </div>
@@ -116,8 +116,8 @@ function WisataSearch() {
                   {/*  above is on image */}
                   <div className="trip-text h-[600px] ">
                     <img
+                      loading="lazy"
                       className="rounded-lg"
-                      width={"100%"}
                       src={item.image[0].url}
                     />
                   </div>

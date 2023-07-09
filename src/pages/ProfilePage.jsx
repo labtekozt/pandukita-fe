@@ -68,17 +68,11 @@ function ProfilePage() {
                 </Link>
               </div>
               <div className="flex mt-6">
-                <a href="">
-                  <IconAlertCircle color="black" />
-                </a>
-                <a href="" className="ml-2 mt-0.5">
-                  Tentang PanduKita
-                </a>
+                <IconAlertCircle color="black" />
+                Tentang PanduKita
                 <div className="grow"></div>
                 <div className="flex-none w-100">
-                  <a href="/">
-                    <IconChevronRight />
-                  </a>
+                  <IconChevronRight />
                 </div>
               </div>
               {state && state.user.role !== "guideTour" && (

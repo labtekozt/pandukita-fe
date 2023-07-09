@@ -30,8 +30,6 @@ export default function AddDestination() {
   // create search that search when user not type for 2 second
   const inputChanged = (e) => {
     setInputValue(e.target.value);
-    if (inputValue === "") return;
-    if (inputValue.length < 3) return;
     setPage(1);
 
     clearTimeout(timer);
@@ -72,7 +70,7 @@ export default function AddDestination() {
               <IconArrowNarrowLeft color="black" />
             </p>
           </div>
-          <div className="grow-0 mr-8">Cari Aktivitas Menarik</div>
+          <div className="grow-0 mr-8">Cari Aktivitas Menarik Di {city}</div>
           <div className="grow h-1"></div>
         </div>
       </div>
@@ -128,7 +126,11 @@ export default function AddDestination() {
                 className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
               >
                 <div className="trip-text flex-1 relative ">
-                  <img className="rounded-lg  w-128" src={item.image[0].url} />
+                  <img
+                    loading="lazy"
+                    className="rounded-lg  w-128"
+                    src={item.image[0].url}
+                  />
                   {/* center */}
                   <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
                     <h1 className="font-bold mb-[10px]">{item.name}</h1>
@@ -170,7 +172,11 @@ export default function AddDestination() {
                 className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
               >
                 <div className="trip-text flex-1 relative ">
-                  <img className="rounded-lg  w-128" src={item.image[0].url} />
+                  <img
+                    loading="lazy"
+                    className="rounded-lg  w-128"
+                    src={item.image[0].url}
+                  />
                   {/* center */}
                   <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
                     <h1 className="font-bold mb-[10px]">{item.name}</h1>

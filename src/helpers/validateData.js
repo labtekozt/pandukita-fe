@@ -9,19 +9,19 @@ export default function validate(data) {
   const phoneError = validator.phoneValidator(phone);
 
   if (usernameError) {
-    return false;
+    return usernameError;
   }
   if (emailError) {
-    return false;
+    return emailError;
   }
   if (passwordError) {
-    return false;
+    return passwordError;
   }
   if (password2Error) {
-    return false;
+    return password2Error;
   }
   if (phoneError) {
-    return false;
+    return phoneError;
   }
-  return true;
+  return null;
 }

@@ -22,13 +22,14 @@ import axiosApiInstance from "../services/axios/axiosApi";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../store";
 
-function plannerAi() {
+function PlannerAi() {
   const { dispatch } = useContext(GlobalContext);
   const id = useParams().id;
   const [groupData, setGroupData] = useState({});
   const { loading, data, error, setState } = useFetch(`/planners/${id}`);
 
   const navigate = useNavigate();
+
   const handleDelete = async (planId) => {
     try {
       const res = await axiosApiInstance.delete(
@@ -194,6 +195,7 @@ function plannerAi() {
                                 </div>
                                 <div className="w-[250px] mt-3">
                                   <img
+                                    loading="lazy"
                                     src={plan.distination.image[0].url}
                                     className="rounded-lg relative w-[100%] object-cover"
                                   />
@@ -309,7 +311,6 @@ function plannerAi() {
               fullWidth="true"
               submit={true}
               centered={true}
-              href="sewapemandu"
             >
               Sewa Pemandu Wisata
             </Button>
@@ -320,4 +321,4 @@ function plannerAi() {
   );
 }
 
-export default plannerAi;
+export default PlannerAi;

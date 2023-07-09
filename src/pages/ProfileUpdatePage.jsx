@@ -96,6 +96,7 @@ function ProfileUpdate() {
           <div className="mt-5 mb-5">
             <h1 className="text-md mb-1">Foto Profil</h1>
             <img
+              loading="lazy"
               //   center content
               className="rounded-full mb-2 object-cover object-center w-24 h-24 sm:w-32 sm:h-32 border-none align-center"
               src={srcImage(data && data.profile)}
