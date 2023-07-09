@@ -20,3 +20,39 @@ export function formatDistance(date) {
     ? `${minutes} minute${minutes > 1 ? "s" : ""} ago`
     : `${seconds} second${seconds > 1 ? "s" : ""} ago`;
 }
+
+export function humanizeDate(date) {
+  const dateNew = new Date(date);
+  // format date monday, 1 january 2021
+  // transform to locale indonesia
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return dateNew.toLocaleDateString("id-ID", options);
+}
+
+export function humanizeTime(date) {
+  const dateNew = new Date(date);
+  // format date 10:00
+  // transform to locale indonesia
+  const options = {
+    hour: "numeric",
+    minute: "numeric",
+  };
+  return dateNew.toLocaleTimeString("id-ID", options);
+}
+
+export function humanizeDateTimeShort(date) {
+  const dateNew = new Date(date);
+  // format date 1 january 2021
+  // transform to locale indonesia
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+  return dateNew.toLocaleDateString("id-ID", options);
+}

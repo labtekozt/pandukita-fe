@@ -59,13 +59,13 @@ function HomePage() {
                 </p>
               </div>
               <div className="relative flex">
-                <a href="/wisatasearch">
+                <Link to={"/destination/search"}>
                   {" "}
                   <input
                     className="p-3 input bg-white-100 rounded-full"
                     placeholder="Cari tempat wisata"
                   />
-                </a>
+                </Link>
                 <IconSearch className="text-black relative-icon absolute right-5 top-3" />
               </div>
             </Stack>
@@ -84,22 +84,22 @@ function HomePage() {
             >
               {data.randomDestination &&
                 data.randomDestination.map((item, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="flex">
-                      <Link to={`/${item._id}`}>
+                  <SwiperSlide key={item._id}>
+                    <div className="flex img-box">
+                      <Link to={`/destination/${item._id}`}>
                         {/* check if width image is 500px and */}
                         <img
                           src={item.image[0].url}
-                          className="rounded-lg relative w-[100%]"
+                          className="rounded-lg relative w-[100%] object-cover"
                         />
                       </Link>
-                      <span className="text-slider slider-title text-md mb-2 absolute m-2 text-white  font-bold z-50">
-                        <a href="/informasiwisata">{item.name}</a>
+                      <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
+                        <Link to={`/destination/${item._id}`}>{item.name}</Link>
                       </span>
-                      <span className="text-slider text-left text-sm absolute m-2 text-white mt-[5em] z-50">
-                        {/* limit item.description to 500char */}
-                        {item.description.length > 300
-                          ? item.description.substring(0, 300) + "..."
+                      <span className="text-slider text-left text-sm absolute m-2 text-white mt-[210px] z-50">
+                        {/* limit description to 500char */}
+                        {item.description.length > 100
+                          ? item.description.substring(0, 100) + "..."
                           : item.description}
                       </span>
                     </div>
@@ -112,12 +112,12 @@ function HomePage() {
               <h1 className="text-2xl font-bold text-black mb-2 ml-1">
                 Bingung Mau Kemana?
               </h1>
-              <a href="/tripplannerhome">
+              <Link href="/planner">
                 <img
                   src={PlannerAds}
                   className="relative w-[100%] object-cover rounded-2xl mb-[35px]"
                 />
-              </a>
+              </Link>
             </div>
             <div>
               <div>
@@ -132,7 +132,7 @@ function HomePage() {
                       border: "1px solid #D1D1D1",
                     }}
                   >
-                    Pantai
+                    {data.category && data.category.map((item) => item.name)}
                   </button>
                 </div>
               </div>
@@ -146,20 +146,22 @@ function HomePage() {
                 >
                   {data.randomCategory &&
                     data.randomCategory.map((item, index) => (
-                      <SwiperSlide key={index}>
-                        <div className="flex">
-                          <Link to={`/${item._id}`}>
+                      <SwiperSlide key={item._id}>
+                        <div className="flex img-box">
+                          <Link to={`/destination/${item._id}`}>
+                            {/* check if width image is 500px and */}
                             <img
                               src={item.image[0].url}
-                              className="rounded-lg relative w-[100%]"
+                              className="rounded-lg relative w-[100%] object-cover"
                             />
                           </Link>
-                          <span className="text-slider slider-title text-md mb-2 absolute m-2 text-white  font-bold z-50">
-                            <a href="/informasiwisata">{item.name}</a>
+                          <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
+                            <Link to={`/destination/${item._id}`}>{item.name}</Link>
                           </span>
-                          <span className="text-slider text-left text-sm absolute m-2 text-white mt-[5em] z-50">
-                            {item.description.length > 300
-                              ? item.description.substring(0, 300) + "..."
+                          <span className="text-slider text-left text-sm absolute m-2 text-white mt-[210px] z-50">
+                            {/* limit description to 500char */}
+                            {item.description.length > 100
+                              ? item.description.substring(0, 100) + "..."
                               : item.description}
                           </span>
                         </div>
@@ -169,7 +171,7 @@ function HomePage() {
               </div>
             </div>
             <div className="mt-[30px]">
-              <a href="/toureguide">
+              <a href="/tourguide">
                 <h1 className="text-2xl font-bold text-black mb-2">
                   Sewa pemandu wisata
                 </h1>
@@ -180,7 +182,7 @@ function HomePage() {
               </a>
             </div>
             <div className="mt-[30px] pb-[130px]">
-              <a href="/wisataadd">
+              <a href="/destination/add">
                 <h1 className="text-2xl font-bold text-black mb-2">
                   Kamu Pemandu Wisata?
                 </h1>

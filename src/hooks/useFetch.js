@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axiosApiInstance from "../services/axios/axiosApi";
 
 export default function useFetchPagination() {
@@ -34,7 +34,7 @@ export default function useFetchPagination() {
   return { state, fetch };
 }
 
-export function useFetch() {
+export function useFetch(url) {
   const initialState = {
     loading: false,
     error: null,
@@ -57,6 +57,9 @@ export function useFetch() {
       setState({ ...state, loading: false, error: error.response.data });
     }
   };
+  useEffect(() => {
+    fetch(url);
+  }, []);
 
-  return { state, fetch };
+  return { ...state, setState };
 }

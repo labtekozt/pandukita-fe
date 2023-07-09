@@ -10,9 +10,11 @@ import {
 } from "@tabler/icons-react";
 import { GlobalContext } from "../store";
 import { logout } from "../services/auth";
+import { Link, useNavigate } from "react-router-dom";
 
 function ProfilePage() {
-  const { dispatch } = useContext(GlobalContext);
+  const { state, dispatch } = useContext(GlobalContext);
+  const navigate = useNavigate();
   const onLogout = async () => {
     await logout(dispatch);
   };
@@ -22,7 +24,7 @@ function ProfilePage() {
       <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
         <div className="flex">
           <div className="grow h-6">
-            <TextLink href="/">
+            <TextLink onClick={() => navigate("/")}>
               <IconArrowNarrowLeft color="black" />
             </TextLink>
           </div>
@@ -33,9 +35,11 @@ function ProfilePage() {
       <div className="m-5 mt-8 pb-[50%]">
         <div className="flex items-center mb-5">
           <div className="ml-3">
-            <strong>Andrean Rahmatan</strong>
+            <strong>{state && state.user.username}</strong>
             <br />
-            <span className="text-gray text-md">lilrahmat@gmail.com</span>
+            <span className="text-gray text-md">
+              {state && state.user.email}
+            </span>
           </div>
         </div>
 
@@ -51,17 +55,17 @@ function ProfilePage() {
             >
               <div className="flex">
                 <p>
-                  <a href="/profilupdate">
+                  <Link to="/profile/update">
                     <IconPencil color="black" />
-                  </a>
+                  </Link>
                 </p>
-                <a href="/profilupdate" className="ml-2 mt-0.5">
+                <Link to="/profile/update" className="ml-2 mt-0.5">
                   Edit Profil
-                </a>
+                </Link>
                 <div className="grow"></div>
-                <a href="/profilupdate">
+                <Link to="/profile/update">
                   <IconChevronRight />
-                </a>
+                </Link>
               </div>
               <div className="flex mt-6">
                 <a href="">
@@ -77,31 +81,33 @@ function ProfilePage() {
                   </a>
                 </div>
               </div>
-              <div className="flex mt-6">
-                <a href="/registertoureguide">
-                  <IconUserPlus color="black" />
-                </a>
-                <a href="/registertoureguide" className="ml-2 mt-0.5">
-                  Bergabung Menjadi Pemandu Wisata <br />
-                  <span className="text-[10px]">
-                    Jadilah Tour Guide yang berpengalaman dan
-                  </span>{" "}
-                  <br />
-                  <span className="text-[10px]">
-                    bergabunglah dengan aplikasi kami untuk berbagi
-                  </span>{" "}
-                  <br />
-                  <span className="text-[10px]">
-                    keindahan destinasi dengan orang-orang dari seluruh
-                  </span>
-                </a>
-                <div className="grow"></div>
-                <div className="flex-none w-100">
-                  <a href="/registertoureguide">
-                    <IconChevronRight />
-                  </a>
+              {state && state.user.role !== "guideTour" && (
+                <div className="flex mt-6">
+                  <Link to="/tourguide/register">
+                    <IconUserPlus color="black" />
+                  </Link>
+                  <Link to="/tourguide/register" className="ml-2 mt-0.5">
+                    Bergabung Menjadi Pemandu Wisata <br />
+                    <span className="text-[10px]">
+                      Jadilah Tour Guide yang berpengalaman dan
+                    </span>{" "}
+                    <br />
+                    <span className="text-[10px]">
+                      bergabunglah dengan aplikasi kami untuk berbagi
+                    </span>{" "}
+                    <br />
+                    <span className="text-[10px]">
+                      keindahan destinasi dengan orang-orang dari seluruh
+                    </span>
+                  </Link>
+                  <div className="grow"></div>
+                  <div className="flex-none w-100">
+                    <Link to="/tourguide/register">
+                      <IconChevronRight />
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </Card>
         </div>

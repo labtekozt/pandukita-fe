@@ -16,30 +16,48 @@ import {
 } from "@tabler/icons-react";
 import { useContext, useState } from "react";
 import { GlobalContext } from "../store";
-import useRegister from "../hooks/auth/useRegister";
+import useFormData from "../hooks/useFormData";
+import { getUser, setCredentials } from "../helpers/setCredentials";
+import axiosAuth from "../services/axios";
+import validate from "../helpers/validateData";
 
 const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { dispatch } = useContext(GlobalContext);
-  const {
-    register,
-    setState,
-    loading,
-    error,
-    username,
-    email,
-    phone,
-    password,
-    password2,
-  } = useRegister();
 
-  if (error) {
-    console.log(error);
-    dispatch({
-      type: "SHOW_TOAST",
-      payload: { message: error, type: "critical", show: true },
-    });
-  }
+  const register = async (data) => {
+    try {
+      // validate data here
+      const isValid = validate(data);
+      if (!isValid) return;
+      await axiosAuth.post("/register", data);
+      //   login request and set credentials
+      dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Register Success", type: "success" },
+      });
+
+      const loginResponse = await axiosAuth.post("/login", {
+        email: data.email,
+        password: data.password,
+      });
+
+      setCredentials(loginResponse.data);
+      dispatch({
+        type: "SET_USER",
+        payload: await getUser(),
+      });
+    } catch (error) {
+      return;
+    }
+  };
+  const { data, handleChange } = useFormData({
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
+    password2: "",
+  });
 
   return (
     <div className="containers">
@@ -59,42 +77,28 @@ const RegisterPage = () => {
               type="text"
               placeholder="pandukita"
               prefix={<IconUser />}
-              value={username.value}
-              onChange={(e) =>
-                setState((prev) => ({
-                  ...prev,
-                  username: { value: e.target.value, error: "" },
-                }))
-              }
-              error={!!username.error}
-              errorText={username.error}
+              value={data && data.username.value}
+              onChange={(e) => handleChange(e)}
+              id="username"
             />
 
             <InputField
               label="Email"
               type="email"
+              id="email"
               placeholder="pandukita@gmail.com"
               prefix={<IconAt />}
-              value={email.value}
-              onChange={(e) =>
-                setState((prev) => ({
-                  ...prev,
-                  email: { value: e.target.value, error: "" },
-                }))
-              }
+              value={data && data.email}
+              onChange={(e) => handleChange(e)}
             />
             <InputField
               label="Phone Number"
               type="email"
               placeholder="08##########"
               prefix={<IconPhone />}
-              value={phone.value}
-              onChange={(e) =>
-                setState((prev) => ({
-                  ...prev,
-                  phone: { value: e.target.value, error: "" },
-                }))
-              }
+              value={data && data.phone}
+              id="phone"
+              onChange={(e) => handleChange(e)}
             />
             <InputField
               type={showPassword ? "text" : "password"}
@@ -110,15 +114,9 @@ const RegisterPage = () => {
                   {showPassword ? <IconEye /> : <IconEyeOff />}
                 </ButtonLink>
               }
-              value={password.value}
-              onChange={(e) =>
-                setState((prev) => ({
-                  ...prev,
-                  password: { value: e.target.value, error: "" },
-                }))
-              }
-              error={!!password.error}
-              errorText={password.error}
+              value={data && data.password.value}
+              onChange={(e) => handleChange(e)}
+              id="password"
             />
             <InputField
               type={showPassword ? "text" : "password"}
@@ -134,30 +132,14 @@ const RegisterPage = () => {
                   {showPassword ? <IconEye /> : <IconEyeOff />}
                 </ButtonLink>
               }
-              value={password2.value}
-              onChange={(e) =>
-                setState((prev) => ({
-                  ...prev,
-                  password2: { value: e.target.value, error: "" },
-                }))
-              }
-              error={!!password2.error}
-              errorText={password2.error}
+              value={data && data.password2.value}
+              onChange={(e) => handleChange(e)}
+              id={"password2"}
             />
             <Button
               fullWidth="true"
-              loading={loading}
-              disabled={loading}
               type="submit"
-              onClick={async () =>
-                register({
-                  username: username.value,
-                  email: email.value,
-                  phone: phone.value,
-                  password: password.value,
-                  password2: password2.value,
-                })
-              }
+              onClick={async () => register(data)}
               centered={true}
             >
               Buat Akun

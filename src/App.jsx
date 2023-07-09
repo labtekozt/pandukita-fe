@@ -26,33 +26,43 @@ import LihatPeta from "./pages/LihatPetaPage";
 import EmptyState from "./pages/EmptyStatePage";
 import LihatPetaAll from "./pages/LihatPetaAllPage";
 import SewaPemandu from "./pages/SewaPemanduPage";
-import ProtectedRoute, { ProtectedLoginRoute } from "./utils/protectedRoute";
+import ProtectedRoute, {
+  ProtectedLoginRoute,
+  ProtectedClientRoute,
+  ProtectedTGRoute,
+} from "./utils/protectedRoute";
+import AddDestination from "./pages/AddDestination";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route element={<ProtectedRoute />}>
         <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/:id" element={<InformasiWisataPage />} />
-        <Route exact path="/:id/map" element={<LihatPeta />} />
-        <Route exact path="/search" element={<WisataSearch />} />
-        <Route exact path="/add" element={<WisataAdd />} />
+        <Route path="destination/:id" element={<InformasiWisataPage />} />
+        <Route exact path="destination/:id/map" element={<LihatPeta />} />
+        <Route exact path="destination/search" element={<WisataSearch />} />
+        <Route exact path="destination/add" element={<WisataAdd />} />
 
-        <Route path="/register/tourguide" element={<RegisterToureGuide />} />
-        <Route path="/search/tourguide" element={<TourGuideSearch />} />
-        <Route exact path="/tourguide" element={<ToureGuidePage />} />
+        <Route exact path="/tourguide/search" element={<TourGuideSearch />} />
+
         <Route path="/tourguide/:id" element={<ProfileTourGuide />} />
-        <Route path="/tourguide/rent" element={<SewaPemandu />} />
+        <Route exact path="/tourguide/rent" element={<SewaPemandu />} />
 
         <Route exact path="/profile" element={<ProfilePage />} />
-        <Route path="/profile/update" element={<ProfileUpdate />} />
-        <Route path="/profile/tourguide" element={<TourGuideProfile />} />
+        <Route exact path="/profile/update" element={<ProfileUpdate />} />
+        <Route exact path="/profile/tourguide" element={<TourGuideProfile />} />
+
+        <Route exact path="/planner/:id/add" element={<PlannerAdd />} />
+        {/* <Route exact path="/planner/:id/update" element={<PlannerUpdate />} /> */}
 
         <Route exact path="/planner" element={<TripPlannerHome />} />
         <Route exact path="/planner/form" element={<PlannerFormPage />} />
-        <Route exact path="/planner/add" element={<PlannerAdd />} />
-        <Route exact path="/planner/update" element={<PlannerUpdate />} />
-        <Route exact path="/planner/ai" element={<PlannerAi />} />
+        <Route
+          exact
+          path="/planner/add-destination"
+          element={<AddDestination />}
+        />
+        <Route exact path="/planner/:id" element={<PlannerAi />} />
       </Route>
 
       <Route element={<ProtectedLoginRoute />}>
@@ -60,34 +70,19 @@ export const router = createBrowserRouter(
         <Route exact path="/register" element={<RegisterPage />} />
       </Route>
 
-      <Route path="/emptystate" Component={EmptyState} />
-      <Route path="/lihatpetaall" Component={LihatPetaAll} />
+      <Route element={<ProtectedClientRoute />}>
+        <Route
+          exact
+          path="/tourguide/register"
+          element={<RegisterToureGuide />}
+        />
+      </Route>
+
+      <Route element={<ProtectedTGRoute />}>
+        <Route exact path="/tourguide" element={<ToureGuidePage />} />
+      </Route>
+
+      <Route path="/*" Component={EmptyState} />
     </>
   )
 );
-// function App() {
-//   return createBrowserRouter(
-//     createRoutesFromElements(
-//       <Route element={<NonLoginRoute />}>
-//         <Route path="/" element={<HomePage />} />
-//         <Route exact path="/:id" element={<InformasiWisataPage />} />
-//         <Route path="/:id/map" element={<LihatPeta />} />
-//         <Route exact path="/search" element={<WisataSearch />} />
-//         <Route path="/add" element={<WisataAdd />} />
-//       </Route>
-//     )
-
-// <Routes>
-
-// <Route path="/" Component={HomePage} />
-// <Route
-// {
-/* 
-
-       */
-// }
-// </Routes>
-//   );
-// }
-
-// export default App;

@@ -6,7 +6,7 @@
 
 // Download a Base64-encoded file
 
-const imageSize = 2520000; /* 2,4 mb */
+const imageSize = 1520000; /* 1,4 mb */
 const accepFileType =
   "image/x-png,image/png,image/jpg,image/jpeg,image/gif,image/wepb";
 const accepFileTypeArray = accepFileType.split(",").map((item) => {
@@ -74,14 +74,12 @@ export function base64StringtoFile(dataurl, filename) {
 }
 
 export function isBase64(str) {
-  if (str === "" || str.trim() === "") {
+  var base64regex =
+    /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+  if (!str || str.length % 4 !== 0 || !base64regex.test(str)) {
     return false;
   }
-  try {
-    return btoa(atob(str)) == str;
-  } catch (err) {
-    return false;
-  }
+  return true;
 }
 export function isDataURL(s) {
   return !!s.match(isDataURL.regex);

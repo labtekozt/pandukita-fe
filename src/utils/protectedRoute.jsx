@@ -4,7 +4,6 @@ import { GlobalContext } from "../store";
 
 const ProtectedRoute = () => {
   const { state } = useContext(GlobalContext);
-  console.log(!state.login);
   if (!state.login) {
     return <Navigate to={"/login"} />;
   }
@@ -14,6 +13,30 @@ const ProtectedRoute = () => {
 export const ProtectedLoginRoute = () => {
   const { state } = useContext(GlobalContext);
   if (state.login) {
+    return <Navigate to={"/"} />;
+  }
+  return <Outlet />;
+};
+
+export const ProtectedClientRoute = () => {
+  const { state } = useContext(GlobalContext);
+  if (!state.login) {
+    return <Navigate to={"/login"} />;
+  }
+  if (state.user.role !== "client") {
+    // getback to previous page
+    return <Navigate to={"/"} />;
+  }
+  return <Outlet />;
+};
+
+export const ProtectedTGRoute = () => {
+  const { state } = useContext(GlobalContext);
+  if (!state.login) {
+    return <Navigate to={"/login"} />;
+  }
+  if (state.user.role !== "guideTour") {
+    // getback to previous page
     return <Navigate to={"/"} />;
   }
   return <Outlet />;

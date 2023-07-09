@@ -54,12 +54,18 @@
 }
 
 .swiper-slide {
-    margin-left: 10px;
+    margin-left: 5px;
     text-align: center;
     font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.img-box{
+    width: 300px;
+    height: 320px;
+    padding: 2px;
 }
 
 .swiper-slide img {
@@ -206,6 +212,12 @@ input[type="radio"] {
         width: 730px;
     }
 
+    .img-box{
+        width: 340px;
+        height: 270px;
+        padding: 2px;
+    }
+
     .trip-text {
         margin-bottom: -120px;
     }
@@ -240,7 +252,7 @@ input[type="radio"] {
     }
 
     .text-slider {
-        padding-top: 190px;
+        padding-top: -10px;
     }
 }
 
@@ -275,12 +287,18 @@ input[type="radio"] {
         margin-top: 0;
     }
 
+    .img-box{
+        width: 300px;
+        height: 270px;
+        padding: 2px;
+    }
+
     .text-slider {
-        margin-top: -40px;
+        margin-top: 150px;
     }
 
     .slider-tittle {
-        margin-top: -70px;
+        margin-top: 110px;
     }
 
     .text-profile {

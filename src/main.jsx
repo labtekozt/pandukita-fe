@@ -9,12 +9,15 @@ import "./App.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { GlobalProvider } from "./store/index.jsx";
 import Toast from "./component/Toast.jsx";
+import { PlanProvaider } from "./store/plan/index.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalProvider>
       <Toast />
-      <RouterProvider router={router}>/</RouterProvider>
+      <PlanProvaider>
+        <RouterProvider router={router}>/</RouterProvider>
+      </PlanProvaider>
     </GlobalProvider>
   </React.StrictMode>
 );

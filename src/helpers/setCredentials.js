@@ -3,9 +3,9 @@ import isTokenExpired from "./jwt/isTokenExpired";
 import { getCookie, setCookie } from "./cookies.js";
 import decodeJwt from "./jwt/decodeJwt";
 
-export const setCredentials = async (keys) => {
+export const setCredentials = (value) => {
   try {
-    await setCookie("keys", JSON.stringify(keys));
+    setCookie("keys", JSON.stringify(value));
   } catch (e) {
     console.log(e);
   }
@@ -14,11 +14,13 @@ export const setCredentials = async (keys) => {
 export const getUser = async () => {
   try {
     const keys = await getCookie("keys");
+   
     // parse the keys to get the user
     const user = decodeJwt(JSON.parse(keys).access);
     return user.user;
   } catch (e) {
-    return null;
+    console.log(e);
+    return {};
     // console.log(e,"user");
   }
 };
@@ -69,6 +71,7 @@ async function getVerifiedKeys(keys) {
 const getCredentials = async () => {
   try {
     let credentials = getCookie("keys");
+    
     if (!credentials) {
       return null;
     }

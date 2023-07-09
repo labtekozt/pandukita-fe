@@ -10,12 +10,56 @@ import {
 import { IconAt, IconEye, IconKey, IconEyeOff } from "@tabler/icons-react";
 import { useState } from "react";
 
-import useLogin from "../hooks/auth/useLogin";
+import axiosAuth from "../services/axios";
+import { getUser, setCredentials } from "../helpers/setCredentials";
+import { useContext } from "react";
+import { GlobalContext } from "../store";
+import useFormData from "../hooks/useFormData";
+import { setCookie } from "../helpers/cookies";
 
 function LoginPage() {
+  const { dispatch } = useContext(GlobalContext);
   const [showPassword, setShowPassword] = useState(false);
+  const login = async () => {
+    try {
+      // validate data here
+      if (!data.email || !data.password) {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: { message: "Email / password must fields", type: "error" },
+        });
+        return;
+      }
 
-  const { login, loading, error, data, setState } = useLogin();
+      const response = await axiosAuth.post("/login", {
+        email: data.email,
+        password: data.password,
+      });
+      setCredentials(response.data);
+
+      dispatch({
+        type: "LOGIN",
+      });
+      dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Login Successfully", type: "success" },
+      });
+      dispatch({
+        type: "SET_USER",
+        payload: await getUser(),
+      });
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Login Failed", type: "error" },
+      });
+    }
+  };
+  const { handleChange, data } = useFormData({
+    email: "",
+    password: "",
+  });
 
   return (
     <form className="containers p-[20px]" required={true}>
@@ -32,20 +76,11 @@ function LoginPage() {
           <InputField
             label="Email"
             type="email"
+            id={"email"}
             placeholder="Masukkan email"
             prefix={<IconAt />}
-            value={data.email.value}
-            onChange={(e) =>
-              setState((prev) => ({
-                ...prev,
-                data: {
-                  ...prev.data,
-                  email: { value: e.target.value, error: "" },
-                },
-              }))
-            }
-            error={!!data.email.error}
-            errorText={data.email.error}
+            value={data && data.email}
+            onChange={(e) => handleChange(e)}
           />
           <InputField
             type={showPassword ? "text" : "password"}
@@ -61,30 +96,14 @@ function LoginPage() {
                 {showPassword ? <IconEye /> : <IconEyeOff />}
               </ButtonLink>
             }
-            value={data.password.value}
-            onChange={(e) =>
-              setState((prev) => ({
-                ...prev,
-                data: {
-                  ...prev.data,
-                  password: { value: e.target.value, error: "" },
-                },
-              }))
-            }
+            id="password"
+            value={data && data.password}
+            onChange={(e) => handleChange(e)}
             error={!!data.password.error}
             errorText={data.password.error}
             secureTextEntry
           />
-          <Button
-            fullWidth="true"
-            onClick={async (e) => {
-              await login(data.email.value, data.password.value);
-              e.preventDefault();
-              
-            }}
-            loading={loading}
-            centered={true}
-          >
+          <Button fullWidth="true" onClick={login} centered={true}>
             Masuk ke Aplikasi
           </Button>
           <Text>
