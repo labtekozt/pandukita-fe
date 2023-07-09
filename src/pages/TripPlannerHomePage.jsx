@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useInfinityFetch";
 import { humanizeDateTimeShort } from "../helpers/dateTime";
 
-function tripPlannerHome() {
+function TripPlannerHome() {
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
   const { data, hasMore, loading } = useFetch("/planners", page, 4);
@@ -80,6 +80,7 @@ function tripPlannerHome() {
                     <Link to={`/planner/${item._id}`}>
                       <div className="trip-text mb-[-210px]">
                         <img
+                          loading="lazy"
                           className="rounded-lg"
                           width={"100%"}
                           src={TripBanner}
@@ -110,6 +111,7 @@ function tripPlannerHome() {
                     <Link to={`/planner/${item._id}`}>
                       <div className="trip-text mb-[-210px]">
                         <img
+                          loading="lazy"
                           className="rounded-lg"
                           width={"100%"}
                           src={TripBanner}
@@ -143,4 +145,4 @@ function tripPlannerHome() {
   );
 }
 
-export default tripPlannerHome;
+export default TripPlannerHome;

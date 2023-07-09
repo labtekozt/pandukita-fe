@@ -42,18 +42,22 @@ function LoginPage() {
       });
       dispatch({
         type: "SHOW_TOAST",
-        payload: { message: "Login Successfully", type: "success" },
+        payload: { message: "Login Berhasil..", type: "success" },
       });
       dispatch({
         type: "SET_USER",
         payload: await getUser(),
       });
     } catch (error) {
-      console.log(error);
-      dispatch({
-        type: "SHOW_TOAST",
-        payload: { message: "Login Failed", type: "error" },
-      });
+      if (error.name == "AxiosError") {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: {
+            message: `Login Gagal.., ${error.response.data.message}`,
+            type: "error",
+          },
+        });
+      }
     }
   };
   const { handleChange, data } = useFormData({

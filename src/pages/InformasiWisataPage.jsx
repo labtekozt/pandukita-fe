@@ -16,7 +16,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper";
 import axiosApiInstance from "../services/axios/axiosApi";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Onboarding from "../component/OnboardingPage";
 
 function InformasiWisataPage(props) {
@@ -53,7 +53,7 @@ function InformasiWisataPage(props) {
           <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
             <div className="flex">
               <div className="grow h-6">
-                <TextLink href="/">
+                <TextLink onClick={() => navigate("/")}>
                   <IconArrowNarrowLeft color="black" />
                 </TextLink>
               </div>
@@ -64,12 +64,16 @@ function InformasiWisataPage(props) {
 
           <div>
             <div className="share absolute ml-[26%] p-2 mt-3 bg-white rounded-[100%]">
-              <a href="/">
+              <Link to={"/"}>
                 <IconShare width={15} height={15} />
-              </a>
+              </Link>
             </div>
             <div className="mb-[-20px]">
-              <img src={data.image && data.image[0].url} className="w-[100%]" />
+              <img
+                loading="lazy"
+                src={data.image && data.image[0].url}
+                className="w-[100%]"
+              />
             </div>
           </div>
 
@@ -144,6 +148,7 @@ function InformasiWisataPage(props) {
                         return (
                           <SwiperSlide key={index}>
                             <img
+                              loading="lazy"
                               src={item.url}
                               className="rounded-lg relative w-[100%] object-cover"
                             />
@@ -181,6 +186,7 @@ function InformasiWisataPage(props) {
                 Butuh pemandu wisata?
               </h1>
               <img
+                loading="lazy"
                 src={TourGuideAds}
                 className="relative w-[100%] object-cover rounded-2xl"
               />

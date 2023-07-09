@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import axiosApiInstance from "../services/axios/axiosApi";
 
-export default function FecthData(url, search, page) {
+export default function FecthDataInfinity(url, search, page) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const [hasMore, setHasMore] = useState(false);
-
   const [total, setTotal] = useState({
     all: 0,
     currentPage: 0,
@@ -31,8 +30,12 @@ export default function FecthData(url, search, page) {
         currentPage: page * res.data.itemsPerPage,
       });
       setData((prev) => {
-        if (!newSearch) {
-          const data = JSON.stringify(prev) === "{}" ? [] : prev;
+        // check if res.data.data same as prev
+        const data = JSON.stringify(prev) === "{}" ? [] : prev;
+        if (
+          !newSearch &&
+          JSON.stringify(data) !== JSON.stringify(res.data.data)
+        ) {
           return [...data, ...res.data.data];
         } else {
           return [...res.data.data];
@@ -77,6 +80,8 @@ export function useFetch(url, page, perPage = 10) {
       });
       setData((prev) => {
         const data = JSON.stringify(prev) === "{}" ? [] : prev;
+        if (JSON.stringify(data) === JSON.stringify(res.data.data)) return data;
+
         return [...data, ...res.data.data];
       });
     } catch (error) {

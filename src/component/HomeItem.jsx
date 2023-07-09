@@ -8,6 +8,7 @@ export default function HomeItem({ item }) {
         <Link to={`/${item._id}`}>
           {/* check if width image is 500px and */}
           <img
+            loading="lazy"
             src={item.image[0].url}
             className="rounded-lg relative w-[100%] object-cover"
           />

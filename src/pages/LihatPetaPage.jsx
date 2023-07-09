@@ -44,7 +44,7 @@ function LihatPeta() {
           <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
             <div className="flex">
               <div className="grow h-6">
-                <TextLink href={`/destination/${id}`}>
+                <TextLink onClick={() => navigate(`/destination/${id}`)}>
                   <IconArrowNarrowLeft color="black" />
                 </TextLink>
               </div>

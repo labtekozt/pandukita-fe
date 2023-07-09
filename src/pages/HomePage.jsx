@@ -45,6 +45,7 @@ function HomePage() {
       ) : (
         <div className="container">
           <img
+            loading="lazy"
             src={HomeHeaderImage}
             className="relative w-[100%] object-cover"
           />
@@ -89,6 +90,7 @@ function HomePage() {
                       <Link to={`/destination/${item._id}`}>
                         {/* check if width image is 500px and */}
                         <img
+                          loading="lazy"
                           src={item.image[0].url}
                           className="rounded-lg relative w-[100%] object-cover"
                         />
@@ -112,8 +114,9 @@ function HomePage() {
               <h1 className="text-2xl font-bold text-black mb-2 ml-1">
                 Bingung Mau Kemana?
               </h1>
-              <Link href="/planner">
+              <Link to="/planner">
                 <img
+                  loading="lazy"
                   src={PlannerAds}
                   className="relative w-[100%] object-cover rounded-2xl mb-[35px]"
                 />
@@ -151,12 +154,15 @@ function HomePage() {
                           <Link to={`/destination/${item._id}`}>
                             {/* check if width image is 500px and */}
                             <img
+                              loading="lazy"
                               src={item.image[0].url}
                               className="rounded-lg relative w-[100%] object-cover"
                             />
                           </Link>
                           <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
-                            <Link to={`/destination/${item._id}`}>{item.name}</Link>
+                            <Link to={`/destination/${item._id}`}>
+                              {item.name}
+                            </Link>
                           </span>
                           <span className="text-slider text-left text-sm absolute m-2 text-white mt-[210px] z-50">
                             {/* limit description to 500char */}
@@ -171,26 +177,28 @@ function HomePage() {
               </div>
             </div>
             <div className="mt-[30px]">
-              <a href="/tourguide">
+              <Link to="/tourguide">
                 <h1 className="text-2xl font-bold text-black mb-2">
                   Sewa pemandu wisata
                 </h1>
                 <img
+                  loading="lazy"
                   src={TourGuideAds}
                   className="relative w-[100%] object-cover rounded-2xl"
                 />
-              </a>
+              </Link>
             </div>
             <div className="mt-[30px] pb-[130px]">
-              <a href="/destination/add">
+              <Link to="/destination/add">
                 <h1 className="text-2xl font-bold text-black mb-2">
                   Kamu Pemandu Wisata?
                 </h1>
                 <img
+                  loading="lazy"
                   src={PemanduAds}
                   className="relative w-[100%] object-cover rounded-2xl"
                 />
-              </a>
+              </Link>
             </div>
           </div>
           <BottomNavigation />

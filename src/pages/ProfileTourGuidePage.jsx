@@ -11,6 +11,7 @@ import {
     IconAlertCircle,
     IconChevronRight
 } from '@tabler/icons-react';
+import { Link } from 'react-router-dom';
 
 
 function ProfileTourGuide() {
@@ -40,16 +41,16 @@ function ProfileTourGuide() {
                     <Card>
                         <div style={{ border: '1px solid #eeeeee', color: 'gray', fontSize: '13px' }} className='p-3'>
                             <div className="flex">
-                                <p><a href="/"><IconPencil /></a></p>
-                                <a href="/profilupdate" className='ml-2 mt-0.5'>Edit Profil</a>
+                                <p><Link to="/"><IconPencil /></Link></p>
+                                <Link to="/profilupdate" className='ml-2 mt-0.5'>Edit Profil</Link>
                                 <div className="grow"></div>
-                                <a href="/profilupdate"><IconChevronRight /></a>
+                                <Link to="/profilupdate"><IconChevronRight /></Link>
                             </div>
                             <div className="flex mt-6">
-                                <a href=""><IconAlertCircle /></a>
-                                <a href="" className='ml-2 mt-0.5'>Tentang PanduKita</a>
+                                <Link to=""><IconAlertCircle /></Link>
+                                <Link to="" className='ml-2 mt-0.5'>Tentang PanduKita</Link>
                                 <div className="grow"></div>
-                                <div className="flex-none w-100"><a href="/"><IconChevronRight /></a></div>
+                                <div className="flex-none w-100"><Link to="/"><IconChevronRight /></Link></div>
                             </div>
                         </div>
                     </Card>
