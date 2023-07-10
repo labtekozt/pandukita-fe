@@ -63,7 +63,7 @@ function InformasiWisataPage(props) {
           </div>
 
           <div>
-            <div className="share absolute ml-[32%] p-2 mt-6 bg-white rounded-[100%]">
+            <div className="share absolute ml-[30%] p-2 mt-6 bg-white rounded-[100%]">
               <Link to={"/"}>
                 <IconShare width={15} height={15} />
               </Link>
