@@ -4,8 +4,8 @@ import reducer from "./reducer";
 import getCredentials, { getUser } from "../helpers/setCredentials";
 
 const initialState = {
-  login: (await getCredentials()) === null ? false : true,
-  user: (await getCredentials()) === null ? {} : await getUser(),
+  login: (async ()=>await getCredentials())() === null ? false : true,
+  user: (async ()=>await getCredentials())() === null ? {} : (async ()=>await getUser())(),
   loading: false,
   toast: {
     show: false,
