@@ -10,6 +10,7 @@ import {
   IconChevronRight,
   IconCalendarEvent,
   IconMap,
+  IconPencil,
   IconMapPinSearch,
   IconTrash,
 } from "@tabler/icons-react";
@@ -159,11 +160,18 @@ function PlannerAi() {
                   )}
               </span>
             </div>
-            <div className="flex m-6 mt-[180px]">
-              <span className="ml-2 mt-1 absolute">
-                <IconMap width={19} color="white" />
+
+            <div className="flex m-6 mb-2 mt-[180px] p-1 w-[150px]">
+              <span className="mt-1 ml-2 absolute z-50">
+                <IconMap width={20} color="white" className="z-50"/>
               </span>
+              <Button 
+              size="small"
+              href="">
+                <span className="pl-5 mt-2">Lihat di peta</span>
+              </Button>
             </div>
+
             <div className="m-6">
               {data &&
                 Object.keys(groupData).map((date, i) => (
@@ -205,9 +213,9 @@ function PlannerAi() {
                                     <Text size="small">{plan.activity}</Text>
                                   </div>
                                   <div className="flex mb-3 mt-4">
-                                    {/* <Link
+                                    <Link
                                     className="hover:pointer-cursor"
-                                    to={`/planner/${id}/edit`}
+                                    to={`/planner/${id}/update`}
                                     plan={plan}
                                   >
                                     <div className="flex mb-3">
@@ -216,7 +224,7 @@ function PlannerAi() {
                                         size="small"
                                         submit={true}
                                       >
-                                        <span className="pl-5">Edit </span>
+                                        <span className="pl-5">Edit</span>
                                       </Button>
                                       <span className="ml-2 mt-1 absolute">
                                         <IconPencil
@@ -225,7 +233,7 @@ function PlannerAi() {
                                         />
                                       </span>
                                     </div>
-                                  </Link> */}
+                                  </Link>
                                     <div className="flex ml-1">
                                       <Button
                                         type="criticalSubtle"

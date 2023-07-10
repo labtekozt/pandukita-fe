@@ -53,7 +53,7 @@ export const router = createBrowserRouter(
         <Route exact path="/profile/tourguide" element={<TourGuideProfile />} />
 
         <Route exact path="/planner/:id/add" element={<PlannerAdd />} />
-        {/* <Route exact path="/planner/:id/update" element={<PlannerUpdate />} /> */}
+        <Route exact path="/planner/:id/update" element={<PlannerUpdate />} />
 
         <Route exact path="/planner" element={<TripPlannerHome />} />
         <Route exact path="/planner/form" element={<PlannerFormPage />} />

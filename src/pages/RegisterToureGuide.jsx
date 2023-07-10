@@ -20,6 +20,7 @@ function RegisterTourGuide() {
   });
 
   const handleSubmit = async (e) => {
+    console.log(handleSubmit)
     e.preventDefault();
     try {
       if (data.username === "" || data.location === "") {
