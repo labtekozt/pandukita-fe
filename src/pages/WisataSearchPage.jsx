@@ -43,15 +43,15 @@ function WisataSearch() {
   );
 
   return (
-    <div className="container">
+    <div className="containerInfo">
       <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
-        <div className="flex">
+        <div className="flex z-50">
           <div className="grow h-6">
             <TextLink href="/">
               <IconArrowNarrowLeft />
             </TextLink>
           </div>
-          <div className="grow-0 mr-8">Cari Wisata</div>
+          <div className="grow-0 mr-8 z-50">Cari Wisata</div>
           <div className="grow h-1"></div>
         </div>
       </div>
@@ -100,7 +100,7 @@ function WisataSearch() {
               <div
                 key={i}
                 onClick={() => navigate(`/destination/${item._id}`)}
-                className="m-5 h-[600px] mb-12 relative  focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
+                className="m-5 mb-12 relative focus:outline-none transition duration-100 ease-in-out hover:cursor-pointer"
               >
                 <div className="mt-[2em]">
                   <div className="z-50 text-white m-6 mb-[1em] absolute  ">
@@ -114,12 +114,14 @@ function WisataSearch() {
                   </div>
 
                   {/*  above is on image */}
-                  <div className="trip-text h-[600px] ">
-                    <img
-                      loading="lazy"
-                      className="rounded-lg"
-                      src={item.image[0].url}
-                    />
+                  <div>
+                    <div className="flex img-box3 mt-[-20px]">
+                      <img
+                        loading="lazy"
+                        className="rounded-lg relative w-[100%] object-cover"
+                        src={item.image[0].url}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -128,7 +130,9 @@ function WisataSearch() {
         })}
       {loading && <LoadingComponent />}
       {data && data.length === 0 && (
-        <NotFoundComponent text={`Tidak ada Wisata Untuk ${search}`} />
+        <div className="grid place-content-center">
+          <NotFoundComponent text={`Tidak ada Wisata Untuk ${search}`} />
+        </div>
       )}
     </div>
   );

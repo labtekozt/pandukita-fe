@@ -38,7 +38,7 @@ function TripPlannerHome() {
       <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
         <div className="flex">
           <div className="grow h-6">
-            <TextLink omClick={() => navigate("/")}>
+            <TextLink onClick={() => navigate("/")}>
               <IconArrowNarrowLeft color="black" />
             </TextLink>
           </div>
@@ -87,19 +87,18 @@ function TripPlannerHome() {
                         />
                       </div>
                       {/* pikirin buat gambarnya apa?? */}
-                      <div className="z-50 text-white m-6">
-                        <h1 className="font-bold mb-[1em]">{item.city}</h1>
-                        <h2 className="mb-[-3px]  ">{item.name}</h2>
+                      <div className="z-50 text-white m-6" style={{paddingBottom : '100%'}}>
+                        <h1 className="font-bold mb-[0.5em]">{item.city}</h1>
+                        <h2 className="mb-[2px]">{item.name}</h2>
                         {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
                         <h1 className="text-md">
                           {/* check if data.startData and endDate same then just render startData */}
                           {item.startDate === item.endDate
                             ? humanizeDateTimeShort(item.startDate)
-                            : `${
-                                humanizeDateTimeShort(item.startDate).split(
-                                  " "
-                                )[0]
-                              } - ${humanizeDateTimeShort(item.endDate)}`}
+                            : `${humanizeDateTimeShort(item.startDate).split(
+                              " "
+                            )[0]
+                            } - ${humanizeDateTimeShort(item.endDate)}`}
                         </h1>
                       </div>
                     </Link>
@@ -109,29 +108,30 @@ function TripPlannerHome() {
                 return (
                   <div className="mt-[175px]" key={i}>
                     <Link to={`/planner/${item._id}`}>
-                      <div className="trip-text mb-[-210px]">
-                        <img
-                          loading="lazy"
-                          className="rounded-lg"
-                          width={"100%"}
-                          src={TripBanner}
-                        />
-                      </div>
-                      {/* pikirin buat gambarnya apa?? */}
-                      <div className="z-50 text-white m-6">
-                        <h1 className="font-bold mb-[1em]">{item.city}</h1>
-                        <h2 className="mb-[-3px]  ">{item.name}</h2>
-                        {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
-                        <h1 className="text-md">
-                          {/* check if data.startData and endDate same then just render startData */}
-                          {item.startDate === item.endDate
-                            ? humanizeDateTimeShort(item.startDate)
-                            : `${
-                                humanizeDateTimeShort(item.startDate).split(
-                                  " "
-                                )[0]
+                      <div className="mb-[-55px]">
+                        <div className="trip-text mb-[-210px]">
+                          <img
+                            loading="lazy"
+                            className="rounded-lg"
+                            width={"100%"}
+                            src={TripBanner}
+                          />
+                        </div>
+                        {/* pikirin buat gambarnya apa?? */}
+                        <div className="z-50 text-white m-6">
+                          <h1 className="font-bold mb-[0.5em]">{item.city}</h1>
+                          <h2 className="mb-[2px]  ">{item.name}</h2>
+                          {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
+                          <h1 className="text-md">
+                            {/* check if data.startData and endDate same then just render startData */}
+                            {item.startDate === item.endDate
+                              ? humanizeDateTimeShort(item.startDate)
+                              : `${humanizeDateTimeShort(item.startDate).split(
+                                " "
+                              )[0]
                               } - ${humanizeDateTimeShort(item.endDate)}`}
-                        </h1>
+                          </h1>
+                        </div>
                       </div>
                     </Link>
                   </div>

@@ -65,7 +65,7 @@ export default function AddDestination() {
     <div className="containerWisata">
       <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
         <div className="flex">
-          <div className="grow h-6">
+          <div className="grow h-6 cursor-pointer">
             <p onClick={() => navigate(`/planner/${id}`)}>
               <IconArrowNarrowLeft color="black" />
             </p>
@@ -88,24 +88,25 @@ export default function AddDestination() {
               value={inputValue}
               type="text"
             />
-            <IconMap2 className="planner-icon mr-2 absolute ml-[350px] mt-2" />
+            <IconMap2 className="planner-icon2 mr-2 absolute ml-[350px] mt-2" />
           </div>
         </div>
       </div>
       {/* hasil pencarian */}
 
-      {data &&
-        data.length > 0 &&
-        data.map((item, i) => {
-          if (data.length === i + 1 && data.length > 4) {
-            return (
-              <div
-                key={i}
-                onClick={() => {
-                  handleChange({ id: "distination", value: item._id });
-                  //   get back to previus page
-                  prevPath
-                    ? navigate(prevPath, {
+      <div className="pb-10">
+        {data &&
+          data.length > 0 &&
+          data.map((item, i) => {
+            if (data.length === i + 1 && data.length > 4) {
+              return (
+                <div
+                  key={i}
+                  onClick={() => {
+                    handleChange({ id: "distination", value: item._id });
+                    //   get back to previus page
+                    prevPath
+                      ? navigate(prevPath, {
                         state: {
                           id: item._id,
                           latitude: item.latitude,
@@ -113,7 +114,7 @@ export default function AddDestination() {
                           name: item.name,
                         },
                       })
-                    : navigate(`/planner/${id}/add`, {
+                      : navigate(`/planner/${id}/add`, {
                         state: {
                           id: item._id,
                           latitude: item.latitude,
@@ -121,38 +122,40 @@ export default function AddDestination() {
                           name: item.name,
                         },
                       });
-                }}
-                ref={lastOrder}
-                className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
-              >
-                <div className="trip-text flex-1 relative ">
-                  <img
-                    loading="lazy"
-                    className="rounded-lg  w-128"
-                    src={item.image[0].url}
-                  />
-                  {/* center */}
-                  <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
-                    <h1 className="font-bold mb-[10px]">{item.name}</h1>
-                    <h2 className="text-sm"> {item.address}</h2>
-                    <h1 className="text-sm">
-                      {item.description.length > 100
-                        ? item.description.substring(0, 100) + "..."
-                        : item.description}
-                    </h1>
+                  }}
+                  ref={lastOrder}
+                  className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
+                >
+                  <div className="trip-text flex-1 relative ">
+                    <div className="img-box2">
+                      <img
+                        loading="lazy"
+                        className="rounded-lg  w-128"
+                        src={item.image[0].url}
+                      />
+                    </div>
+                    {/* center */}
+                    <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
+                      <h1 className="font-bold mb-[10px]">{item.name}</h1>
+                      <h2 className="text-sm"> {item.address}</h2>
+                      <h1 className="text-sm">
+                        {item.description.length > 100
+                          ? item.description.substring(0, 100) + "..."
+                          : item.description}
+                      </h1>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          } else {
-            return (
-              <div
-                key={i}
-                onClick={() => {
-                  handleChange({ id: "distination", value: item._id });
-                  //   get back to previus page
-                  prevPath
-                    ? navigate(prevPath, {
+              );
+            } else {
+              return (
+                <div
+                  key={i}
+                  onClick={() => {
+                    handleChange({ id: "distination", value: item._id });
+                    //   get back to previus page
+                    prevPath
+                      ? navigate(prevPath, {
                         state: {
                           id: item._id,
                           latitude: item.latitude,
@@ -160,7 +163,7 @@ export default function AddDestination() {
                           name: item.name,
                         },
                       })
-                    : navigate(`/planner/${id}/add`, {
+                      : navigate(`/planner/${id}/add`, {
                         state: {
                           id: item._id,
                           latitude: item.latitude,
@@ -168,34 +171,39 @@ export default function AddDestination() {
                           name: item.name,
                         },
                       });
-                }}
-                className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
-              >
-                <div className="trip-text flex-1 relative ">
-                  <img
-                    loading="lazy"
-                    className="rounded-lg  w-128"
-                    src={item.image[0].url}
-                  />
-                  {/* center */}
-                  <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
-                    <h1 className="font-bold mb-[10px]">{item.name}</h1>
-                    <h2 className="text-sm"> {item.address}</h2>
-                    <h1 className="text-sm">
-                      {item.description.length > 100
-                        ? item.description.substring(0, 100) + "..."
-                        : item.description}
-                    </h1>
+                  }}
+                  className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
+                >
+                  <div className="flex-1 relative pb-100">
+                    <div className="img-box2">
+                      <img
+                        loading="lazy"
+                        className="rounded-lg w-[100%]"
+                        src={item.image[0].url}
+                      />
+                    </div>
+                    {/* center */}
+                    <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
+                      <h1 className="font-bold mb-[10px]">{item.name}</h1>
+                      <h2 className="text-sm"> {item.address}</h2>
+                      <h1 className="text-sm">
+                        {item.description.length > 100
+                          ? item.description.substring(0, 100) + "..."
+                          : item.description}
+                      </h1>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          }
-        })}
-      {loading && <LoadingComponent />}
-      {data && data.length === 0 && (
-        <NotFoundComponent text={`Tidak ada Wisata`} />
-      )}
+              );
+            }
+          })}
+        {loading && <LoadingComponent />}
+        {data && data.length === 0 && (
+          <div className="grid place-content-center">
+            <NotFoundComponent text={`Tidak ada Wisata`} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

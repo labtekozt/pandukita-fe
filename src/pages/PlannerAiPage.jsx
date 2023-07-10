@@ -120,10 +120,10 @@ function PlannerAi() {
       {loading ? (
         <Onboarding />
       ) : (
-        <div className="container">
+        <div className="containerInfo">
           <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
             <div className="flex">
-              <div className="grow h-6">
+              <div className="grow h-6 cursor-pointer">
                 <div onClick={() => navigate("/planner")}>
                   <IconArrowNarrowLeft color="black" />
                 </div>
@@ -154,7 +154,7 @@ function PlannerAi() {
                 {data && humanizeDate(data.startDate)}
                 {data &&
                   humanizeDate(data.startDate) !==
-                    humanizeDate(data.endDate) && (
+                  humanizeDate(data.endDate) && (
                     <> - {humanizeDate(data.endDate)}</>
                   )}
               </span>
@@ -167,44 +167,45 @@ function PlannerAi() {
             <div className="m-6">
               {data &&
                 Object.keys(groupData).map((date, i) => (
-                  <Tile
-                    title={date}
-                    noPadding={true}
-                    expandable={true}
-                    initialExpanded={true}
-                    description=""
-                    key={date}
-                  >
-                    {groupData[date].length > 0 ? (
-                      <div className="pb-10">
-                        <div className="m-3">
-                          <Timeline direction="column">
-                            {groupData[date].map((plan, i) => (
-                              <TimelineStep type="secondary" key={i}>
-                                <Text
-                                  className="text-[#00A388]"
-                                  size="normal"
-                                  weight="bold"
-                                >
-                                  {plan.distination.name}
-                                </Text>
-                                <div className="mt-2">
-                                  <Text size="small" weight="bold">
-                                    {plan.time}
+                  <div className="mt-[20px]">
+                    <Tile
+                      title={date}
+                      noPadding={true}
+                      expandable={true}
+                      initialExpanded={true}
+                      description=""
+                      key={date}
+                    >
+                      {groupData[date].length > 0 ? (
+                        <div className="pb-10">
+                          <div className="m-3">
+                            <Timeline direction="column">
+                              {groupData[date].map((plan, i) => (
+                                <TimelineStep type="secondary" key={i}>
+                                  <Text
+                                    className="text-[#00A388]"
+                                    size="normal"
+                                    weight="bold"
+                                  >
+                                    {plan.distination.name}
                                   </Text>
-                                </div>
-                                <div className="w-[250px] mt-3">
-                                  <img
-                                    loading="lazy"
-                                    src={plan.distination.image[0].url}
-                                    className="rounded-lg relative w-[100%] object-cover"
-                                  />
-                                </div>
-                                <div className="mt-3">
-                                  <Text size="small">{plan.activity}</Text>
-                                </div>
-                                <div className="flex mb-3 mt-4">
-                                  {/* <Link
+                                  <div className="mt-2">
+                                    <Text size="small" weight="bold">
+                                      {plan.time}
+                                    </Text>
+                                  </div>
+                                  <div className="img-box2 mt-3">
+                                    <img
+                                      loading="lazy"
+                                      src={plan.distination.image[0].url}
+                                      className="rounded-lg relative w-[100%] object-cover"
+                                    />
+                                  </div>
+                                  <div className="mt-3">
+                                    <Text size="small">{plan.activity}</Text>
+                                  </div>
+                                  <div className="flex mb-3 mt-4">
+                                    {/* <Link
                                     className="hover:pointer-cursor"
                                     to={`/planner/${id}/edit`}
                                     plan={plan}
@@ -225,69 +226,70 @@ function PlannerAi() {
                                       </span>
                                     </div>
                                   </Link> */}
-                                  <div className="flex ml-1">
-                                    <Button
-                                      type="criticalSubtle"
-                                      size="small"
-                                      submit={true}
-                                      onClick={() => handleDelete(plan._id)}
-                                    >
-                                      <span className="pl-5">Hapus</span>
-                                    </Button>
-                                    <span className="ml-2 mt-1 absolute">
-                                      <IconTrash width={19} color="red" />
-                                    </span>
+                                    <div className="flex ml-1">
+                                      <Button
+                                        type="criticalSubtle"
+                                        size="small"
+                                        submit={true}
+                                        onClick={() => handleDelete(plan._id)}
+                                      >
+                                        <span className="pl-5">Hapus</span>
+                                      </Button>
+                                      <span className="ml-2 mt-1 absolute">
+                                        <IconTrash width={19} color="red" />
+                                      </span>
+                                    </div>
                                   </div>
-                                </div>
-                              </TimelineStep>
-                            ))}
+                                </TimelineStep>
+                              ))}
 
-                            <TimelineStep type="secondary">
-                              <Link
-                                to={`/planner/${id}/add`}
-                                state={{ date: date }}
-                              >
-                                <span className="text-[#00A388]">
-                                  + Tambah Wisata
-                                </span>
-                              </Link>
-                            </TimelineStep>
-                          </Timeline>
+                              <TimelineStep type="secondary">
+                                <Link
+                                  to={`/planner/${id}/add`}
+                                  state={{ date: date }}
+                                >
+                                  <span className="text-[#00A388]">
+                                    + Tambah Wisata
+                                  </span>
+                                </Link>
+                              </TimelineStep>
+                            </Timeline>
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="pb-10" key={i}>
-                        <Link
-                          className="hover:pointer-cursor"
-                          to={`/planner/${id}/add`}
-                          state={{ date: date }}
-                        >
-                          <div className="p-5 flex items-center justify-center">
-                            <div className="img-guide">
-                              <Illustration
-                                name="CompassTravelPlan"
-                                size="small"
-                              />
+                      ) : (
+                        <div className="pb-10" key={i}>
+                          <Link
+                            className="hover:pointer-cursor"
+                            to={`/planner/${id}/add`}
+                            state={{ date: date }}
+                          >
+                            <div className="p-5 flex items-center justify-center">
+                              <div className="img-guide">
+                                <Illustration
+                                  name="CompassTravelPlan"
+                                  size="small"
+                                />
+                              </div>
                             </div>
-                          </div>
-                          <div className="flex items-center justify-center p-1">
-                            <span className="align-center">
-                              Belum ada tempatnya nih, ayo <br /> tambah
-                              rencanamu!
-                            </span>
-                          </div>
-                          <div className="flex items-center justify-center p-1">
-                            <Button size="small" type="primarySubtle">
-                              <span className="pl-6">Tambah Tujuan</span>
-                            </Button>
-                            <span className="mr-[29%] m-2 absolute">
-                              <IconMapPinSearch width={19} color="#00A388" />
-                            </span>
-                          </div>
-                        </Link>
-                      </div>
-                    )}
-                  </Tile>
+                            <div className="flex items-center justify-center p-1">
+                              <span className="align-center">
+                                Belum ada tempatnya nih, ayo <br /> tambah
+                                rencanamu!
+                              </span>
+                            </div>
+                            <div className="flex items-center justify-center p-1">
+                              <Button size="small" type="primarySubtle">
+                                <span className="pl-6">Tambah Tujuan</span>
+                              </Button>
+                              <span className="mr-[27%] icon-add-plan m-2 absolute">
+                                <IconMapPinSearch width={19} color="#00A388" />
+                              </span>
+                            </div>
+                          </Link>
+                        </div>
+                      )}
+                    </Tile>
+                  </div>
                 ))}
             </div>
           </div>
@@ -302,7 +304,7 @@ function PlannerAi() {
             </Button>
             <IconChevronRight
               color="white"
-              className="planner-ai mr-2 absolute ml-[364px] mt-[10px]"
+              className="planner-ai mr-2 absolute ml-[384px] mt-[10px]"
             />
           </div>
           <div className="mt-[-15px] p-4 z-50 bottom-0">

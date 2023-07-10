@@ -84,7 +84,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="containers">
+    <div className="containerInfo">
       <form className="p-[20px]" required={true}>
         <div className="login">
           <div className="pb-2 pt-2">

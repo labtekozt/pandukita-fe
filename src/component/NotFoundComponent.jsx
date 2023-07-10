@@ -4,7 +4,7 @@ export default function NotFoundComponent({ text }) {
   return (
     <div
       className="empty grid place-content-center min-h-screen"
-      style={{ width: "500px", backgroundColor: "white" }}
+      style={{ width: "300px", backgroundColor: "white" }}
     >
       <div className="mt-[10%]">
         <div>

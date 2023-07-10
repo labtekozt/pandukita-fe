@@ -82,17 +82,19 @@ function RegisterTourGuide() {
           Bergabung Menjadi Pemandu <br /> Wisata
         </span>
         <div className="mt-5 mb-5">
-          <h1 className="text-md mb-1">Foto Profil</h1>
+          <h1 className="text-md mb-1 text-center mb-3">Foto Profil</h1>
           {data && data.profile !== "" && (
-            <img
-              loading="lazy"
-              //   center content
-              className="rounded-full mb-2 object-cover object-center w-24 h-24 sm:w-32 sm:h-32 border-none align-center"
-              src={srcImage(data.profile)}
-              alt="username photo"
-              width="100"
-              height="100"
-            />
+            <div className="grid place-content-center mb-5">
+              <img
+                loading="lazy"
+                //   center content
+                className="rounded-full mb-2 object-cover border border-black object-center w-24 h-24 sm:w-32 sm:h-32 align-center"
+                src={srcImage(data.profile)}
+                alt="username photo"
+                width="100"
+                height="100"
+              />
+            </div>
           )}
 
           <div className="flex mt-1">
@@ -141,7 +143,7 @@ function RegisterTourGuide() {
               ))}
             </select>
 
-            <IconMap2 className="planner-icon mr-2 absolute ml-[350px] mt-2" />
+            <IconMap2 className="mr-2 absolute ml-3 mt-2" />
           </div>
         </div>
 

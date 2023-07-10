@@ -98,7 +98,7 @@ function HomePage() {
                       <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
                         <Link to={`/destination/${item._id}`}>{item.name}</Link>
                       </span>
-                      <span className="text-slider text-left text-sm absolute m-2 text-white mt-[210px] z-50">
+                      <span className="text-slider slider-des text-left text-sm absolute m-2 text-white mt-[230px] z-50">
                         {/* limit description to 500char */}
                         {item.description.length > 100
                           ? item.description.substring(0, 100) + "..."
@@ -159,12 +159,12 @@ function HomePage() {
                               className="rounded-lg relative w-[100%] object-cover"
                             />
                           </Link>
-                          <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
+                          <span className="text-slider text-left slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
                             <Link to={`/destination/${item._id}`}>
                               {item.name}
                             </Link>
                           </span>
-                          <span className="text-slider text-left text-sm absolute m-2 text-white mt-[210px] z-50">
+                          <span className="text-slider slider-des text-left text-sm absolute m-2 text-white mt-[230px] z-50">
                             {/* limit description to 500char */}
                             {item.description.length > 100
                               ? item.description.substring(0, 100) + "..."
@@ -202,8 +202,9 @@ function HomePage() {
             </div>
           </div>
           <BottomNavigation />
-        </div>
-      )}
+        </div >
+      )
+      }
     </>
   );
 }
