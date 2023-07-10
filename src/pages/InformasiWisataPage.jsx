@@ -49,7 +49,7 @@ function InformasiWisataPage(props) {
       {loading ? (
         <Onboarding />
       ) : (
-        <div className="containerGuide pb-100">
+        <div className="containerInfo pb-100">
           <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
             <div className="flex">
               <div className="grow h-6">
@@ -63,12 +63,12 @@ function InformasiWisataPage(props) {
           </div>
 
           <div>
-            <div className="share absolute ml-[26%] p-2 mt-3 bg-white rounded-[100%]">
+            <div className="share absolute ml-[30%] p-2 mt-6 bg-white rounded-[100%]">
               <Link to={"/"}>
                 <IconShare width={15} height={15} />
               </Link>
             </div>
-            <div className="mb-[-20px]">
+            <div className="mb-[-20px] img-box2">
               <img
                 loading="lazy"
                 src={data.image && data.image[0].url}
@@ -114,7 +114,7 @@ function InformasiWisataPage(props) {
               <span size="extraLarge" className="font-bold">
                 Deskripsi
               </span>
-              <p className="mt-5">{data.description}</p>
+              <p className="mt-5 text-justify">{data.description}</p>
             </div>
             <div
               onClick={() => setIsOpen((prev) => !prev)}
@@ -141,17 +141,19 @@ function InformasiWisataPage(props) {
                     spaceBetween={10}
                     freeMode={true}
                     modules={[FreeMode]}
-                    className="mySwiper MySwiper mt-4"
+                    className="MySwiper mt-4"
                   >
                     {data.image &&
                       data.image.map((item, index) => {
                         return (
                           <SwiperSlide key={index}>
-                            <img
-                              loading="lazy"
-                              src={item.url}
-                              className="rounded-lg relative w-[100%] object-cover"
-                            />
+                            <div className="flex img-box">
+                              <img
+                                loading="lazy"
+                                src={item.url}
+                                className="rounded-lg relative w-[100%] object-cover"
+                              />
+                            </div>
                           </SwiperSlide>
                         );
                       })}

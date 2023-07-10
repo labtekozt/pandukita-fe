@@ -113,7 +113,7 @@ function PlannerAdd() {
                     placeholder="Lampung Selatan..."
                     type="text"
                   />
-                  <IconMap2 className="planner-icon mr-2 absolute ml-[350px] mt-2" />
+                  <IconMap2 className="planner-icon2 mr-2 absolute ml-[350px] mt-2" />
                 </div>
               </Link>
             </div>

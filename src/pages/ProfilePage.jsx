@@ -69,7 +69,7 @@ function ProfilePage() {
               </div>
               <div className="flex mt-6">
                 <IconAlertCircle color="black" />
-                Tentang PanduKita
+                <span className="mt-1 ml-2">Tentang PanduKita</span>
                 <div className="grow"></div>
                 <div className="flex-none w-100">
                   <IconChevronRight />

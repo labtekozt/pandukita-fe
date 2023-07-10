@@ -8,6 +8,12 @@
     background-color: #fff;
 }
 
+.containerInfo {
+    width: 460px;
+    margin: auto;
+    background-color: #fff;
+}
+
 .text-nav {
     font-size: 15px;
 }
@@ -50,7 +56,7 @@
 }
 
 .MySwiper {
-    width: 350px;
+    width: 420px;
 }
 
 .swiper-slide {
@@ -62,10 +68,20 @@
     align-items: center;
 }
 
-.img-box{
+.img-box {
     width: 300px;
     height: 320px;
     padding: 2px;
+}
+
+.img-box2 {
+    width: 100%;
+    height: 100%;
+}
+
+.img-box3 {
+    width: 420px;
+    height: 320px;
 }
 
 .swiper-slide img {
@@ -109,7 +125,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    cursor: pointer;    
+    cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 5px;
     padding: 1px 10px 1px 10px;
@@ -124,7 +140,7 @@ input[type="radio"] {
 #option-2:checked:checked~.option-2,
 #option-3:checked:checked~.option-3,
 #option-4:checked:checked~.option-4,
-#option-5:checked:checked~.option-5{
+#option-5:checked:checked~.option-5 {
     border-color: #03c7a6;
     padding: 1px 10px 1px 10px;
     border-radius: 5px;
@@ -140,8 +156,7 @@ input[type="radio"] {
 #option-2:checked:checked~.option-2 span,
 #option-3:checked:checked~.option-3 span,
 #option-4:checked:checked~.option-4 span,
-#option-5:checked:checked~.option-5 span
-{
+#option-5:checked:checked~.option-5 span {
     color: #fff;
 }
 
@@ -150,6 +165,10 @@ input[type="radio"] {
     .container {
         width: 100%;
         margin: auto;
+    }
+
+    .text-slider {
+        padding-bottom: -10px;
     }
 
     .containers {
@@ -165,6 +184,22 @@ input[type="radio"] {
     .containerWisata {
         width: 760px;
         background-color: #fff;
+    }
+
+    .containerInfo {
+        width: 600px;
+        margin: auto;
+        background-color: #fff;
+    }
+
+    .img-box2 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-box3 {
+        width: 100%;
+        height: 250px;
     }
 
     .relative input {
@@ -204,15 +239,19 @@ input[type="radio"] {
     }
 
     .share {
-        margin-top: 30px;
-        margin-left: 92%;
+        margin-top: 20px;
+        margin-left: 93%;
     }
 
     .swiper {
         width: 730px;
     }
 
-    .img-box{
+    .MySwiper{
+        width: auto;
+    }
+
+    .img-box {
         width: 340px;
         height: 270px;
         padding: 2px;
@@ -220,10 +259,6 @@ input[type="radio"] {
 
     .trip-text {
         margin-bottom: -120px;
-    }
-
-    .planner-icon {
-        margin-left: 680px;
     }
 
     .date-picker {
@@ -243,7 +278,7 @@ input[type="radio"] {
     }
 
     .search input {
-        margin-top: 30px;
+        margin-top: 0;
         width: 650px;
     }
 
@@ -251,9 +286,36 @@ input[type="radio"] {
         margin-top: 0;
     }
 
-    .text-slider {
-        padding-top: -10px;
+    .icon-add-plan {
+        margin-right: 20%;
     }
+
+    .planner-ai {
+        right: 0;
+        margin-right: 20%;
+    }
+
+    .planner-icon2 {
+        margin-left: 670px;
+    }
+
+    .planner-icon {
+        margin-left: 670px;
+    }
+
+    .share {
+        margin-left: 65%;
+    }
+
+    .slider-tittle{
+        margin-top: 160px;
+    }
+
+    .slider-des{
+        margin-top: 200px;
+    }
+
+
 }
 
 /* responsive mobile */
@@ -278,6 +340,12 @@ input[type="radio"] {
         background-color: #fff;
     }
 
+    .containerInfo {
+        width: 100%;
+        margin: auto;
+        background-color: #fff;
+    }
+
     .empty {
         width: 370px !important;
     }
@@ -287,10 +355,19 @@ input[type="radio"] {
         margin-top: 0;
     }
 
-    .img-box{
+    .icon-add-plan {
+        margin-right: 34%;
+    }
+
+    .img-box {
         width: 300px;
         height: 270px;
         padding: 2px;
+    }
+
+    .img-box3 {
+        width: 100%;
+        height: 200px;
     }
 
     .text-slider {
@@ -357,11 +434,7 @@ input[type="radio"] {
 
     .planner-ai {
         right: 0;
-        margin-right: 29px;
-    }
-
-    .planner-icon {
-        margin-left: 300px;
+        margin-right: 50px;
     }
 
     .date-picker {
@@ -374,6 +447,18 @@ input[type="radio"] {
 
     .date-icon {
         margin-left: 130px;
+    }
+
+    .planner-icon2 {
+        margin-left: 300px;
+    }
+
+    .planner-icon {
+        margin-left: 296px;
+    }
+
+    .date-plan {
+        width: 100%;
     }
 
 }

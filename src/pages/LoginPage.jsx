@@ -66,7 +66,7 @@ function LoginPage() {
   });
 
   return (
-    <form className="containers p-[20px]" required={true}>
+    <form className="containerInfo p-[20px]" required={true}>
       <div className="login">
         <div className="pb-2 pt-2">
           <h1 className="text-2xl font-bold text-black">Selamat datang!</h1>
