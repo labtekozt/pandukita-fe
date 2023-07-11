@@ -16,7 +16,7 @@ import {
 } from "@tabler/icons-react";
 import { Illustration } from "@kiwicom/orbit-components";
 import { useFetch } from "../hooks/useFetch";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Onboarding from "../component/OnboardingPage";
 import { humanizeDate } from "../helpers/dateTime";
 import axiosApiInstance from "../services/axios/axiosApi";
@@ -116,7 +116,7 @@ function PlannerAi() {
   if (!loading && error?.status === 404) {
     navigate("/404");
   }
-  
+
   return (
     <>
       {loading ? (

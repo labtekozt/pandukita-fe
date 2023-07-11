@@ -107,21 +107,21 @@ export default function AddDestination() {
                     //   get back to previus page
                     prevPath
                       ? navigate(prevPath, {
-                        state: {
-                          id: item._id,
-                          latitude: item.latitude,
-                          longtitude: item.longtitude,
-                          name: item.name,
-                        },
-                      })
+                          state: {
+                            id: item._id,
+                            latitude: item.latitude,
+                            longtitude: item.longtitude,
+                            name: item.name,
+                          },
+                        })
                       : navigate(`/planner/${id}/add`, {
-                        state: {
-                          id: item._id,
-                          latitude: item.latitude,
-                          longtitude: item.longtitude,
-                          name: item.name,
-                        },
-                      });
+                          state: {
+                            id: item._id,
+                            latitude: item.latitude,
+                            longtitude: item.longtitude,
+                            name: item.name,
+                          },
+                        });
                   }}
                   ref={lastOrder}
                   className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
@@ -135,7 +135,16 @@ export default function AddDestination() {
                       />
                     </div>
                     {/* center */}
-                    <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
+                    <div
+                      className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white "
+                      style={{
+                        backgroundColor: "rgba(0,0,0,0.2)",
+                        borderRadius: "10px",
+                        padding: "15px",
+                        width: "100%",
+                        textAlign: "center",
+                      }}
+                    >
                       <h1 className="font-bold mb-[10px]">{item.name}</h1>
                       <h2 className="text-sm"> {item.address}</h2>
                       <h1 className="text-sm">
@@ -156,21 +165,21 @@ export default function AddDestination() {
                     //   get back to previus page
                     prevPath
                       ? navigate(prevPath, {
-                        state: {
-                          id: item._id,
-                          latitude: item.latitude,
-                          longtitude: item.longtitude,
-                          name: item.name,
-                        },
-                      })
+                          state: {
+                            id: item._id,
+                            latitude: item.latitude,
+                            longtitude: item.longtitude,
+                            name: item.name,
+                          },
+                        })
                       : navigate(`/planner/${id}/add`, {
-                        state: {
-                          id: item._id,
-                          latitude: item.latitude,
-                          longtitude: item.longtitude,
-                          name: item.name,
-                        },
-                      });
+                          state: {
+                            id: item._id,
+                            latitude: item.latitude,
+                            longtitude: item.longtitude,
+                            name: item.name,
+                          },
+                        });
                   }}
                   className="m-5 flex relative focus:outline-none hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
                 >
@@ -183,7 +192,16 @@ export default function AddDestination() {
                       />
                     </div>
                     {/* center */}
-                    <div className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white ">
+                    <div
+                      className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white "
+                      style={{
+                        backgroundColor: "rgba(0,0,0,0.3)",
+                        borderRadius: "10px",
+                        padding: "15px",
+                        width: "100%",
+                        textAlign: "center",
+                      }}
+                    >
                       <h1 className="font-bold mb-[10px]">{item.name}</h1>
                       <h2 className="text-sm"> {item.address}</h2>
                       <h1 className="text-sm">

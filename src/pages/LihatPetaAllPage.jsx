@@ -1,15 +1,13 @@
 import { Button } from "@kiwicom/orbit-components/lib/";
-import {
-  IconArrowNarrowLeft,
-  IconMapPin,
-  IconChevronRight,
-} from "@tabler/icons-react";
+import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useFetch } from "../hooks/useFetch";
 import { useNavigate, useParams } from "react-router-dom";
 import Onboarding from "../component/OnboardingPage";
+
+
 
 function LihatPetaAll() {
   const id = useParams().id;

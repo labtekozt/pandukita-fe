@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 
 import reducer from "./reducer";
-import getCredentials, { getUser } from "../helpers/setCredentials";
+import getCredentials, { getUser } from "../helpers/getCredentials";
 
 const initialState = {
   login: (await getCredentials()) === null ? false : true,
@@ -18,7 +18,6 @@ export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>
       {children}

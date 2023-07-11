@@ -1,6 +1,6 @@
 import axiosApiInstance from "../axios/axiosApi";
 import { removeCookie } from "../../helpers/cookies";
-import getCredentials from "../../helpers/setCredentials";
+import getCredentials from "../../helpers/getCredentials";
 
 export async function logout(dispatch) {
   try {

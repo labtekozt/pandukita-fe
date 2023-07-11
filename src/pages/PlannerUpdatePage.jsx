@@ -13,6 +13,7 @@ import { useFetch } from "../hooks/useFetch";
 import { GlobalContext } from "../store";
 import axiosApiInstance from "../services/axios/axiosApi";
 import Onboarding from "../component/OnboardingPage";
+import LoadingOverlayComponent from "../component/LoadingOverlay";
 
 function PlannerUpdate() {
   const id = useParams().id;
@@ -27,6 +28,7 @@ function PlannerUpdate() {
     startTime: data.plan && data.plan[0].time.split("-")[0],
     endTime: data.plan && data.plan[0].time.split("-")[1],
   });
+  const [loadingUpload, setLoadingUpload] = useState(false);
 
   const handleChange = (e) => {
     setState({ ...state, [e.id]: e.value });
@@ -34,6 +36,7 @@ function PlannerUpdate() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoadingUpload(true);
     try {
       // check if data is empty
       if (
@@ -49,11 +52,15 @@ function PlannerUpdate() {
             type: "error",
           },
         });
+        setLoadingUpload(false);
+        return;
       }
 
       const dataPost = {
         ...state,
-        time: `${state.startTime}-${state.endTime}`,
+        time: `${
+          state.startTime || (data.plan && data.plan[0].time.split("-")[0])
+        }-${state.endTime || (data.plan && data.plan[0].time.split("-")[1])}`,
       };
       await axiosApiInstance.put(`/planners/${id}/plans/${planId}`, dataPost);
       dispatch({
@@ -63,6 +70,7 @@ function PlannerUpdate() {
           type: "success",
         },
       });
+      setLoadingUpload(false);
       window.location.href = `/planner/${id}`;
     } catch (error) {
       if (error.name == "AxiosError") {
@@ -73,6 +81,7 @@ function PlannerUpdate() {
             type: "error",
           },
         });
+        setLoadingUpload(false);
       }
     }
   };
@@ -105,6 +114,7 @@ function PlannerUpdate() {
 
   return (
     <>
+      {loadingUpload && <LoadingOverlayComponent />}
       {loading ? (
         <Onboarding />
       ) : (
@@ -214,22 +224,23 @@ function PlannerUpdate() {
             <div className="flex mb-[30%] mt-4">
               <div className="mt-1 w-full">
                 <label className="text-md">Waktu Mulai</label>
-                {state.startTime && (
+                {(state.startTime ||
+                  (data?.plan && data.plan[0].time.split("-")[0])) && (
                   <input
                     style={{ padding: "10px" }}
                     name="from"
                     className="w-full placeholder:text-slate-400 block bg-[#e8edf1] border border-none rounded-sm shadow-sm focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 md:text-md"
                     type="time"
-                    value={state.timeStart || "00:00"}
+                    value={state.startTime || data?.plan[0].time.split("-")[0]}
                     id="startTime"
                     onChange={(e) => {
+                      if (!e.target.value) return;
                       handleChange(e.target);
-                      if (
-                        state &&
-                        state.timeEnd &&
-                        state.timeEnd < e.target.value
-                      ) {
-                        handleChange({ value: e.target.value, id: "timeEnd" });
+                      if (state.timeEnd && state.timeEnd < e.target.value) {
+                        handleChange({
+                          value: e.target.value,
+                          id: "timeEnd",
+                        });
                       }
                     }}
                   />
@@ -237,16 +248,21 @@ function PlannerUpdate() {
               </div>
               <div className="time mt-1 ml-4 mb-10 w-full">
                 <label className="text-md">Waktu Akhir</label>
-                {state.endTime && (
+                {(state.endTime ||
+                  (data?.plan && data.plan[0].time.split("-")[1])) && (
                   <input
                     style={{ padding: "10px" }}
                     name="to"
                     className="w-full placeholder:text-slate-400 block bg-[#e8edf1] border border-none rounded-sm shadow-sm focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 md:text-md"
                     type="time"
-                    value={state.endTime}
+                    value={state.endTime || data?.plan[0].time.split("-")[1]}
                     min={state?.timeStart}
-                    id="startTime"
-                    onChange={(e) => handleChange(e.target)}
+                    id="endTime"
+                    onChange={(e) => {
+                      if (!e.target.value) return;
+
+                      handleChange(e.target);
+                    }}
                   />
                 )}
               </div>

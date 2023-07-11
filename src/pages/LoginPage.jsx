@@ -11,7 +11,7 @@ import { IconAt, IconEye, IconKey, IconEyeOff } from "@tabler/icons-react";
 import { useState } from "react";
 
 import axiosAuth from "../services/axios";
-import { getUser, setCredentials } from "../helpers/setCredentials";
+import { getUser, setCredentials } from "../helpers/getCredentials";
 import { useContext } from "react";
 import { GlobalContext } from "../store";
 import useFormData from "../hooks/useFormData";

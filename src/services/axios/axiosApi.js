@@ -1,5 +1,5 @@
 import axios from "axios";
-import getCredentials from "../../helpers/setCredentials";
+import getCredentials from "../../helpers/getCredentials";
 import { baseURL } from "../../tmp/config";
 
 const axiosApiInstance = axios.create({
