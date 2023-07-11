@@ -1,0 +1,5 @@
+/*    /index.html   200
+/destination/* /index.html 200
+/tourguide/* /index.html 200
+/planner/:id /index.html 200
+
