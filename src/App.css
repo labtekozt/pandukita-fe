@@ -27,6 +27,16 @@ form.container{
   height: 430px;
   z-index: 0;
 }
-/*mobile*/
+/*tablet*/
 @media screen and (max-width: 1024px) {
+  body{
+    background-color: #fff;
+  }
+}
+
+/*mobile*/
+@media screen and (max-width: 762px) {
+  body{
+    background-color: #fff;
+  }
 }
