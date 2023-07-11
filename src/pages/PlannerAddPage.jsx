@@ -22,6 +22,9 @@ function PlannerAdd() {
   const id = useParams().id;
   const { loading, data, error } = useFetch(`/planners/${id}/short`);
   const location = useLocation();
+  if (!loading && error?.status === 404) {
+    navigate("/planner");
+  }
 
   const latLong = [location.state?.latitude, location.state?.longtitude];
   const nameLoc = location.state?.name;
@@ -185,11 +188,12 @@ function PlannerAdd() {
                 <input
                   style={{ padding: "10px" }}
                   name="from"
-                  value={plan.timeStart}
                   className="w-full placeholder:text-slate-400 block bg-[#e8edf1] border border-none rounded-md shadow-sm focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 md:text-md"
                   type="time"
+                  value={plan.timeStart}
                   id="timeStart"
                   onChange={(e) => {
+                    if (!e.target.value) return;
                     handleChange(e.target);
                     if (plan && plan.timeEnd && plan.timeEnd < e.target.value) {
                       handleChange({ value: e.target.value, id: "timeEnd" });
@@ -209,7 +213,10 @@ function PlannerAdd() {
                   className="w-full placeholder:text-slate-400 block bg-[#e8edf1] border border-none rounded-md shadow-sm focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 md:text-md"
                   type="time"
                   id="timeEnd"
-                  onChange={(e) => handleChange(e.target)}
+                  onChange={(e) => {
+                    if (!e.target.value) return;
+                    handleChange(e.target);
+                  }}
                 />
               </div>
             </div>

@@ -84,7 +84,7 @@ function LihatPeta() {
                 fullWidth="true"
                 submit={true}
                 centered={true}
-                onClick={() => navigate(`/${id}`)}
+                onClick={() => navigate(`/destination/${id}`)}
               >
                 Lihat Wisata
               </Button>

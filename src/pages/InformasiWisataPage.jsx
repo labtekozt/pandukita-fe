@@ -18,32 +18,17 @@ import { FreeMode } from "swiper";
 import axiosApiInstance from "../services/axios/axiosApi";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Onboarding from "../component/OnboardingPage";
+import { useFetch } from "../hooks/useFetch";
 
 function InformasiWisataPage(props) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const id = useParams().id;
-  const [loading, setLoading] = useState(true);
+  const { loading, error, data } = useFetch(`/destinations/${id}`);
 
-  const [data, setData] = useState({});
-  const [error, setError] = useState(null);
-
-  const getData = async () => {
-    try {
-      setLoading(true);
-      const response = await axiosApiInstance.get(`/destinations/${id}`);
-      setData(response.data);
-      setLoading(false);
-    } catch (error) {
-      setError(error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+  if (!loading && error?.status === 404) {
+    navigate("/404");
+  }
   return (
     <>
       {loading ? (
@@ -143,7 +128,7 @@ function InformasiWisataPage(props) {
                     modules={[FreeMode]}
                     className="MySwiper mt-4"
                   >
-                    {data.image &&
+                    {data?.image &&
                       data.image.map((item, index) => {
                         return (
                           <SwiperSlide key={index}>

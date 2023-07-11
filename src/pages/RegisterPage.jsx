@@ -17,7 +17,7 @@ import {
 import { useContext, useState } from "react";
 import { GlobalContext } from "../store";
 import useFormData from "../hooks/useFormData";
-import { getUser, setCredentials } from "../helpers/setCredentials";
+import { getUser, setCredentials } from "../helpers/getCredentials";
 import axiosAuth from "../services/axios";
 import validate from "../helpers/validateData";
 import { useNavigate } from "react-router-dom";

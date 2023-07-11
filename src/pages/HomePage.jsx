@@ -14,29 +14,21 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper";
 import { GlobalContext } from "../store";
-import axiosApiInstance from "../services/axios/axiosApi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useFetch } from "../hooks/useFetch";
+
 function HomePage() {
   const { state, dispatch } = useContext(GlobalContext);
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState({});
-  const [error, setError] = useState(null);
+  const { data, loading, error } = useFetch("/destinations/home");
+  const navigate = useNavigate();
 
-  const getData = async () => {
-    try {
-      setLoading(true);
-      const response = await axiosApiInstance.get("/destinations/home");
-      setData(response.data);
-      setLoading(false);
-    } catch (error) {
-      setError(error);
-      setLoading(false);
+  if (!loading && error) {
+    console.log(error);
+    if (error.status === 401) {
+      dispatch({ type: "LOGOUT" });
     }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+    navigate("/login");
+  }
 
   return (
     <>
@@ -177,34 +169,33 @@ function HomePage() {
               </div>
             </div>
             <div className="mt-[30px]">
-              <Link to="/tourguide">
-                <h1 className="text-2xl font-bold text-black mb-2">
-                  Sewa pemandu wisata
-                </h1>
-                <img
-                  loading="lazy"
-                  src={TourGuideAds}
-                  className="relative w-[100%] object-cover rounded-2xl"
-                />
-              </Link>
+              {/* <Link to="/tourguide"> */}
+              <h1 className="text-2xl font-bold text-black mb-2">
+                Sewa pemandu wisata
+              </h1>
+              <img
+                loading="lazy"
+                src={TourGuideAds}
+                className="relative w-[100%] object-cover rounded-2xl"
+              />
+              {/* </Link> */}
             </div>
             <div className="mt-[30px] pb-[130px]">
-              <Link to="/destination/add">
-                <h1 className="text-2xl font-bold text-black mb-2">
-                  Kamu Pemandu Wisata?
-                </h1>
-                <img
-                  loading="lazy"
-                  src={PemanduAds}
-                  className="relative w-[100%] object-cover rounded-2xl"
-                />
-              </Link>
+              {/* <Link to="/destination/add"> */}
+              <h1 className="text-2xl font-bold text-black mb-2">
+                Kamu Pemandu Wisata?
+              </h1>
+              <img
+                loading="lazy"
+                src={PemanduAds}
+                className="relative w-[100%] object-cover rounded-2xl"
+              />
+              {/* </Link> */}
             </div>
           </div>
           <BottomNavigation />
-        </div >
-      )
-      }
+        </div>
+      )}
     </>
   );
 }

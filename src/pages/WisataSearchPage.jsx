@@ -69,28 +69,43 @@ function WisataSearch() {
             return (
               <div
                 key={i}
-                onClick={() => navigate(`/destination/${item._id}`)}
                 ref={lastOrder}
-                className="m-5 h-[600px] relative hover:shadow-lg transition duration-100 ease-in-out hover:cursor-pointer"
+                onClick={() => navigate(`/destination/${item._id}`)}
+                className="m-5 mb-12 relative focus:outline-none transition duration-100 ease-in-out hover:cursor-pointer"
               >
                 <div className="mt-[2em]">
-                  {/* link widh and hight fit with parent  */}
-                  <div className="trip-text mb-[-200px]">
-                    <img
-                      loading="lazy"
-                      className="rounded-lg"
-                      src={item.image[0].url}
-                    />
-                  </div>
-                  <div className="z-50 text-white m-6 mb-[1em] absolute ">
-                    <h1 className="font-bold mb-[10px]">{item.name}</h1>
+                  {/* create black layer */}
+                  <div
+                    // center text
+                    className="z-10 text-white mb-[1em] absolute bottom-[-1em] "
+                    style={{
+                      backgroundColor: "rgba(0,0,0,0.3)",
+                      borderRadius: "10px",
+                      padding: "15px",
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    <h1 className="font-bold mb-[10px] text-center">
+                      {item.name}
+                    </h1>
                     <h2 className="text-sm"> {item.address}</h2>
-
                     <h1 className="text-sm">
                       {item.description.length > 100
                         ? item.description.substring(0, 100) + "..."
                         : item.description}
                     </h1>
+                  </div>
+
+                  {/*  above is on image */}
+                  <div>
+                    <div className="flex img-box3 mt-[-20px]">
+                      <img
+                        loading="lazy"
+                        className="rounded-lg relative w-[100%] object-cover"
+                        src={item.image[0].url}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -103,8 +118,21 @@ function WisataSearch() {
                 className="m-5 mb-12 relative focus:outline-none transition duration-100 ease-in-out hover:cursor-pointer"
               >
                 <div className="mt-[2em]">
-                  <div className="z-50 text-white m-6 mb-[1em] absolute  ">
-                    <h1 className="font-bold mb-[10px]">{item.name}</h1>
+                  {/* create black layer */}
+                  <div
+                    // center text
+                    className="z-10 text-white mb-[1em] absolute bottom-[-1em] "
+                    style={{
+                      backgroundColor: "rgba(0,0,0,0.3)",
+                      borderRadius: "10px",
+                      padding: "15px",
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    <h1 className="font-bold mb-[10px] text-center">
+                      {item.name}
+                    </h1>
                     <h2 className="text-sm"> {item.address}</h2>
                     <h1 className="text-sm">
                       {item.description.length > 100

@@ -11,6 +11,9 @@ import { GlobalProvider } from "./store/index.jsx";
 import Toast from "./component/Toast.jsx";
 import { PlanProvaider } from "./store/plan/index.jsx";
 
+import L from "leaflet";
+L.Icon.Default.imagePath = "/leaflet_images/"; 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalProvider>

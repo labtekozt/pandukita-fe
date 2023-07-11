@@ -247,7 +247,7 @@ input[type="radio"] {
         width: 730px;
     }
 
-    .MySwiper{
+    .MySwiper {
         width: auto;
     }
 
@@ -307,11 +307,11 @@ input[type="radio"] {
         margin-left: 65%;
     }
 
-    .slider-tittle{
+    .slider-tittle {
         margin-top: 160px;
     }
 
-    .slider-des{
+    .slider-des {
         margin-top: 200px;
     }
 
@@ -411,6 +411,8 @@ input[type="radio"] {
     .guide input {
         width: 330px !important;
     }
+
+
 
     .share {
         margin-left: 85%;

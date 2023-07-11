@@ -6,7 +6,7 @@ import { GlobalContext } from "../store";
 import axiosApiInstance from "../services/axios/axiosApi";
 import useFormData from "../hooks/useFormData";
 import { srcImage } from "../helpers/url";
-import { setCredentials } from "../helpers/setCredentials";
+import { setCredentials } from "../helpers/getCredentials";
 import { removeCookie } from "../helpers/cookies";
 
 function ProfileUpdate() {
@@ -56,14 +56,24 @@ function ProfileUpdate() {
 
       navigate("/profile");
     } catch (error) {
-      console.log(error);
-      dispatch({
-        type: "SHOW_TOAST",
-        payload: {
-          message: `Gagal mengubah data, ${error.message} `,
-          type: "error",
-        },
-      });
+      if (error.name == "AxiosError") {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: {
+            message: `Update Profile gagal, ${error.response.data.message}`,
+            type: "error",
+          },
+        });
+      }
+      if (error.status === 413) {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: {
+            message: `Update Profile gagal, Tolong upload Dibawah 1.2MB`,
+            type: "error",
+          },
+        });
+      }
     }
     // check validate data
   };

@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import { TextLink, Button, InputFile } from "@kiwicom/orbit-components/lib/";
 import { IconArrowNarrowLeft, IconMap2, IconUser } from "@tabler/icons-react";
 import useFormData from "../hooks/useFormData";
 import axiosApiInstance from "../services/axios/axiosApi";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../store";
-import { setCredentials } from "../helpers/setCredentials";
+import { setCredentials } from "../helpers/getCredentials";
 import { removeCookie } from "../helpers/cookies";
 import { srcImage } from "../helpers/url";
 import items from "../disk/data/kotaLampung.json";
@@ -18,11 +18,11 @@ function RegisterTourGuide() {
     location: "",
     description: "",
   });
-
+  const [loadingUpload, setLoadingUpload] = useState(false);
   const handleSubmit = async (e) => {
-    console.log(handleSubmit)
     e.preventDefault();
     try {
+      setLoadingUpload(true);
       if (data.username === "" || data.location === "") {
         dispatch({
           type: "SHOW_TOAST",
@@ -31,7 +31,7 @@ function RegisterTourGuide() {
             type: "error",
           },
         });
-
+        setLoadingUpload(false);
         return;
       }
       const response = await axiosApiInstance.post("/users/tour-guide", data);
@@ -49,6 +49,7 @@ function RegisterTourGuide() {
         type: "SET_USER",
         payload: response.data.newUser,
       });
+      setLoadingUpload(false);
 
       navigate("/profile/");
     } catch (error) {
@@ -61,6 +62,16 @@ function RegisterTourGuide() {
           },
         });
       }
+      if (error.status === 413) {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: {
+            message: `Gagal Mendaftar Menjadi Pemandu Wisata, Tolong upload Dibawah 1.2MB`,
+            type: "error",
+          },
+        });
+      }
+      setLoadingUpload(false);
     }
   };
 
