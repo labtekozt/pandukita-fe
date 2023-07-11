@@ -116,6 +116,7 @@ function PlannerAi() {
   if (!loading && error?.status === 404) {
     navigate("/404");
   }
+  
   return (
     <>
       {loading ? (
@@ -155,7 +156,7 @@ function PlannerAi() {
                 {data && humanizeDate(data.startDate)}
                 {data &&
                   humanizeDate(data.startDate) !==
-                  humanizeDate(data.endDate) && (
+                    humanizeDate(data.endDate) && (
                     <> - {humanizeDate(data.endDate)}</>
                   )}
               </span>
@@ -163,11 +164,14 @@ function PlannerAi() {
 
             <div className="flex m-6 mb-2 mt-[180px] p-1 w-[150px]">
               <span className="mt-1 ml-2 absolute z-50">
-                <IconMap width={20} color="white" className="z-50"/>
+                <IconMap width={20} color="white" className="z-50" />
               </span>
-              <Button 
-              size="small"
-              href="">
+              <Button
+                size="small"
+                onClick={() =>
+                  navigate(`/planner/${id}/map`, { state: { data } })
+                }
+              >
                 <span className="pl-5 mt-2">Lihat di peta</span>
               </Button>
             </div>
@@ -175,7 +179,7 @@ function PlannerAi() {
             <div className="m-6">
               {data &&
                 Object.keys(groupData).map((date, i) => (
-                  <div className="mt-[20px]">
+                  <div className="mt-[20px]" key={i}>
                     <Tile
                       title={date}
                       noPadding={true}
@@ -214,26 +218,25 @@ function PlannerAi() {
                                   </div>
                                   <div className="flex mb-3 mt-4">
                                     <Link
-                                    className="hover:pointer-cursor"
-                                    to={`/planner/${id}/update`}
-                                    plan={plan}
-                                  >
-                                    <div className="flex mb-3">
-                                      <Button
-                                        type="primarySubtle"
-                                        size="small"
-                                        submit={true}
-                                      >
-                                        <span className="pl-5">Edit</span>
-                                      </Button>
-                                      <span className="ml-2 mt-1 absolute">
-                                        <IconPencil
-                                          width={19}
-                                          color="#00A388"
-                                        />
-                                      </span>
-                                    </div>
-                                  </Link>
+                                      className="hover:pointer-cursor"
+                                      to={`/planner/${id}/plan/${plan._id}/update`}
+                                    >
+                                      <div className="flex mb-3">
+                                        <Button
+                                          type="primarySubtle"
+                                          size="small"
+                                          submit={true}
+                                        >
+                                          <span className="pl-5">Edit</span>
+                                        </Button>
+                                        <span className="ml-2 mt-1 absolute">
+                                          <IconPencil
+                                            width={19}
+                                            color="#00A388"
+                                          />
+                                        </span>
+                                      </div>
+                                    </Link>
                                     <div className="flex ml-1">
                                       <Button
                                         type="criticalSubtle"

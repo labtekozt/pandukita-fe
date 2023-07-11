@@ -32,13 +32,15 @@ export default function FecthDataInfinity(url, search, page) {
       setData((prev) => {
         // check if res.data.data same as prev
         const data = JSON.stringify(prev) === "{}" ? [] : prev;
+        console.log(newSearch);
+        console.log(JSON.stringify(data) === JSON.stringify(res.data.data));
         if (
-          !newSearch &&
-          JSON.stringify(data) !== JSON.stringify(res.data.data)
+          newSearch ||
+          JSON.stringify(data) === JSON.stringify(res.data.data)
         ) {
-          return [...data, ...res.data.data];
-        } else {
           return [...res.data.data];
+        } else {
+          return [...data, ...res.data.data];
         }
       });
     } catch (error) {
@@ -80,7 +82,8 @@ export function useFetch(url, page, perPage = 10) {
       });
       setData((prev) => {
         const data = JSON.stringify(prev) === "{}" ? [] : prev;
-        if (JSON.stringify(data) === JSON.stringify(res.data.data)) return data;
+        if (JSON.stringify(data) === JSON.stringify(res.data.data))
+          return [...res.data.data];
 
         return [...data, ...res.data.data];
       });

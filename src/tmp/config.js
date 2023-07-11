@@ -1,2 +1,2 @@
-export const baseURL = "http://47.89.245.22/api/v1";
-export const Domain = "http://47.89.245.22";
+export const baseURL = "http://127.0.0.1:8000/api/v1";
+export const Domain = "http://127.0.0.1:8000";

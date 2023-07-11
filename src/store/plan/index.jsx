@@ -9,7 +9,7 @@ const initialState = {
   // when use this initial state, make sure to use this format
   // timeStart: "00:00",
   // timeEnd: "00:00",
-  timeStart: "00:00",
+timeStart: "00:00",
   timeEnd: "00:00",
 };
 

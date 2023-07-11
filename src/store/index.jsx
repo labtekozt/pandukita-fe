@@ -1,11 +1,11 @@
-import React, { createContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 import reducer from "./reducer";
 import getCredentials, { getUser } from "../helpers/setCredentials";
 
 const initialState = {
-  login: (async ()=>await getCredentials())() === null ? false : true,
-  user: (async ()=>await getCredentials())() === null ? {} : (async ()=>await getUser())(),
+  login: (await getCredentials()) === null ? false : true,
+  user: (await getCredentials()) === null ? {} : await getUser(),
   loading: false,
   toast: {
     show: false,

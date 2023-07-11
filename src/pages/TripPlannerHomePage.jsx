@@ -71,8 +71,7 @@ function TripPlannerHome() {
           </span>
         </div>
         <div className="m-6">
-          {data &&
-            data.length > 0 &&
+          {data && data.length > 0 ? (
             data.map((item, i) => {
               if (data.length === i + 1) {
                 return (
@@ -87,7 +86,10 @@ function TripPlannerHome() {
                         />
                       </div>
                       {/* pikirin buat gambarnya apa?? */}
-                      <div className="z-50 text-white m-6" style={{paddingBottom : '100%'}}>
+                      <div
+                        className="z-50 text-white m-6"
+                        style={{ paddingBottom: "100%" }}
+                      >
                         <h1 className="font-bold mb-[0.5em]">{item.city}</h1>
                         <h2 className="mb-[2px]">{item.name}</h2>
                         {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
@@ -95,10 +97,11 @@ function TripPlannerHome() {
                           {/* check if data.startData and endDate same then just render startData */}
                           {item.startDate === item.endDate
                             ? humanizeDateTimeShort(item.startDate)
-                            : `${humanizeDateTimeShort(item.startDate).split(
-                              " "
-                            )[0]
-                            } - ${humanizeDateTimeShort(item.endDate)}`}
+                            : `${
+                                humanizeDateTimeShort(item.startDate).split(
+                                  " "
+                                )[0]
+                              } - ${humanizeDateTimeShort(item.endDate)}`}
                         </h1>
                       </div>
                     </Link>
@@ -126,10 +129,11 @@ function TripPlannerHome() {
                             {/* check if data.startData and endDate same then just render startData */}
                             {item.startDate === item.endDate
                               ? humanizeDateTimeShort(item.startDate)
-                              : `${humanizeDateTimeShort(item.startDate).split(
-                                " "
-                              )[0]
-                              } - ${humanizeDateTimeShort(item.endDate)}`}
+                              : `${
+                                  humanizeDateTimeShort(item.startDate).split(
+                                    " "
+                                  )[0]
+                                } - ${humanizeDateTimeShort(item.endDate)}`}
                           </h1>
                         </div>
                       </div>
@@ -137,7 +141,18 @@ function TripPlannerHome() {
                   </div>
                 );
               }
-            })}
+            })
+          ) : (
+            <div className="flex justify-center items-center h-[300px]">
+              <h1 className="text-gray-10 font-bold text-xl">
+                Belum ada rencana perjalanan, Yuk Buat
+              </h1>
+              <div className="flex-grow"></div>
+              <span className="text-[#00A388] mt-0.5 text-trip font-bold text-md mr-[30px] hover:cursor-pointer ">
+                <Link to="/planner/form">Tambah +</Link>
+              </span>
+            </div>
+          )}
         </div>
       </div>
       <BottomNavigation />
