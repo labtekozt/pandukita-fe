@@ -101,25 +101,18 @@ function InformasiWisataPage(props) {
               </span>
               <p className="mt-5 text-justify">{data.description}</p>
             </div>
-            <div
-              onClick={() => setIsOpen((prev) => !prev)}
-              className="cursor-pointer flex mt-10 p-3 rounded-lg"
-              style={{
-                boxShadow: "0 2px 8px -1px #d2d3d3",
-                transition: "0.5s",
-              }}
+            
+            <div className="mt-5">
+            <Tile
+              title="Galeri"
+              expanded={true}
+              expandable={true}
+              external={true}
+              initialExpanded={false}
+              noPadding={true}
             >
-              <span>Galery</span>
-              <div className="grow"></div>
-              {!isOpen ? (
-                <IconChevronDown width={20} />
-              ) : (
-                <IconChevronUp width={20} />
-              )}
-            </div>
 
             <div className="open-hide">
-              {!isOpen && (
                 <div className=" mt-[20px] pb-5">
                   <Swiper
                     slidesPerView={2}
@@ -144,7 +137,8 @@ function InformasiWisataPage(props) {
                       })}
                   </Swiper>
                 </div>
-              )}
+            </div>
+            </Tile>
             </div>
 
             <div className="mt-5">

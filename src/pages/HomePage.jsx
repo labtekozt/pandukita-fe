@@ -64,7 +64,7 @@ function HomePage() {
             </Stack>
           </div>
           <div className="mt-[20px] pb-5">
-            <h1 className="text-2xl text-jelajah ml-[20px] font-bold text-black mb-2">
+            <h1 className="text-2xl text-jelajah ml-[20px] font-medium text-black mb-2">
               Jelajahi Indonesia
             </h1>
 
@@ -84,13 +84,13 @@ function HomePage() {
                         <img
                           loading="lazy"
                           src={item.image[0].url}
-                          className="rounded-lg relative w-[100%] object-cover"
+                          className="rounded-lg relative w-[100%] object-cover brightness-50"
                         />
                       </Link>
-                      <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
+                      <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[150px] font-bold z-50 text-left">
                         <Link to={`/destination/${item._id}`}>{item.name}</Link>
                       </span>
-                      <span className="text-slider slider-des text-left text-sm absolute m-2 text-white mt-[230px] z-50">
+                      <span className="text-slider slider-des text-left text-sm absolute m-2 text-white mt-[200px] z-50">
                         {/* limit description to 500char */}
                         {item.description.length > 100
                           ? item.description.substring(0, 100) + "..."
@@ -103,7 +103,7 @@ function HomePage() {
           </div>
           <div className="m-5">
             <div>
-              <h1 className="text-2xl font-bold text-black mb-2 ml-1">
+              <h1 className="text-2xl font-medium text-black mb-2 ml-1">
                 Bingung Mau Kemana?
               </h1>
               <Link to="/planner">
@@ -148,7 +148,7 @@ function HomePage() {
                             <img
                               loading="lazy"
                               src={item.image[0].url}
-                              className="rounded-lg relative w-[100%] object-cover"
+                              className="rounded-lg relative w-[100%] object-cover brightness-50"
                             />
                           </Link>
                           <span className="text-slider text-left slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">

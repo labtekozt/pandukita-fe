@@ -109,7 +109,7 @@ function PlannerFormPage() {
               ))}
             </select>
 
-            <IconMap2 className="planner-icon mr-2 absolute ml-[350px] mt-2" />
+            {/*<IconMap2 className="planner-icon mr-2 absolute ml-[350px] mt-2" />*/}
           </div>
         </div>
 
@@ -176,7 +176,7 @@ function PlannerFormPage() {
         />
       </div>
       <div className="text-hr flex z-50 bottom-0">
-        <p className="text-sm text-gray">Ingin Hal Baru ?</p>
+        <p className="text-sm text-gray">Rencana otomatis dengan AI</p>
       </div>
       <div className="flex p-4  mt-[-20px] z-50 bottom-0">
         <Button
@@ -185,7 +185,7 @@ function PlannerFormPage() {
           centered={true}
           onClick={() => navigate("/planner/ai")}
         >
-          Buat Rencana Baru
+          Buat Rencana Otomatis
         </Button>
         <IconRobot
           color={"#00A388"}

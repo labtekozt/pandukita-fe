@@ -70,20 +70,20 @@ export default function AddDestination() {
               <IconArrowNarrowLeft color="black" />
             </p>
           </div>
-          <div className="grow-0 mr-8">Cari Aktivitas Menarik Di {city}</div>
+          <div className="grow-0 mr-8">Aktivitas Menarik di {city}</div>
           <div className="grow h-1"></div>
         </div>
       </div>
 
       <div className="m-5 pb-1">
-        <div className="mt-10 mb-6">
+        <div className="mt-5 mb-6">
           <h1 className="text-md mb-1">Mau Kemana?</h1>
           <div className="flex mt-1">
             <input
               style={{ padding: "10px" }}
               name="tujuan"
-              className="w-full placeholder:text-slate-400 block bg-[#e8edf1] border border-none rounded-md py-2 pl-2 shadow-sm focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 md:text-md"
-              placeholder="Teluk Hantu...."
+              className="w-full placeholder:text-slate-400 block bg-[#e8edf1] border border-none rounded-md py-2 pl-2 shadow-sm focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 text-md"
+              placeholder="Nama wisata...."
               onChange={inputChanged}
               value={inputValue}
               type="text"
@@ -187,13 +187,13 @@ export default function AddDestination() {
                     <div className="img-box2">
                       <img
                         loading="lazy"
-                        className="rounded-lg w-[100%]"
+                        className="rounded-lg w-[100%] h-[15em] object-cover"
                         src={item.image[0].url}
                       />
                     </div>
                     {/* center */}
                     <div
-                      className="absolute bottom-6 px-4 py-3 bg-gray-500/50 w-full text-white "
+                      className="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full text-white"
                       style={{
                         backgroundColor: "rgba(0,0,0,0.3)",
                         borderRadius: "10px",
@@ -202,8 +202,8 @@ export default function AddDestination() {
                         textAlign: "center",
                       }}
                     >
-                      <h1 className="font-bold mb-[10px]">{item.name}</h1>
-                      <h2 className="text-sm"> {item.address}</h2>
+                      <h1 className="font-semibold mb-[10px] text-2xl">{item.name}</h1>
+                      <h2 className="text-sm">{item.address}</h2>
                       <h1 className="text-sm">
                         {item.description.length > 100
                           ? item.description.substring(0, 100) + "..."
@@ -218,7 +218,7 @@ export default function AddDestination() {
         {loading && <LoadingComponent />}
         {data && data.length === 0 && (
           <div className="grid place-content-center">
-            <NotFoundComponent text={`Tidak ada Wisata`} />
+            <NotFoundComponent text={`Belum ada wisata di daerah ${city}`} />
           </div>
         )}
       </div>

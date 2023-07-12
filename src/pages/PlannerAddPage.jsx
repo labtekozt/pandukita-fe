@@ -113,7 +113,7 @@ function PlannerAdd() {
                     value={nameLoc ? nameLoc : ""}
                     readOnly
                     className="w-full placeholder:text-slate-400 block bg-[#e8edf1] border border-none rounded-md py-2 pl-2 shadow-sm focus:outline-none focus:border-none focus:ring-[#f0ecec] focus:ring-1 md:text-md"
-                    placeholder="Lampung Selatan..."
+                    placeholder="Nama wisata..."
                     type="text"
                   />
                   <IconMap2 className="planner-icon2 mr-2 absolute ml-[350px] mt-2" />
