@@ -206,7 +206,7 @@ function PlannerAi() {
                                       {plan.time}
                                     </Text>
                                   </div>
-                                  <div className="img-box2 mt-3">
+                                  <div className="img-box4 mt-3">
                                     <img
                                       loading="lazy"
                                       src={plan.distination.image[0].url}
