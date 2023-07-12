@@ -85,6 +85,10 @@
     height: 320px;
 }
 
+.img-box4 {
+    width: 350px;   
+}
+
 .swiper-slide img {
     display: block;
     width: 100%;
@@ -202,6 +206,10 @@ input[type="radio"] {
         width: 100%;
         height: 250px;
     }
+
+   .img-box4 {
+       width: 500px; 
+   }
 
     .relative input {
         width: 300px;
@@ -370,6 +378,10 @@ input[type="radio"] {
         width: 100%;
         height: 200px;
     }
+
+   .img-box4 {
+       width: 250px;   
+   }
 
     .text-slider {
         margin-top: 150px;
