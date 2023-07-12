@@ -12,7 +12,7 @@ function BottomNavigation() {
     { name: "Home", icon: <IconHome />, href: "/" },
     { name: "Journey", icon: <IconSTurnLeft />, href: "/planner" },
     { name: "Message", icon: <IconMessageDots /> },
-    { name: "profile", icon: <IconUserCircle />, href: "/profile" },
+    { name: "Profile", icon: <IconUserCircle />, href: "/profile" },
   ];
 
   return (

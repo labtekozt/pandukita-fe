@@ -85,20 +85,18 @@ function TripPlannerHome() {
                           <div className="trip-text mb-[-210px]">
                             <img
                               loading="lazy"
-                              className="rounded-lg"
-                              width={"100%"}
+                              className="rounded-lg w-[100%] h-[145px] object-cover brightness-50"
                               src={TripBanner}
                             />
                           </div>
                           {/* pikirin buat gambarnya apa?? */}
                           <div
-                            className="z-50 text-white m-6"
+                            className="z-50 text-white p-6 brightness-100"
                             style={{ paddingBottom: "100%" }}
                           >
-                            <h1 className="font-bold mb-[0.5em]">
+                            <div className="translate-y-16">
+                            <h1 className="font-bold">{item.name}</h1>
                               {item.city}
-                            </h1>
-                            <h2 className="mb-[2px]">{item.name}</h2>
                             {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
                             <h1 className="text-md">
                               {/* check if data.startData and endDate same then just render startData */}
@@ -110,6 +108,7 @@ function TripPlannerHome() {
                                     )[0]
                                   } - ${humanizeDateTimeShort(item.endDate)}`}
                             </h1>
+                            </div>
                           </div>
                         </Link>
                       </div>
@@ -122,17 +121,16 @@ function TripPlannerHome() {
                             <div className="trip-text mb-[-210px]">
                               <img
                                 loading="lazy"
-                                className="rounded-lg"
+                                className="rounded-lg w-[100%] h-[145px] object-cover brightness-50"
                                 width={"100%"}
                                 src={TripBanner}
                               />
                             </div>
                             {/* pikirin buat gambarnya apa?? */}
-                            <div className="z-50 text-white m-6">
-                              <h1 className="font-bold mb-[0.5em]">
-                                {item.city}
-                              </h1>
-                              <h2 className="mb-[2px]  ">{item.name}</h2>
+                            <div className="text-white m-6 brightness-100">
+                              <div className="translate-y-16">
+                              <h1 className="font-bold">{item.name}</h1>
+                              <h2>{item.city}</h2>
                               {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
                               <h1 className="text-md">
                                 {/* check if data.startData and endDate same then just render startData */}
@@ -144,6 +142,7 @@ function TripPlannerHome() {
                                       ).split(" ")[0]
                                     } - ${humanizeDateTimeShort(item.endDate)}`}
                               </h1>
+                              </div>
                             </div>
                           </div>
                         </Link>
