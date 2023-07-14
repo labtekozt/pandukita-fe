@@ -207,6 +207,10 @@ input[type="radio"] {
         height: 250px;
     }
 
+   .img-box4 {
+       width: 500px; 
+   }
+
     .relative input {
         width: 300px;
     }
