@@ -21,14 +21,28 @@ import Onboarding from "../component/OnboardingPage";
 import { useFetch } from "../hooks/useFetch";
 
 function InformasiWisataPage(props) {
-  const [isOpen, setIsOpen] = useState(false);
+  
   const navigate = useNavigate();
   const id = useParams().id;
   const { loading, error, data } = useFetch(`/destinations/${id}`);
-
+  
   if (!loading && error?.status === 404) {
     navigate("/404");
   }
+
+  function handleShare(){
+    if (navigator.share) {
+      navigator.share({
+        url: location.href,
+        title: `${data.name}\n${data.address}`,
+        text: "Kunjungi wisata ini di PanduKita yuk!"
+      }).then(() => console.log('Successfully shared'))
+      .catch((error) => console.log('Error sharing:', error));
+    } else {
+      //if navigator share not support
+    }
+  };
+
   return (
     <>
       {loading ? (
@@ -49,9 +63,7 @@ function InformasiWisataPage(props) {
 
           <div>
             <div className="share absolute ml-[30%] p-2 mt-6 bg-white rounded-[100%]">
-              <Link to={"/"}>
-                <IconShare width={15} height={15} />
-              </Link>
+                <IconShare width={20} height={20} onClick={handleShare}/>
             </div>
             <div className="mb-[-20px] img-box2">
               <img
