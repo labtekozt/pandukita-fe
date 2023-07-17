@@ -26,7 +26,7 @@ export default function SearchBar({ search, handleSearch, searchHandle }) {
                 onChange={handleSearch}
                 spellCheck={true}
                 onKeyDown={handleEnter}
-                className="input t-3 p-3 bg-white-100 rounded-full w-[70%]"
+                className="input t-3 p-3 bg-white-100 rounded-full"
                 placeholder="Cari tempat wisata"
               />
               <IconSearch
