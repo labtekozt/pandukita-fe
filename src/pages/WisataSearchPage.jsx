@@ -44,9 +44,10 @@ function WisataSearch() {
 
   return (
     <div
-      className="containerInfo"
+      className="containerInfo w-100"
       style={{
-        width: "460px",
+        minWidth: "420px",
+        minHeight: "100vh",
       }}
     >
       <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
@@ -164,7 +165,7 @@ function WisataSearch() {
       {loading && <LoadingComponent />}
       {data && data.length === 0 && (
         <div className="grid place-content-center">
-          <NotFoundComponent text={`Tidak ada Wisata Untuk ${search}`} />
+          <NotFoundComponent text={`Tidak ada Wisata :( `} />
         </div>
       )}
     </div>

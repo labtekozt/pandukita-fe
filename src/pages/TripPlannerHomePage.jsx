@@ -39,7 +39,7 @@ function TripPlannerHome() {
       {loading ? (
         <Onboarding />
       ) : (
-        <div className="container">
+        <div className="container min-h-screen">
           <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
             <div className="flex">
               <div className="grow h-6">
@@ -51,7 +51,7 @@ function TripPlannerHome() {
               <div className="grow h-1"></div>
             </div>
           </div>
-          <div className="pb-[70%]">
+          <div className="pb-[40%]">
             <div className="grid gap-4 grid-cols-2">
               <div className="mt-[45px] m-5">
                 <span className="text-[24px] font-bold">
@@ -66,7 +66,7 @@ function TripPlannerHome() {
                 <Illustration name="CompassPoints" size="medium" />
               </div>
             </div>
-            <div className="flex mt-[10px]">
+            <div className="flex mt-[10px] mb-[-165px]">
               <h1 className="ml-6 text-gray-10 font-bold text-xl">
                 Perjalanan Kamu
               </h1>
@@ -75,18 +75,15 @@ function TripPlannerHome() {
                 <Link to="/planner/form">Tambah +</Link>
               </span>
             </div>
-            <div className="m-6 h-[100%]">
+            <div className="m-6 ">
               {data && data.length > 0 ? (
                 data.map((item, i) => {
                   if (data.length === i + 1) {
                     return (
-                      <div className="mt-2" key={i} ref={lastOrder}>
-                        <div className="">
-                          <Link
-                            to={`/planner/${item._id}`}
-                            className="relative "
-                          >
-                            <div className="trip-text">
+                      <div className="mt-[175px]" key={i} ref={lastOrder}>
+                        <div className="mb-[-55px]">
+                          <Link to={`/planner/${item._id}`}>
+                            <div className="trip-text mb-[-210px]">
                               <img
                                 loading="lazy"
                                 className="rounded-lg w-[100%] h-[145px] object-cover brightness-50"
@@ -95,12 +92,12 @@ function TripPlannerHome() {
                               />
                             </div>
                             {/* pikirin buat gambarnya apa?? */}
-                            <div className="text-white m-6 brightness-100 absolute bottom-0 left-0 p-2 ">
-                              <div className=" ">
+                            <div className="text-white m-6 brightness-100 min-[350px]:translate-y-12">
+                              <div className="">
                                 <h1 className="font-bold">{item.name}</h1>
                                 <h2>{item.city}</h2>
                                 {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
-                                <h1 className="text">
+                                <h1 className="text-md">
                                   {/* check if data.startData and endDate same then just render startData */}
                                   {item.startDate === item.endDate
                                     ? humanizeDateTimeShort(item.startDate)
@@ -120,43 +117,40 @@ function TripPlannerHome() {
                     );
                   } else {
                     return (
-                      <div className="mt-2" key={i} >
-                      <div className="">
-                        <Link
-                          to={`/planner/${item._id}`}
-                          className="relative "
-                        >
-                          <div className="trip-text">
-                            <img
-                              loading="lazy"
-                              className="rounded-lg w-[100%] h-[145px] object-cover brightness-50"
-                              width={"100%"}
-                              src={TripBanner}
-                            />
-                          </div>
-                          {/* pikirin buat gambarnya apa?? */}
-                          <div className="text-white m-6 brightness-100 absolute bottom-0 left-0 p-2 ">
-                            <div className=" ">
-                              <h1 className="font-bold">{item.name}</h1>
-                              <h2>{item.city}</h2>
-                              {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
-                              <h1 className="text">
-                                {/* check if data.startData and endDate same then just render startData */}
-                                {item.startDate === item.endDate
-                                  ? humanizeDateTimeShort(item.startDate)
-                                  : `${
-                                      humanizeDateTimeShort(
-                                        item.startDate
-                                      ).split(" ")[0]
-                                    } - ${humanizeDateTimeShort(
-                                      item.endDate
-                                    )}`}
-                              </h1>
+                      <div className="mt-[175px]" key={i}>
+                        <div className="mb-[-55px]">
+                          <Link to={`/planner/${item._id}`}>
+                            <div className="trip-text mb-[-210px]">
+                              <img
+                                loading="lazy"
+                                className="rounded-lg w-[100%] h-[145px] object-cover brightness-50"
+                                width={"100%"}
+                                src={TripBanner}
+                              />
                             </div>
-                          </div>
-                        </Link>
+                            {/* pikirin buat gambarnya apa?? */}
+                            <div className="text-white m-6 brightness-100 min-[400px]:translate-y-12">
+                              <div className="">
+                                <h1 className="font-bold">{item.name}</h1>
+                                <h2>{item.city}</h2>
+                                {/* create format 6 - 7 Mei 2023 from item.startDate and item.endDate */}
+                                <h1 className="text-md">
+                                  {/* check if data.startData and endDate same then just render startData */}
+                                  {item.startDate === item.endDate
+                                    ? humanizeDateTimeShort(item.startDate)
+                                    : `${
+                                        humanizeDateTimeShort(
+                                          item.startDate
+                                        ).split(" ")[0]
+                                      } - ${humanizeDateTimeShort(
+                                        item.endDate
+                                      )}`}
+                                </h1>
+                              </div>
+                            </div>
+                          </Link>
+                        </div>
                       </div>
-                    </div>
                     );
                   }
                 })
@@ -178,6 +172,10 @@ function TripPlannerHome() {
               )}
             </div>
           </div>
+          {
+            // if data.length > 2 render data
+            data.length <= 2 && <div className="h-[200px]"></div>
+          }
           <BottomNavigation />
         </div>
       )}
