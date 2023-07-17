@@ -43,7 +43,12 @@ function WisataSearch() {
   );
 
   return (
-    <div className="containerInfo">
+    <div
+      className="containerInfo"
+      style={{
+        width: "460px",
+      }}
+    >
       <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
         <div className="flex z-50">
           <div className="grow h-6">

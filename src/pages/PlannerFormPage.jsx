@@ -18,7 +18,7 @@ function PlannerFormPage() {
 
   const { data, handleChange } = useFormData({
     name: "",
-    city: "",
+    city: kotaLampung[0],
     startDate: new Date(),
     endDate: new Date(),
   });
