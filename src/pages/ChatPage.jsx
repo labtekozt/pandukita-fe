@@ -71,7 +71,7 @@ function Chat() {
                                 <div class="relative flex m-2">
                                     <input type="text" placeholder="Kirim Pesan" class="w-full input-chat focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-3 bg-light border-solid border-gray-200 rounded-full py-3" />
                                     <div class="absolute right-0 items-center inset-y-0 sm:flex">
-                                        <button type="button" class="mr-2 icon-chat mt-[-10px] inline-flex items-center justify-center rounded-full h-10 w-10 transition duration-500 ease-in-out hover:bg-gray-300 focus:outline-none">
+                                        <button type="button" class="mr-2 icon-chat inline-flex items-center justify-center rounded-full h-10 w-10 transition duration-500 ease-in-out hover:bg-gray-300 focus:outline-none">
                                             <IconSend />
                                         </button>
                                     </div>
