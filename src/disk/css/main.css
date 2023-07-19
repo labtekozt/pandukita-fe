@@ -407,11 +407,11 @@ input[type="radio"] {
         background: #fff;
     }
     .input-chat{
-        border: 1px solid rgb(172, 172, 172);
+        border: 2px solid rgb(172, 172, 172);
         margin-bottom: 15px;
     }
     .icon-chat{
-        margin-top: 4px;
+        margin-top: 10px;
     }
 
     .containers {
