@@ -9,6 +9,7 @@ import {
   IconCalendarEvent,
   IconMapPin,
 } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 import LoadingTourGuide from "../component/LoadingTourGuidePage";
 
 function TourGuideProfile() {
@@ -141,15 +142,15 @@ function TourGuideProfile() {
             </div>
           </div>
           <div className="p-4 z-50 btn-profile bottom-0">
-            <Button
-              type="primary"
-              fullWidth="true"
-              submit={true}
-              centered={true}
-              href="/"
-            >
-              Chat Dengan Pemandu Wisata
-            </Button>
+            <Link to="/chat">
+              <Button
+                type="primary"
+                fullWidth="true"
+                submit={true}
+                centered={true}>
+                Chat Dengan Pemandu Wisata
+              </Button>
+            </Link>
           </div>
         </div>
       )}
