@@ -8,7 +8,7 @@ import {
   IconChevronRight,
 } from "@tabler/icons-react";
 import { Illustration } from "@kiwicom/orbit-components";
-import Tguide from "../disk/image/tguide.jpg";
+import Tguide1 from "../disk/image/tguide1.jpg";
 
 function ToureGuidePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +80,7 @@ function ToureGuidePage() {
               <img
                 width={"99%"}
                 loading="lazy"
-                src={Tguide}
+                src={Tguide1}
                 className="rounded-lg"
               />
             </a>

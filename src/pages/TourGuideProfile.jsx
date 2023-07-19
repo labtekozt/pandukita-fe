@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Tguide from "../disk/image/tguide.jpg";
+import Tguide1 from "../disk/image/tguide1.jpg";
 import { TextLink, Button, Card } from "@kiwicom/orbit-components/lib/";
 import {
   IconArrowNarrowLeft,
@@ -26,7 +26,7 @@ function TourGuideProfile() {
       {loading ? (
         <LoadingTourGuide />
       ) : (
-        <div className="containerGuide">
+        <div className="containerInfo">
           <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
             <div className="flex">
               <div className="grow h-6">
@@ -39,11 +39,12 @@ function TourGuideProfile() {
             </div>
           </div>
           <div className="m-4">
-            <img
-              loading="lazy"
-              src={Tguide}
-              className="rounded rounded-md relative w-[100%] object-cover"
-            />
+            <div className="flex img-box5">
+              <img
+                loading="lazy"
+                src={Tguide1}
+                className="rounded rounded-md relative w-[100%] object-cover"/>
+            </div>
           </div>
           <div className="m-5">
             <h1>Halo! Nama saya </h1>
@@ -77,7 +78,7 @@ function TourGuideProfile() {
             <h1 size="extraLarge" className="font-bold mb-2">
               Deskripsi
             </h1>
-            <p>
+            <p className="text-justify">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Molestiae vel, eius, tempore esse, perferendis similique minus
               veniam dolorem aliquam praesentium ut totam nisi vitae?
@@ -139,7 +140,7 @@ function TourGuideProfile() {
               </Card>
             </div>
           </div>
-          <div className="p-4 z-50 shadow-sm sticky bottom-0">
+          <div className="p-4 z-50 btn-profile bottom-0">
             <Button
               type="primary"
               fullWidth="true"
@@ -147,7 +148,7 @@ function TourGuideProfile() {
               centered={true}
               href="/"
             >
-              Mulai Chat
+              Chat Dengan Pemandu Wisata
             </Button>
           </div>
         </div>

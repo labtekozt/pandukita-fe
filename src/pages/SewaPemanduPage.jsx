@@ -25,7 +25,7 @@ function SewaPemandu() {
             </div>
             <div className="m-5 mt-8">
                 <div className="flex items-center mb-5">
-                    <span className="text-xl">Rangkuman Perjalanan kamu</span>
+                    <span className="text-xl text-rent mt-[-10px]">Rangkuman Perjalanan kamu</span>
                     <div className='grow'></div>
                     <div className='flex mr-0 mb-3 mt-1'>
                         <Button size="small" type="primary" href='/lihatpeta'><span className='pl-5'>Lihat di Peta </span></Button>
