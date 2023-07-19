@@ -108,7 +108,7 @@
     margin-bottom: 15px;
 }
 .icon-chat{
-    margin-top: -20px;
+    margin-top: -15px;
 }
 
 .scrollbar-w-2::-webkit-scrollbar {
@@ -407,7 +407,7 @@ input[type="radio"] {
         background: #fff;
     }
     .input-chat{
-        border: 1px solid rgb(207, 207, 207);
+        border: 1px solid rgb(172, 172, 172);
         margin-bottom: 15px;
     }
     .icon-chat{
@@ -518,8 +518,6 @@ input[type="radio"] {
     .guide input {
         width: 330px !important;
     }
-
-
 
     .share {
         margin-left: 85%;
