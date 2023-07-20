@@ -84,7 +84,7 @@ function HomePage() {
                         <img
                           loading="lazy"
                           src={item.image[0].url}
-                          className="rounded-lg relative w-[100%] object-cover brightness-50"
+                          className="rounded-lg relative w-[100%] object-cover brightness-50 shadow-lg"
                         />
                       </Link>
                       <span className="text-slider slider-tittle text-md mb-2 absolute m-2 text-white mt-[150px] font-bold z-50 text-left">
@@ -104,19 +104,19 @@ function HomePage() {
           <div className="m-5">
             <div>
               <h1 className="text-2xl font-medium text-black mb-2 ml-1">
-                Bingung Mau Kemana?
+                Atur perjalananmu
               </h1>
               <Link to="/planner">
                 <img
                   loading="lazy"
                   src={PlannerAds}
-                  className="relative w-[100%] object-cover rounded-2xl mb-[35px]"
+                  className="relative w-[100%] object-cover rounded-2xl mb-[35px] shadow-lg"
                 />
               </Link>
             </div>
             <div>
               <div>
-                <h1 className="text-2xl font-bold text-black mb-3 ml-1">
+                <h1 className="text-2xl font-medium text-black mb-3 ml-1">
                   Kategori
                 </h1>
                 <div className="flex">
@@ -127,7 +127,8 @@ function HomePage() {
                       border: "1px solid #D1D1D1",
                     }}
                   >
-                    {data.category && data.category.map((item) => item.name)}
+                    {/*{data.category && data.category.map((item) => item.name)}*/}
+                    Pantai
                   </button>
                 </div>
               </div>
@@ -148,7 +149,7 @@ function HomePage() {
                             <img
                               loading="lazy"
                               src={item.image[0].url}
-                              className="rounded-lg relative w-[100%] object-cover brightness-50"
+                              className="rounded-lg relative w-[100%] object-cover brightness-50 shadow-lg"
                             />
                           </Link>
                           <span className="text-slider text-left slider-tittle text-md mb-2 absolute m-2 text-white mt-[180px] font-bold z-50">
@@ -170,25 +171,25 @@ function HomePage() {
             </div>
             <div className="mt-[30px]">
               {/* <Link to="/tourguide"> */}
-              <h1 className="text-2xl font-bold text-black mb-2">
+              <h1 className="text-2xl font-medium text-black mb-2">
                 Sewa pemandu wisata
               </h1>
               <img
                 loading="lazy"
                 src={TourGuideAds}
-                className="relative w-[100%] object-cover rounded-2xl"
+                className="relative w-[100%] object-cover rounded-2xl shadow-lg"
               />
               {/* </Link> */}
             </div>
             <div className="mt-[30px] pb-[130px]">
               {/* <Link to="/destination/add"> */}
-              <h1 className="text-2xl font-bold text-black mb-2">
-                Kamu Pemandu Wisata?
+              <h1 className="text-2xl font-medium text-black mb-2">
+                Kamu pemandu wisata?
               </h1>
               <img
                 loading="lazy"
                 src={PemanduAds}
-                className="relative w-[100%] object-cover rounded-2xl"
+                className="relative w-[100%] object-cover rounded-2xl shadow-lg"
               />
               {/* </Link> */}
             </div>
