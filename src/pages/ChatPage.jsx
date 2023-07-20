@@ -28,50 +28,50 @@ function Chat() {
                                 <div className="chat-message">
                                 <div className="flex items-end justify-end">
                                     <div className="flex flex-col space-y-2 text-md max-w-xs mx-2 order-1 items-end">
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">pagi pak, apakah bisa memandu saya dalam perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none text-white" style={{background : 'rgb(35, 35, 250)'}}>pagi pak, apakah bisa memandu saya dalam perjalanan ini ?</span></div>
                                     </div>
                                 </div>
                                 </div>
                                 <div className="chat-message">
                                 <div className="flex items-end">
                                     <div className="flex flex-col space-y-2 text-md max-w-xs mx-2 order-2 items-start">
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">silahkan</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none text-gray-600" style={{background : '#D1D1D1'}}>silahkan</span></div>
                                     </div>
                                 </div>
                                 </div>
                                 <div className="chat-message">
                                 <div className="flex items-end justify-end">
                                     <div className="flex flex-col space-y-2 text-md max-w-xs mx-2 order-1 items-end">
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
                                     </div>
                                 </div>
                                 </div>
                                 <div className="chat-message">
                                 <div className="flex items-end">
                                     <div className="flex flex-col space-y-2 text-md max-w-xs mx-2 order-2 items-start">
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600" style={{background : '#D1D1D1'}}>perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600" style={{background : '#D1D1D1'}}>perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600" style={{background : '#D1D1D1'}}>perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600" style={{background : '#D1D1D1'}}>perkiraan sekitar 2 juta suda termasuk penginapan bisa saya bantu</span></div>
                                     </div>
                                 </div>
                                 </div>
                             </div>
 
-                            <div class="fixed navbar-chat border-t-2 border-gray-200 mt-5 sm:mb-0">
+                            <div class="fixed navbar-chat border-t-2 border-[#D1D1D1] mt-5 sm:mb-0">
                                 <div class="relative flex m-2">
-                                    <input type="text" placeholder="Kirim Pesan" class="w-full input-chat focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-3 bg-light border-solid border-gray-200 rounded-full py-3" />
+                                    <input type="text" placeholder="Kirim Pesan" class="w-full input-chat focus:outline-none focus:placeholder-gray text-gray-600 placeholder-gray-600 pl-3 bg-light border-solid border-gray-200 rounded-full py-3" />
                                     <div class="absolute right-0 items-center inset-y-0 sm:flex">
-                                        <button type="button" class="mr-2 icon-chat inline-flex items-center justify-center rounded-full h-10 w-10 transition duration-500 ease-in-out hover:bg-gray-300 focus:outline-none">
+                                        <button type="button" class="mr-2 icon-chat inline-flex items-center justify-center rounded-full h-10 w-10 transition duration-500 ease-in-out hover:bg-[#D1D1D1] focus:outline-none">
                                             <IconSend />
                                         </button>
                                     </div>
