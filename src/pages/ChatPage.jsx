@@ -28,7 +28,7 @@ function Chat() {
                                 <div className="chat-message">
                                 <div className="flex items-end justify-end">
                                     <div className="flex flex-col space-y-2 text-md max-w-xs mx-2 order-1 items-end">
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none text-white" style={{background : 'rgb(35, 35, 250)'}}>pagi pak, apakah bisa memandu saya dalam perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none text-white" style={{background : '#00A388'}}>pagi pak, apakah bisa memandu saya dalam perjalanan ini ?</span></div>
                                     </div>
                                 </div>
                                 </div>
@@ -42,16 +42,16 @@ function Chat() {
                                 <div className="chat-message">
                                 <div className="flex items-end justify-end">
                                     <div className="flex flex-col space-y-2 text-md max-w-xs mx-2 order-1 items-end">
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
-                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : 'rgb(35, 35, 250)'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
+                                        <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white " style={{background : '#00A388'}}>kira kira total budged berapa ya pak untuk perjalanan ini ?</span></div>
                                     </div>
                                 </div>
                                 </div>
