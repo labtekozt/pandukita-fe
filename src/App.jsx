@@ -32,6 +32,7 @@ import ProtectedRoute, {
   ProtectedTGRoute,
 } from "./utils/protectedRoute";
 import AddDestination from "./pages/AddDestination";
+import ChatRoom from "./component/ChatRoom";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -68,6 +69,7 @@ export const router = createBrowserRouter(
           element={<AddDestination />}
         />
         <Route exact path="/planner/:id" element={<PlannerAi />} />
+        <Route exact path="/chat/:id" element={<ChatRoom />} />
       </Route>
 
       <Route element={<ProtectedLoginRoute />}>

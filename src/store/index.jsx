@@ -6,6 +6,7 @@ import getCredentials, { getUser } from "../helpers/getCredentials";
 const initialState = {
   login: (await getCredentials()) === null ? false : true,
   user: (await getCredentials()) === null ? {} : await getUser(),
+  jwt: (await getCredentials()) === null ? null : await getCredentials(),
   loading: false,
   toast: {
     show: false,
