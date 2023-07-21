@@ -46,7 +46,7 @@ function WisataSearch() {
     <div
       className="containerInfo w-100"
       style={{
-        minWidth: "420px",
+        minWidth: "300px",
         minHeight: "100vh",
       }}
     >

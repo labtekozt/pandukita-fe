@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import BottomNavigation from "../component/BottomNavigation";
 import Onboarding from "../component/OnboardingPage";
 import HomeHeaderImage from "../disk/image/HeaderHome.png";
 import PlannerAds from "../disk/image/PlannerAds.png";
 import TourGuideAds from "../disk/image/TourGuideAds.png";
-import Slider from "../disk/image/slider.jpg";
 import PemanduAds from "../disk/image/pemanduAds.png";
 import { Stack } from "@kiwicom/orbit-components/lib/";
 import { IconSearch } from "@tabler/icons-react";
@@ -39,7 +38,7 @@ function HomePage() {
           <img
             loading="lazy"
             src={HomeHeaderImage}
-            className="relative w-[100%] object-cover"
+            className="relative w-[100%] h-[180px] object-cover"
           />
           <div className="absolute top-0 m-5 w-100">
             <Stack spacing="large" direction="column">

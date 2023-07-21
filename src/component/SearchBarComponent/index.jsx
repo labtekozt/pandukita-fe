@@ -1,6 +1,6 @@
 import HeaderSearch from "../../disk/image/HeaderSearch.png";
-import { Stack } from "@kiwicom/orbit-components";
 import { IconSearch } from "@tabler/icons-react";
+import { Stack } from "@kiwicom/orbit-components/lib/";
 
 export default function SearchBar({ search, handleSearch, searchHandle }) {
   // handleWhem user press enter
@@ -16,11 +16,13 @@ export default function SearchBar({ search, handleSearch, searchHandle }) {
         <img
           loading="lazy"
           src={HeaderSearch}
-          className="relative w-[100%] h-[110px] object-cover"
+          className="relative w-[100%] h-[148px] object-cover"
         />
-        <div className="absolute top-0 m-5 w-100">
+        <div className="absolute top-0 m-5 w-[100%]">
           <Stack spacing="large" direction="column">
-            <div className="relative search flex mt-[60px]">
+            <div className="relative search flex mt-[60px]" style={{
+              maxWidth: "95%",
+            }}>
               <input
                 value={search}
                 onChange={handleSearch}
