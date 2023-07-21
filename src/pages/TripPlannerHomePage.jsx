@@ -77,7 +77,7 @@ function TripPlannerHome() {
                 data.map((item, i) => {
                   if (data.length === i + 1) {
                     return (
-                      <div className="mt-[175px] mb-[150px]" key={i} ref={lastOrder}>
+                      <div className="mt-[175px] mb-[100px]" key={i} ref={lastOrder}>
                         <div className="mb-[-55px]">
                           <Link to={`/planner/${item._id}`}>
                             <div className="trip-text mb-[-210px]">
@@ -89,7 +89,7 @@ function TripPlannerHome() {
                               />
                             </div>
                             {/* pikirin buat gambarnya apa?? */}
-                            <div className="text-white m-6 brightness-100 min-[350px]:translate-y-12">
+                            <div className="text-white m-6 brightness-100 min-[300px]:translate-y-12">
                               <div className="">
                                 <h1 className="font-bold">{item.name}</h1>
                                 <h2>{item.city}</h2>
@@ -114,7 +114,7 @@ function TripPlannerHome() {
                     );
                   } else {
                     return (
-                      <div className="mt-[175px] mb-[100px]" key={i}>
+                      <div className="mt-[175px]" key={i}>
                         <div className="mb-[-55px]">
                           <Link to={`/planner/${item._id}`}>
                             <div className="trip-text mb-[-210px]">
@@ -126,7 +126,7 @@ function TripPlannerHome() {
                               />
                             </div>
                             {/* pikirin buat gambarnya apa?? */}
-                            <div className="text-white m-6 brightness-100 min-[400px]:translate-y-12">
+                            <div className="text-white m-6 brightness-100 min-[300px]:translate-y-12">
                               <div className="">
                                 <h1 className="font-bold">{item.name}</h1>
                                 <h2>{item.city}</h2>
