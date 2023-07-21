@@ -164,7 +164,13 @@ function WisataSearch() {
         })}
       {loading && <LoadingComponent />}
       {data && data.length === 0 && (
-        <div className="grid place-content-center">
+        <div
+          className="grid place-content-center"
+          style={{
+            minWidth: "280px",
+            maxWidth: "100vw",
+          }}
+        >
           <NotFoundComponent text={`Tidak ada Wisata :( `} />
         </div>
       )}
