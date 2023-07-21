@@ -52,10 +52,10 @@ export const router = createBrowserRouter(
 
         <Route exact path="/profile" element={<ProfilePage />} />
         <Route exact path="/profile/update" element={<ProfileUpdate />} />
-        <Route exact path="/profile/tourguide" element={<TourGuideProfile />} />
 
         <Route exact path="/planner/:id/add" element={<PlannerAdd />} />
         <Route exact path="/planner/:id/map" element={<LihatPetaAll />} />
+        <Route exact path="/planner/:id/profile/tourguide" element={<TourGuideProfile />} />
         <Route
           exact
           path="/planner/:id/plan/:planId/update"

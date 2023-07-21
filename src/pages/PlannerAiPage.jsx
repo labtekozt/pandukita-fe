@@ -156,7 +156,7 @@ function PlannerAi() {
                 {data && humanizeDate(data.startDate)}
                 {data &&
                   humanizeDate(data.startDate) !==
-                    humanizeDate(data.endDate) && (
+                  humanizeDate(data.endDate) && (
                     <> - {humanizeDate(data.endDate)}</>
                   )}
               </span>
@@ -319,14 +319,15 @@ function PlannerAi() {
             />
           </div>
           <div className="mt-[-15px] p-4 z-50 bottom-0">
-            <Button
-              type="primarySubtle"
-              fullWidth="true"
-              submit={true}
-              centered={true}
-            >
-              Sewa Pemandu Wisata
-            </Button>
+            <Link to={`/planner/${id}/profile/tourguide`}>
+              <Button
+                type="primarySubtle"
+                fullWidth="true"
+                submit={true}
+                centered={true}>
+                Sewa Pemandu Wisata
+              </Button>
+            </Link>
           </div>
         </div>
       )}

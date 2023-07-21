@@ -98,13 +98,12 @@ function TripPlannerHome() {
                                   {/* check if data.startData and endDate same then just render startData */}
                                   {item.startDate === item.endDate
                                     ? humanizeDateTimeShort(item.startDate)
-                                    : `${
-                                        humanizeDateTimeShort(
-                                          item.startDate
-                                        ).split(" ")[0]
-                                      } - ${humanizeDateTimeShort(
-                                        item.endDate
-                                      )}`}
+                                    : `${humanizeDateTimeShort(
+                                      item.startDate
+                                    ).split(" ")[0]
+                                    } - ${humanizeDateTimeShort(
+                                      item.endDate
+                                    )}`}
                                 </h1>
                               </div>
                             </div>
@@ -135,13 +134,12 @@ function TripPlannerHome() {
                                   {/* check if data.startData and endDate same then just render startData */}
                                   {item.startDate === item.endDate
                                     ? humanizeDateTimeShort(item.startDate)
-                                    : `${
-                                        humanizeDateTimeShort(
-                                          item.startDate
-                                        ).split(" ")[0]
-                                      } - ${humanizeDateTimeShort(
-                                        item.endDate
-                                      )}`}
+                                    : `${humanizeDateTimeShort(
+                                      item.startDate
+                                    ).split(" ")[0]
+                                    } - ${humanizeDateTimeShort(
+                                      item.endDate
+                                    )}`}
                                 </h1>
                               </div>
                             </div>

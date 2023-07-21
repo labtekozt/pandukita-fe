@@ -31,7 +31,7 @@ function TourGuideProfile() {
           <div className="p-2 z-50 shadow-sm sticky top-0 bg-white">
             <div className="flex">
               <div className="grow h-6">
-                <TextLink href="/plannerai">
+                <TextLink href="/planner">
                   <IconArrowNarrowLeft color="black" />
                 </TextLink>
               </div>
@@ -44,7 +44,7 @@ function TourGuideProfile() {
               <img
                 loading="lazy"
                 src={Tguide1}
-                className="rounded rounded-md relative w-[100%] object-cover"/>
+                className="rounded rounded-md relative w-[100%] object-cover" />
             </div>
           </div>
           <div className="m-5">
