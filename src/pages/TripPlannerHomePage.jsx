@@ -54,11 +54,8 @@ function TripPlannerHome() {
           <div className="pb-[40%]">
             <div className="grid gap-4 grid-cols-2">
               <div className="mt-[45px] m-5">
-                <span className="text-[24px] font-bold">
-                  Atur
-                  <br />
-                  Perjalanan <br />
-                  Disini
+                <span className="text-[24px] font-bold leading-4">
+                  Atur Perjalanan Disini
                 </span>
               </div>
 
@@ -67,11 +64,11 @@ function TripPlannerHome() {
               </div>
             </div>
             <div className="flex mt-[10px] mb-[-165px]">
-              <h1 className="ml-6 text-gray-10 font-bold text-xl">
+              <h1 className="ml-6 text-gray-10 font-medium text-xl">
                 Perjalanan Kamu
               </h1>
               <div className="flex-grow"></div>
-              <span className="text-[#00A388] mt-0.5 text-trip font-bold text-md mr-[30px]">
+              <span className="text-[#00A388] mt-0.5 text-trip font-medium text-md mr-[30px]">
                 <Link to="/planner/form">Tambah +</Link>
               </span>
             </div>
@@ -80,7 +77,7 @@ function TripPlannerHome() {
                 data.map((item, i) => {
                   if (data.length === i + 1) {
                     return (
-                      <div className="mt-[175px]" key={i} ref={lastOrder}>
+                      <div className="mt-[175px] mb-[100px]" key={i} ref={lastOrder}>
                         <div className="mb-[-55px]">
                           <Link to={`/planner/${item._id}`}>
                             <div className="trip-text mb-[-210px]">

@@ -9,6 +9,10 @@
     background-color: #fff;
 }
 
+.navbar{
+    position: sticky;
+}
+
 .containerInfo {
     width: 460px;
     margin: auto;
@@ -87,6 +91,49 @@
 
 .img-box4 {
     width: 350px;   
+}
+
+.img-box5 {
+    width: 100%;   
+    height: 100%; 
+}
+
+.navbar-chat{
+    bottom: 0;
+    width: 400px;
+    background: #fff;
+}
+.input-chat{
+    border: 1px solid rgb(207, 207, 207);
+    margin-bottom: 15px;
+}
+.icon-chat{
+    margin-top: -15px;
+}
+
+.scrollbar-w-2::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+}
+  
+.scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+    --bg-opacity: 1;
+    background-color: #fff;
+    background-color: #fff;
+}
+  
+.scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+    --bg-opacity: 1;
+    background-color: #fff;
+    background-color: #fff;
+}
+  
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+}
+
+.btn-profile{
+    position: sticky;
 }
 
 .swiper-slide img {
@@ -172,6 +219,10 @@ input[type="radio"] {
         margin: auto;
     }
 
+    .navbar{
+        position: fixed;
+    }
+
     .text-slider {
         padding-bottom: -10px;
     }
@@ -210,6 +261,10 @@ input[type="radio"] {
    .img-box4 {
        width: 500px; 
    }
+
+   .btn-profile{
+        position: sticky;
+    }
 
     .relative input {
         width: 300px;
@@ -328,7 +383,13 @@ input[type="radio"] {
         width: 500px;   
     }
 
+    .navbar-chat{
+        width: 740px;
+    }
 
+    .input-chat{
+        width: 100%!important;
+    }
 }
 
 /* responsive mobile */
@@ -336,6 +397,23 @@ input[type="radio"] {
     .container {
         width: 100%;
         margin: auto;
+    }
+
+    .navbar{
+        position: fixed;
+    }
+
+    .navbar-chat{
+        bottom: 0;
+        width: 380px;
+        background: #fff;
+    }
+    .input-chat{
+        border: 2px solid rgb(172, 172, 172);
+        margin-bottom: 15px;
+    }
+    .icon-chat{
+        margin-top: 4px;
     }
 
     .containers {
@@ -346,6 +424,10 @@ input[type="radio"] {
         max-width: 100%;
         margin: auto;
         background-color: #fff;
+    }
+    .text-rent{
+        margin-top: -10px;
+        font-size: 13px;
     }
 
     .containerWisata {
@@ -385,6 +467,16 @@ input[type="radio"] {
 
     .img-box4 {
         width: 250px;   
+    }
+
+    .img-box5 {
+        width: 100%;   
+        height: 100%; 
+    }
+
+    .btn-profile{
+        position: fixed;
+        width: 100%;
     }
 
     .text-slider {
@@ -428,8 +520,6 @@ input[type="radio"] {
     .guide input {
         width: 330px !important;
     }
-
-
 
     .share {
         margin-left: 85%;

@@ -17,7 +17,7 @@ function BottomNavigation() {
 
   return (
     <div
-      className="sticky bottom-0 left-0 right-0 h-16 bg-white"
+      className="navbar bottom-0 left-0 right-0 h-16 bg-white"
       style={{ boxShadow: "0 -8px 6px -9px gray", zIndex: 1000 }}
     >
       <div className="grid h-full max-w-lg grid-cols-4 mx-auto">

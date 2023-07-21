@@ -26,6 +26,7 @@ import LihatPeta from "./pages/LihatPetaPage";
 import EmptyState from "./pages/EmptyStatePage";
 import LihatPetaAll from "./pages/LihatPetaAllPage";
 import SewaPemandu from "./pages/SewaPemanduPage";
+import Chat from "./pages/ChatPage";
 import ProtectedRoute, {
   ProtectedLoginRoute,
   ProtectedClientRoute,
@@ -47,6 +48,7 @@ export const router = createBrowserRouter(
         <Route exact path="/tourguide/search" element={<TourGuideSearch />} />
 
         <Route path="/tourguide/:id" element={<ProfileTourGuide />} />
+        <Route path="/chat" element={<Chat />} />
         <Route exact path="/tourguide/rent" element={<SewaPemandu />} />
 
         <Route exact path="/profile" element={<ProfilePage />} />
