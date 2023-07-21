@@ -77,7 +77,7 @@ function TripPlannerHome() {
                 data.map((item, i) => {
                   if (data.length === i + 1) {
                     return (
-                      <div className="mt-[175px] mb-[100px]" key={i} ref={lastOrder}>
+                      <div className="mt-[175px] mb-[150px]" key={i} ref={lastOrder}>
                         <div className="mb-[-55px]">
                           <Link to={`/planner/${item._id}`}>
                             <div className="trip-text mb-[-210px]">
@@ -114,7 +114,7 @@ function TripPlannerHome() {
                     );
                   } else {
                     return (
-                      <div className="mt-[175px]" key={i}>
+                      <div className="mt-[175px] mb-[100px]" key={i}>
                         <div className="mb-[-55px]">
                           <Link to={`/planner/${item._id}`}>
                             <div className="trip-text mb-[-210px]">
