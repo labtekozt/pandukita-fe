@@ -14,7 +14,7 @@ function Chat() {
         <div className='containerWisata'>
             <div className='p-2 z-50 shadow-sm sticky top-0 bg-white'>
                 <div className="flex">
-                    <div className="grow h-6"><TextLink href='/plannerai'><IconArrowNarrowLeft color='black' /></TextLink></div>
+                    <div className="grow h-6"><TextLink href='/planner'><IconArrowNarrowLeft color='black' /></TextLink></div>
                     <div className="grow-0">Chat : Hartono</div>
                     <div className="grow h-1"></div>
                     <div className='mr-2 mt-[-3px] font-bold'>. . .</div>

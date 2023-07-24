@@ -319,7 +319,7 @@ function PlannerAi() {
             />
           </div>
           <div className="mt-[-15px] p-4 z-50 bottom-0">
-            <Link to={`/planner/${id}/profile/tourguide`}>
+            <Link to={`/planner/${id}/tourguide/rent`}>
               <Button
                 type="primarySubtle"
                 fullWidth="true"

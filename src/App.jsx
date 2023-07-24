@@ -48,14 +48,14 @@ export const router = createBrowserRouter(
 
         <Route path="/tourguide/:id" element={<ProfileTourGuide />} />
         <Route path="/chat" element={<Chat />} />
-        <Route exact path="/tourguide/rent" element={<SewaPemandu />} />
+        <Route exact path="/planner/:id/tourguide/rent" element={<SewaPemandu />} />
 
         <Route exact path="/profile" element={<ProfilePage />} />
         <Route exact path="/profile/update" element={<ProfileUpdate />} />
 
         <Route exact path="/planner/:id/add" element={<PlannerAdd />} />
         <Route exact path="/planner/:id/map" element={<LihatPetaAll />} />
-        <Route exact path="/planner/:id/profile/tourguide" element={<TourGuideProfile />} />
+        <Route exact path="/planner/:id/tourguide/rent/profile/tourguide" element={<TourGuideProfile />} />
         <Route
           exact
           path="/planner/:id/plan/:planId/update"
