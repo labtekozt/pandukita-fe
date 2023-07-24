@@ -68,7 +68,7 @@ function Chat() {
                                         </div>
                                     </Card>
                                 </div>
-                            <div className='border-b border-dark'></div>
+                            <div className='border-b border-[#D1D1D1]'></div>
                             </div>
                             }
                             <div className="chat-message">
