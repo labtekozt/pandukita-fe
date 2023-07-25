@@ -47,10 +47,9 @@ export const router = createBrowserRouter(
         <Route exact path="destination/add" element={<WisataAdd />} />
 
         <Route exact path="/tourguide/search" element={<TourGuideSearch />} />
-
         <Route path="/tourguide/:id" element={<ProfileTourGuide />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/listchat" element={<ListChat />} />
+        <Route path="/chatasdas" element={<Chat />} />
+        <Route path="/chat" element={<ListChat />} />
         <Route exact path="/planner/:id/tourguide/rent" element={<SewaPemandu />} />
 
         <Route exact path="/profile" element={<ProfilePage />} />

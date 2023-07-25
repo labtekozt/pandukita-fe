@@ -39,14 +39,14 @@ function LoginPage() {
 
       dispatch({
         type: "LOGIN",
+        payload: {
+          user: await getUser(),
+          jwt: response.data,
+        },
       });
       dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Login Berhasil..", type: "success" },
-      });
-      dispatch({
-        type: "SET_USER",
-        payload: await getUser(),
       });
     } catch (error) {
       if (error.name == "AxiosError") {

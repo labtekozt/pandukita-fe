@@ -4,12 +4,16 @@ const reducer = (state, action) => {
     case "LOGIN":
       return {
         ...state,
+        jwt: py.jwt,
+        user: py.user,
         login: true,
       };
 
     case "LOGOUT":
       return {
         ...state,
+        jwt: null,
+        user: {},
         login: false,
       };
     case "SET_LOADING":
@@ -45,6 +49,33 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: {},
+      };
+    case "ADD_NOTIFICATION":
+      return {
+        ...state,
+        notification: {
+          ...state.notification,
+          ...py,
+          show: true,
+        },
+      };
+    case "HIDE_NOTIFICATION":
+      return {
+        ...state,
+        notification: {
+          ...state.notification,
+          show: false,
+        },
+      };
+    case "SET_CONNECT":
+      return {
+        ...state,
+        isConnect: true,
+      };
+    case "SET_DISCONNECT":
+      return {
+        ...state,
+        isConnect: false,
       };
 
     default:

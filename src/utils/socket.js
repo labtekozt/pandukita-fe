@@ -16,13 +16,14 @@ const SocketIo = (jwt) =>
     // max reconnection attempts
     reconnectionAttempts: 5,
     // delay between reconnection attempts
-    reconnectionDelay: 1000,
+    reconnectionDelay: 3000,
     // max delay for a connection
     timeout: 20000,
     // auto connect
-    autoConnect: false,
+    autoConnect: true,
     // enable debug mode
     addTrailingSlash: true,
+    // reconnection every 30minutes
 
     transports: ["websocket"],
     // force new connection
