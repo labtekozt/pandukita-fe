@@ -11,7 +11,7 @@ function BottomNavigation() {
   const Menus = [
     { name: "Home", icon: <IconHome />, href: "/" },
     { name: "Journey", icon: <IconSTurnLeft />, href: "/planner" },
-    { name: "Message", icon: <IconMessageDots /> },
+    { name: "Message", icon: <IconMessageDots />, href: "/listchat"},
     { name: "Profile", icon: <IconUserCircle />, href: "/profile" },
   ];
 

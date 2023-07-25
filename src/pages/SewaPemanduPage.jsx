@@ -11,6 +11,7 @@ import {
     IconMapPin,
     IconSearch
 } from '@tabler/icons-react';
+import { Link } from "react-router-dom";
 
 
 function SewaPemandu() {
@@ -59,7 +60,9 @@ function SewaPemandu() {
                 </div>
             </div>
             <div className='flex p-4 pb-[100%]'>
-                <Button fullWidth="true" submit={true} centered={true} href="/tourguideprofile">Cari Pemandu Wisata</Button>
+                <Button fullWidth="true" submit={true} centered={true}>
+                    <Link to='profile/tourguide'>Cari Pemandu Wisata</Link>
+                </Button>
                 <p className='mt-2 planner-icon absolute ml-[350px]'><IconSearch color='white' /></p>
             </div>
         </div>
