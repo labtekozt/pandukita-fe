@@ -142,15 +142,13 @@ function TourGuideProfile() {
             </div>
           </div>
           <div className="p-4 z-50 btn-profile bottom-0">
-            <Link to="/chat">
               <Button
                 type="primary"
                 fullWidth="true"
                 submit={true}
                 centered={true}>
-                Chat Dengan Pemandu Wisata
+                Buat Pesanan
               </Button>
-            </Link>
           </div>
         </div>
       )}
