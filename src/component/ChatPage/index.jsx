@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { TextLink, Button } from "@kiwicom/orbit-components/lib/";
 import Card from "@kiwicom/orbit-components/lib/Card";
 import {
@@ -24,6 +24,7 @@ function ChatPage({
 }) {
   const [messageType, setMessageType] = useState("");
   const [show, toggleShow] = useState(true);
+  const [timer, setTimer] = useState(null);
 
   useEffect(() => {
     if (message.length === 0) return;
@@ -39,14 +40,25 @@ function ChatPage({
       handleSendMessage(messageType);
       setMessageType("");
     } else {
-      const data = {
-        typing: true,
-        chatRoomId: roomId,
-      };
-      onTyping(data);
-      setTimeout(timeoutFunction, 1000);
+      clearTimeout(timer);
+
+      const newTimer = setTimeout(() => {
+        handleSendTyping();
+      }, 250);
+
+      setTimer(newTimer);
     }
   };
+
+  const handleSendTyping = useCallback(() => {
+    const data = {
+      typing: true,
+      chatRoomId: roomId,
+    };
+    onTyping(data);
+    setTimeout(timeoutFunction, 2000);
+  }, [onTyping, roomId]);
+
   const handleOnClick = () => {
     if (messageType.trim() == "") return;
     handleSendMessage(messageType);
