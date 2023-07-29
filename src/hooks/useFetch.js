@@ -63,3 +63,33 @@ export function useFetch(url) {
 
   return { ...state, setState };
 }
+
+export function useFetchPost(url, data) {
+  const initialState = {
+    loading: false,
+    error: null,
+    data: [],
+  };
+  const [state, setState] = useState(initialState);
+
+  const fetch = async (data) => {
+    try {
+      setState({ ...state, loading: true });
+
+      const response = await axiosApiInstance.post(url, data);
+
+      setState({
+        ...state,
+        loading: false,
+        data: response.data,
+      });
+    } catch (error) {
+      setState({ ...state, loading: false, error: error.response.data });
+    }
+  };
+  useEffect(() => {
+    fetch(data);
+  }, []);
+
+  return { ...state, setState, fetch };
+}

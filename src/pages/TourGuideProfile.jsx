@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import Tguide1 from "../disk/image/tguide1.jpg";
 import { TextLink, Button, Card } from "@kiwicom/orbit-components/lib/";
 import {
@@ -9,18 +9,79 @@ import {
   IconCalendarEvent,
   IconMapPin,
 } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import LoadingTourGuide from "../component/LoadingTourGuidePage";
+import { useFetchPost } from "../hooks/useFetch";
+import { srcImage } from "../helpers/url";
+import SummaryPlanner from "../component/SummaryPlanner";
+import { SocketContext } from "../store";
+import { IconSearch } from "@tabler/icons-react";
 
 function TourGuideProfile() {
-  const [loading, setLoading] = useState(false);
+  const { id } = useParams();
+  const navigate = useNavigate();
+  // if id is undefined, navigate to planner page
+  if (!id) {
+    navigate("/planner");
+  }
 
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
+  const { socketRef, state } = useContext(SocketContext);
+  // create useFetchPost for fetch data from api
+  const { loading, data, error, fetch } = useFetchPost(
+    `/users/macth-tour-guide`,
+    {
+      plannerId: id,
+      exTourGuide: [],
+    }
+  );
+
+  const makeOrderTg = useCallback(
+    (data) => {
+      if (!socketRef.current) return;
+      socketRef.current.emit("order-tour", {
+        to: data.to,
+        from: data.from,
+        data: data.plan,
+      });
+    },
+    [socketRef.current]
+  );
+
+  // create function for fetch again
+  const fetchBestMacth = async () => {
+    fetch({
+      plannerId: id,
+      exTourGuide: exTourGuide,
+    });
+  };
+
+  // set exTourGuide when data is ready and not empty array
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
+  if (!data?.tourGuide && !loading) {
+    return (
+      <div className="containerInfo">
+        <div className="flex flex-col items-center justify-center h-screen">
+          <div className="text-xl font-bold">Saat Ini Tour Guide Tidak ada</div>
+          <div className="text-lg font-bold">
+            Silahkan Cari Tour Guide Lainnya
+          </div>
+          <div className="mt-5">
+            <Button iconLeft={<IconSearch />} onClick={() => refreshPage()}>
+              Cari Tour Guide lain
+            </Button>
+            <Link to={`/planner/${id}`}>
+              <Button iconLeft={<IconArrowNarrowLeft />}>
+                Kembali ke Home
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -43,33 +104,29 @@ function TourGuideProfile() {
             <div className="flex img-box5">
               <img
                 loading="lazy"
-                src={Tguide1}
-                className="rounded rounded-md relative w-[100%] object-cover" />
+                src={srcImage(data?.tourGuide?.profile)}
+                className="rounded rounded-md relative w-[100%] object-cover"
+              />
             </div>
           </div>
           <div className="m-5">
             <h1>Halo! Nama saya </h1>
             <div className="flex">
-              <span className="font-bold text-[20px]">Hartono</span>
+              <span className="font-bold text-[20px]">
+                {data?.tourGuide?.username}
+              </span>
               <span className="mt-0.5 ml-3" style={{ color: "#1667C2" }}>
                 <IconShieldCheckFilled width={22} />
               </span>
             </div>
-            <div className="flex mt-3">
-              <span className="mt-0.5" style={{ color: "#1667C2" }}>
-                <IconShieldCheckFilled width={22} />
-              </span>
-              <span className="ml-2 text-md mt-[4px]">
-                Pemandu Wisata <span className="font-bold">Terverifikasi</span>
-              </span>
-            </div>
+
             <div className="flex mt-0.5 mb-5">
               <h1 className="flex mt-2">
                 <span className="text-[#00A388]">
                   <IconMapPinFilled width={22} />
                 </span>
                 <span className="ml-2 text-md mt-0.5">
-                  Kab, Pesawaran, Lampung
+                  {data?.tourGuide?.location}, Lampung
                 </span>
               </h1>
             </div>
@@ -79,76 +136,38 @@ function TourGuideProfile() {
             <h1 size="extraLarge" className="font-bold mb-2">
               Deskripsi
             </h1>
-            <p className="text-justify">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Molestiae vel, eius, tempore esse, perferendis similique minus
-              veniam dolorem aliquam praesentium ut totam nisi vitae?
-              Consequuntur rerum saepe consequatur voluptatem earum.
-            </p>
+            <p className="text-justify">{data?.tourGuide?.description}</p>
           </div>
           <div className="m-5 text-[#E8EDF1] border"></div>
 
           <div className="m-4 mt-2 pb-[100%]">
-            <div className="flex items-center mb-5">
-              <span className="text-md">Rangkuman Perjalanan kamu</span>
-              <div className="grow"></div>
-              <div className="flex mr-0 mb-3 mt-2">
-                <Button size="small" type="primary" href="/lihatpeta">
-                  <span className="pl-5">Lihat di Peta </span>
-                </Button>
-                <span className="ml-2 mt-1 absolute">
-                  <IconMap width={19} color="white" />
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-[#eeeeee] rounded-md">
-              <Card>
-                <div
-                  style={{ color: "black", fontSize: "13px" }}
-                  className="p-3"
-                >
-                  <div className="flex">
-                    <p className="mt-0.5">
-                      <IconMap size={20} />
-                    </p>
-                    <span className="ml-2 font-bold text-black text-xl">
-                      Jalan Jalan ke Lampung
-                    </span>
-                  </div>
-                  <div className="flex mt-3">
-                    <p className="mt-0.5">
-                      <IconCalendarEvent size={20} />
-                    </p>
-                    <span className="ml-2 text-md mt-0.5">
-                      Sen, 6 Maret 2023 - Rabu, 8 Maret 2023
-                    </span>
-                  </div>
-                  <div className="flex mt-3">
-                    <p className="mt-0.5">
-                      <IconMapPin size={20} />
-                    </p>
-                    <span className="ml-2 text-md mt-0.5">
-                      Lampung, Indonesia
-                      <ull className="text-sm ml-2">
-                        <li>Taman Gajah Way Kambas</li>
-                        <li>Pantai Sebalang</li>
-                        <li>Mangrove Cukunyinyi</li>
-                      </ull>
-                    </span>
-                  </div>
-                </div>
-              </Card>
-            </div>
+            {data?.planner && (
+              <SummaryPlanner
+                city={data?.planner.city}
+                endDate={data?.planner.endDate}
+                id={id}
+                name={data?.planner.name}
+                plan={data?.planner.plan}
+                startDate={data?.planner.startDate}
+              />
+            )}
           </div>
           <div className="p-4 z-50 btn-profile bottom-0">
-              <Button
-                type="primary"
-                fullWidth="true"
-                submit={true}
-                centered={true}>
-                Buat Pesanan
-              </Button>
+            <Button
+              type="primary"
+              fullWidth="true"
+              submit={true}
+              onClick={() =>
+                makeOrderTg({
+                  to: data.tourGuide._id,
+                  from: state.user.id,
+                  plan: data.planner,
+                })
+              }
+              centered={true}
+            >
+              Buat Pesanan
+            </Button>
           </div>
         </div>
       )}

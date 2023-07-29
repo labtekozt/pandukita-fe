@@ -1,9 +1,19 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import SocketIo from "../utils/socket";
+import getCredentials from "../helpers/getCredentials";
 
 export default function useSocket({ state, dispatch }) {
   const socketRef = useRef(null);
   const jwt = state?.jwt?.access;
+
+  const handleReceiveNotification = useCallback((data) => {
+    dispatch({ type: "ADD_NOTIFICATION", payload: data });
+  }, []);
+
+  const handleReceiveOrderNotification = useCallback((data) => {
+    console.log(data);
+    dispatch({ type: "ADD_ORDER_NOTIFICATION", payload: data });
+  }, []);
 
   useEffect(() => {
     if (!jwt) return;
@@ -18,17 +28,34 @@ export default function useSocket({ state, dispatch }) {
       dispatch({ type: "SET_DISCONNECT" });
     });
 
-    socketRef.current.on("notification", (data) => {
-      dispatch({ type: "ADD_NOTIFICATION", payload: data });
-      // hide notification after 30s and reject notification after 1min if not click on it
-      setTimeout(() => {
-        dispatch({ type: "HIDE_NOTIFICATION", payload: data });
-      }, 30000);
+    socketRef.current.on("notification", handleReceiveNotification);
+    socketRef.current.on("order-notification", handleReceiveOrderNotification);
+    socketRef.current.on("wait-order", (data) => {
+      dispatch({ type: "ADD_WAIT_ORDER", payload: data });
+    });
+
+    socketRef.current.on("connect_error", (err) => {
+      if (err.message === "jwt expired") {
+        const jwtNew = getCredentials();
+        if (jwtNew) {
+          dispatch({ type: "SET_JWT", payload: jwtNew.access });
+        }
+        return;
+      }
+
+      dispatch({
+        type: "SHOW_TOAST",
+        payload: {
+          type: "error",
+          message: err.message,
+        },
+      });
     });
 
     return () => {
-      socketRef.current.off("notification");
       socketRef.current.disconnect();
+      socketRef.current.removeAllListeners();
+
       dispatch({ type: "SET_DISCONNECT" });
     };
   }, [jwt]);

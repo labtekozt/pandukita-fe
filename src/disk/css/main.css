@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 * {
-   font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .container {
@@ -9,7 +10,7 @@
     background-color: #fff;
 }
 
-.navbar{
+.navbar {
     position: sticky;
 }
 
@@ -90,24 +91,26 @@
 }
 
 .img-box4 {
-    width: 350px;   
+    width: 350px;
 }
 
 .img-box5 {
-    width: 100%;   
-    height: 100%; 
+    width: 100%;
+    height: 100%;
 }
 
-.navbar-chat{
+.navbar-chat {
     bottom: 0;
     width: 400px;
     background: #fff;
 }
-.input-chat{
+
+.input-chat {
     border: 1px solid rgb(207, 207, 207);
     margin-bottom: 15px;
 }
-.icon-chat{
+
+.icon-chat {
     margin-top: -15px;
 }
 
@@ -115,24 +118,24 @@
     width: 0.25rem;
     height: 0.25rem;
 }
-  
+
 .scrollbar-track-blue-lighter::-webkit-scrollbar-track {
     --bg-opacity: 1;
     background-color: #fff;
     background-color: #fff;
 }
-  
+
 .scrollbar-thumb-blue::-webkit-scrollbar-thumb {
     --bg-opacity: 1;
     background-color: #fff;
     background-color: #fff;
 }
-  
+
 .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
     border-radius: 0.25rem;
 }
 
-.btn-profile{
+.btn-profile {
     position: sticky;
 }
 
@@ -212,15 +215,15 @@ input[type="radio"] {
     color: #fff;
 }
 
-.notif{
-    width: 430px; 
- }
- 
- .confirm{
-     width: 400px;
-     margin-top: 50px;
-     margin-left: 20px;
- }
+.notif {
+    width: 430px;
+}
+
+.confirm {
+    width: 400px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
 
 /* Responsive tablet */
 @media screen and (max-width : 1024px) {
@@ -229,7 +232,7 @@ input[type="radio"] {
         margin: auto;
     }
 
-    .navbar{
+    .navbar {
         position: fixed;
     }
 
@@ -268,11 +271,11 @@ input[type="radio"] {
         height: 250px;
     }
 
-   .img-box4 {
-       width: 500px; 
-   }
+    .img-box4 {
+        width: 500px;
+    }
 
-   .btn-profile{
+    .btn-profile {
         position: sticky;
     }
 
@@ -390,22 +393,24 @@ input[type="radio"] {
     }
 
     .img-box4 {
-        width: 500px;   
+        width: 500px;
     }
 
-    .navbar-chat{
+    .navbar-chat {
         width: 740px;
     }
 
-    .input-chat{
-        width: 100%!important;
+    .input-chat {
+        width: 100% !important;
     }
-    .confirm{
+
+    .confirm {
         width: 700px;
         margin-left: 30px;
     }
-    .notif{
-        width : 560px;  
+
+    .notif {
+        width: 560px;
         margin-left: 30%;
     }
 }
@@ -417,20 +422,22 @@ input[type="radio"] {
         margin: auto;
     }
 
-    .navbar{
+    .navbar {
         position: fixed;
     }
 
-    .navbar-chat{
+    .navbar-chat {
         bottom: 0;
         width: 380px;
         background: #fff;
     }
-    .input-chat{
+
+    .input-chat {
         border: 2px solid rgb(172, 172, 172);
         margin-bottom: 15px;
     }
-    .icon-chat{
+
+    .icon-chat {
         margin-top: 4px;
     }
 
@@ -443,7 +450,8 @@ input[type="radio"] {
         margin: auto;
         background-color: #fff;
     }
-    .text-rent{
+
+    .text-rent {
         margin-top: -10px;
         font-size: 13px;
     }
@@ -484,15 +492,15 @@ input[type="radio"] {
     }
 
     .img-box4 {
-        width: 250px;   
+        width: 250px;
     }
 
     .img-box5 {
-        width: 100%;   
-        height: 100%; 
+        width: 100%;
+        height: 100%;
     }
 
-    .btn-profile{
+    .btn-profile {
         position: fixed;
         width: 100%;
     }
@@ -587,11 +595,13 @@ input[type="radio"] {
     .date-plan {
         width: 100%;
     }
-    .confirm{
+
+    .confirm {
         width: 330px;
     }
-    .notif{
-        width : 300px;  
+
+    .notif {
+        width: 300px;
         margin-left: 30%;
     }
 

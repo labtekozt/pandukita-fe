@@ -11,14 +11,14 @@ function BottomNavigation() {
   const Menus = [
     { name: "Home", icon: <IconHome />, href: "/" },
     { name: "Journey", icon: <IconSTurnLeft />, href: "/planner" },
-    { name: "Message", icon: <IconMessageDots />, href: "/chat"},
+    { name: "Message", icon: <IconMessageDots />, href: "/chat" },
     { name: "Profile", icon: <IconUserCircle />, href: "/profile" },
   ];
 
   return (
     <div
       className="navbar bottom-0 left-0 right-0 h-16 bg-white"
-      style={{ boxShadow: "0 -8px 6px -9px gray", zIndex: 1000 }}
+      style={{ boxShadow: "0 -8px 6px -9px gray", zIndex: 2 }}
     >
       <div className="grid h-full max-w-lg grid-cols-4 mx-auto">
         {Menus.map((menu) => (

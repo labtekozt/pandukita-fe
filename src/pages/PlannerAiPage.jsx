@@ -26,8 +26,8 @@ import { GlobalContext } from "../store";
 function PlannerAi() {
   const { dispatch } = useContext(GlobalContext);
   const id = useParams().id;
-  const [groupData, setGroupData] = useState({});
   const { loading, data, error, setState } = useFetch(`/planners/${id}`);
+  const [groupData, setGroupData] = useState({});
 
   const navigate = useNavigate();
 
@@ -156,7 +156,7 @@ function PlannerAi() {
                 {data && humanizeDate(data.startDate)}
                 {data &&
                   humanizeDate(data.startDate) !==
-                  humanizeDate(data.endDate) && (
+                    humanizeDate(data.endDate) && (
                     <> - {humanizeDate(data.endDate)}</>
                   )}
               </span>
@@ -318,17 +318,20 @@ function PlannerAi() {
               className="planner-ai mr-2 absolute ml-[384px] mt-[10px]"
             />
           </div>
-          <div className="mt-[-15px] p-4 z-50 bottom-0">
-            <Link to={`/planner/${id}/tourguide/rent`}>
-              <Button
-                type="primarySubtle"
-                fullWidth="true"
-                submit={true}
-                centered={true}>
-                Sewa Pemandu Wisata
-              </Button>
-            </Link>
-          </div>
+          {data && !data.tourGuide && (
+            <div className="mt-[-15px] p-4 z-50 bottom-0">
+              <Link to={`/planner/${id}/rent`}>
+                <Button
+                  type="primarySubtle"
+                  fullWidth="true"
+                  submit={true}
+                  centered={true}
+                >
+                  Sewa Pemandu Wisata
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </>

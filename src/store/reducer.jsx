@@ -54,7 +54,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         notification: {
-          ...state.notification,
           ...py,
           show: true,
         },
@@ -63,8 +62,10 @@ const reducer = (state, action) => {
       return {
         ...state,
         notification: {
-          ...state.notification,
+          title: "",
+          body: "",
           show: false,
+          data: {},
         },
       };
     case "SET_CONNECT":
@@ -76,6 +77,53 @@ const reducer = (state, action) => {
       return {
         ...state,
         isConnect: false,
+      };
+
+    case "ADD_ORDER_NOTIFICATION":
+      return {
+        ...state,
+        orderNotification: {
+          ...py,
+          show: true,
+        },
+      };
+    case "HIDE_ORDER_NOTIFICATION":
+      return {
+        ...state,
+        orderNotification: {
+          title: "",
+          body: "",
+          from: "",
+          show: false,
+          data: {},
+        },
+      };
+
+    case "ADD_WAIT_ORDER":
+      return {
+        ...state,
+        waitOrder: {
+          ...py,
+          show: true,
+        },
+      };
+
+    case "HIDE_WAIT_ORDER":
+      return {
+        ...state,
+        waitOrder: {
+          title: "",
+          body: "",
+          show: false,
+          data: {},
+          accept: undefined,
+        },
+      };
+
+    case "SET_JWT":
+      return {
+        ...state,
+        jwt: py,
       };
 
     default:

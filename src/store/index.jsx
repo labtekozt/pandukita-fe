@@ -15,13 +15,26 @@ const initialState = {
     type: "success",
   },
   notification: {
-    type: "",
     title: "",
     body: "",
     show: false,
     data: {},
   },
   isConnect: false,
+  orderNotification: {
+    show: false,
+    title: "",
+    body: "",
+    data: {},
+  },
+
+  waitOrder: {
+    show: false,
+    title: "",
+    accept: undefined,
+    body: "",
+    data: {},
+  },
 };
 
 export const GlobalContext = createContext(initialState);
@@ -31,7 +44,7 @@ export const GlobalProvider = ({ children }) => {
   const { socketRef } = useSocket({ state, dispatch });
   return (
     <GlobalContext.Provider value={{ state, dispatch }}>
-      <SocketContext.Provider value={{ socketRef, state }}>
+      <SocketContext.Provider value={{ socketRef, state, dispatch }}>
         {children}
       </SocketContext.Provider>
     </GlobalContext.Provider>

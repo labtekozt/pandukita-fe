@@ -15,8 +15,6 @@ import { FreeMode } from "swiper";
 import { GlobalContext } from "../store";
 import { Link, useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import ConfirmPesanan from "../component/ModalConfirm/Confirm";
-import Notif from "../component/popUp/Notification";
 
 
 function HomePage() {
@@ -39,8 +37,6 @@ function HomePage() {
       ) : (
         <div className="container">
           <div className="z-50">
-            <ConfirmPesanan />
-            <Notif />
           </div>
           <img
             loading="lazy"
