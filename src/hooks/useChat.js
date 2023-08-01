@@ -9,58 +9,76 @@ const useChat = (roomId) => {
   const [userTyping, setUserTyping] = useState(null);
   const [rooms, setRooms] = useState({});
 
-  const onTyping = useCallback((data) => {
-    if (data.typing) {
-      socketRef.current.emit("user-typing", data.chatRoomId);
-    } else {
-      socketRef.current.emit("user-stop-typing", data.chatRoomId);
-    }
-  }, []);
+  const onTyping = useCallback(
+    (data) => {
+      if (data.typing) {
+        socketRef.current.emit("user-typing", data.chatRoomId);
+      } else {
+        socketRef.current.emit("user-stop-typing", data.chatRoomId);
+      }
+    },
+    [socketRef.current]
+  );
 
-  const sendMessage = useCallback((data) => {
-    if (!data.message) return;
-    socketRef.current.emit("private-message", data);
-  }, []);
+  const sendMessage = useCallback(
+    (data) => {
+      if (!data.message) return;
+      socketRef.current.emit("private-message", data);
+    },
+    [socketRef.current]
+  );
 
-  const handleReceiveMessage = useCallback((message) => {
-    setMessages((prev) => {
-      return [...prev, message];
-    });
-    setLastMessageRoom((prev) => ({
-      ...prev,
-      [message?.chatRoomId]: {
-        roomId: message?.chatRoomId,
-        message: message?.message,
-        time: message?.createdAt,
-        profile: message?.profile,
-      },
-    }));
-  }, []);
+  const handleReceiveMessage = useCallback(
+    (message) => {
+      setMessages((prev) => {
+        return [...prev, message];
+      });
+      setLastMessageRoom((prev) => ({
+        ...prev,
+        [message?.chatRoomId]: {
+          roomId: message?.chatRoomId,
+          message: message?.message,
+          time: message?.createdAt,
+          profile: message?.profile,
+        },
+      }));
+    },
+    [socketRef.current]
+  );
 
-  const handleReceiveTyping = useCallback((data) => {
-    setUserTyping(data);
-  }, []);
+  const handleReceiveTyping = useCallback(
+    (data) => {
+      setUserTyping(data);
+    },
+    [socketRef.current]
+  );
 
-  const handleReceiveRooms = useCallback((rooms) => {
-    const lastMessage = {};
-    const roomsM = {};
-    rooms.forEach((room) => {
-      roomsM[room._id] = room;
-      lastMessage[room._id] = {
-        roomId: room._id,
-        message: room.lastMessage,
-        time: room.time,
-        profile: room.profile,
-      };
-    });
+  const handleReceiveRooms = useCallback(
+    (rooms) => {
+      const lastMessage = {};
+      const roomsM = {};
+      rooms.forEach((room) => {
+        roomsM[room._id] = room;
+        lastMessage[room._id] = {
+          roomId: room._id,
+          message: room.lastMessage,
+          time: room.time,
+          profile: room.profile,
+        };
+      });
 
-    setLastMessageRoom(lastMessage);
-    setRooms(roomsM);
-  }, []);
+      setLastMessageRoom(lastMessage);
+      setRooms(roomsM);
+    },
+    [socketRef.current]
+  );
 
-  const handleReceiveGetMessage = useCallback((data) => {
-    setMessages(data);
-  }, []);
+  const handleReceiveGetMessage = useCallback(
+    (data) => {
+      setMessages(data);
+    },
+    [socketRef.current]
+  );
 
   useEffect(() => {
     // for get rooms

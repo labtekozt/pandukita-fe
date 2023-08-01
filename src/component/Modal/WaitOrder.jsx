@@ -127,10 +127,16 @@ function ModalWaitOrder() {
                               dispatch({
                                 type: "HIDE_WAIT_ORDER",
                               });
+                              // reset timer
+                              setTimer(0);
+                              // return to planner/$id
+                              window.location.href = `/`;
                             }}
                             className="mr-2"
                             type="secondary"
                             size="small"
+                            fullWidth
+                            centered
                           >
                             Close
                           </Button>
@@ -139,12 +145,46 @@ function ModalWaitOrder() {
                       {data().accept === false && (
                         <div className="mt-4">
                           <Button
-                            onClick={() => {}}
+                            onClick={() => {
+                              hideModalComfirm();
+                              dispatch({
+                                type: "HIDE_WAIT_ORDER",
+                              });
+                              // reset timer
+                              setTimer(0);
+                              // reaload page and set state with id of tour
+                              window.location.reload();
+                            }}
                             className="mr-2"
                             type="secondary"
                             size="small"
+                            fullWidth
+                            centered
                           >
                             Get New Tour
+                          </Button>
+                        </div>
+                      )}
+                      {data().accept === true && (
+                        <div className="mt-4">
+                          <Button
+                            onClick={() => {
+                              hideModalComfirm();
+                              dispatch({
+                                type: "HIDE_WAIT_ORDER",
+                              });
+                              // reset timer
+                              setTimer(0);
+                              // set to chat page;
+                              window.location.href = `/chat`;
+                            }}
+                            className="mr-2"
+                            type="secondary"
+                            size="small"
+                            fullWidth
+                            centered
+                          >
+                            Go to Chat
                           </Button>
                         </div>
                       )}

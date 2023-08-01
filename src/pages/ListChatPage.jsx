@@ -3,13 +3,16 @@ import useChat from "../hooks/useChat";
 import ChatList from "../component/ChatList";
 import { GlobalContext } from "../store";
 import ChatPage from "../component/ChatPage";
+import { useLocation } from "react-router-dom";
 
 function ListChat() {
   const { state } = useContext(GlobalContext);
+
   const [roomId, setRoomId] = useState(null);
   const handleRoomId = (id) => {
     setRoomId(id);
   };
+
   const {
     sendMessage,
     rooms,
@@ -19,6 +22,7 @@ function ListChat() {
     onTyping,
   } = useChat(roomId);
 
+  console.log(rooms);
   if (roomId) {
     return (
       <ChatPage

@@ -68,15 +68,25 @@ function TourGuideProfile() {
           <div className="text-lg font-bold">
             Silahkan Cari Tour Guide Lainnya
           </div>
-          <div className="mt-5">
-            <Button iconLeft={<IconSearch />} onClick={() => refreshPage()}>
+          <div className="flex flex-col">
+            <Button
+              centered
+              fullWidth={true}
+              iconLeft={<IconArrowNarrowLeft />}
+              onClick={() => navigate(`/planner/${id}`)}
+              className="mt-2 "
+            >
+              Kembali ke Home
+            </Button>
+            <Button
+              fullWidth={true}
+              iconLeft={<IconSearch />}
+              onClick={() => refreshPage()}
+              className="mt-2 "
+              centered
+            >
               Cari Tour Guide lain
             </Button>
-            <Link to={`/planner/${id}`}>
-              <Button iconLeft={<IconArrowNarrowLeft />}>
-                Kembali ke Home
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
