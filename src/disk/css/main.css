@@ -225,6 +225,13 @@ input[type="radio"] {
     margin-left: 20px;
 }
 
+.lokasi{
+    width: 350px;
+}
+.icon-lokasi{
+    margin-left: 300px;
+}
+
 /* Responsive tablet */
 @media screen and (max-width : 1024px) {
     .container {
@@ -422,6 +429,13 @@ input[type="radio"] {
     .notif {
         width: 560px;
         margin-left: 30%;
+    }
+
+    .lokasi{
+        width: 650px;
+    }
+    .icon-lokasi{
+        margin-left: 590px;
     }
 }
 
@@ -622,6 +636,13 @@ input[type="radio"] {
     .notif {
         width: 300px;
         margin-left: 30%;
+    }
+
+    .lokasi{
+        width: 300px;
+    }
+    .icon-lokasi{
+        margin-left: 250px;
     }
 
 }

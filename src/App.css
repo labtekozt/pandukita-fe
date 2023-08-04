@@ -27,6 +27,12 @@ form.container{
   height: 430px;
   z-index: 0;
 }
+
+.leaflet-container3 {
+  height: 540px!important;
+  z-index: 0;
+}
+
 /*tablet*/
 @media screen and (max-width: 1024px) {
   body{

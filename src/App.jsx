@@ -18,7 +18,7 @@ import PlannerFormPage from "./pages/PlannerFormPage";
 import PlannerAdd from "./pages/PlannerAddPage";
 import PlannerAi from "./pages/PlannerAiPage";
 import TourGuideSearch from "./pages/TourGuideSearchPage";
-import WisataAdd from "./pages/WisataAddPage";
+import DestinationAdd from "./pages/DestinationAddPage";
 import PlannerUpdate from "./pages/PlannerUpdatePage";
 import ProfileUpdate from "./pages/ProfileUpdatePage";
 import ProfileTourGuide from "./pages/ProfileTourGuidePage";
@@ -44,7 +44,7 @@ export const router = createBrowserRouter(
         <Route path="destination/:id" element={<InformasiWisataPage />} />
         <Route exact path="destination/:id/map" element={<LihatPeta />} />
         <Route exact path="destination/search" element={<WisataSearch />} />
-        <Route exact path="destination/add" element={<WisataAdd />} />
+        <Route exact path="destination/add" element={<DestinationAdd />} />
 
         <Route exact path="/tourguide/search" element={<TourGuideSearch />} />
         <Route path="/tourguide/:id" element={<ProfileTourGuide />} />
