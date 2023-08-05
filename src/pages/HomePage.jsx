@@ -15,7 +15,7 @@ import { FreeMode } from "swiper";
 import { GlobalContext } from "../store";
 import { Link, useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-
+import { srcImage } from "../helpers/url";
 
 function HomePage() {
   const { state, dispatch } = useContext(GlobalContext);
@@ -36,8 +36,7 @@ function HomePage() {
         <Onboarding />
       ) : (
         <div className="container">
-          <div className="z-50">
-          </div>
+          <div className="z-50"></div>
           <img
             loading="lazy"
             src={HomeHeaderImage}
@@ -85,7 +84,7 @@ function HomePage() {
                         {/* check if width image is 500px and */}
                         <img
                           loading="lazy"
-                          src={item.image[0].url}
+                          src={srcImage(item.image[0].url)}
                           className="rounded-lg relative w-[100%] object-cover brightness-50 shadow-lg"
                         />
                       </Link>
@@ -150,7 +149,7 @@ function HomePage() {
                             {/* check if width image is 500px and */}
                             <img
                               loading="lazy"
-                              src={item.image[0].url}
+                              src={srcImage(item.image[0].url)}
                               className="rounded-lg relative w-[100%] object-cover brightness-50 shadow-lg"
                             />
                           </Link>
@@ -172,28 +171,28 @@ function HomePage() {
               </div>
             </div>
             <div className="mt-[30px]">
-              {/* <Link to="/tourguide"> */}
-              <h1 className="text-2xl font-medium text-black mb-2">
-                Sewa pemandu wisata
-              </h1>
-              <img
-                loading="lazy"
-                src={TourGuideAds}
-                className="relative w-[100%] object-cover rounded-2xl shadow-lg"
-              />
-              {/* </Link> */}
+              <Link to="/planner">
+                <h1 className="text-2xl font-medium text-black mb-2">
+                  Sewa pemandu wisata
+                </h1>
+                <img
+                  loading="lazy"
+                  src={TourGuideAds}
+                  className="relative w-[100%] object-cover rounded-2xl shadow-lg"
+                />
+              </Link>
             </div>
             <div className="mt-[30px] pb-[130px]">
-              {/* <Link to="/destination/add"> */}
-              <h1 className="text-2xl font-medium text-black mb-2">
-                Kamu pemandu wisata?
-              </h1>
-              <img
-                loading="lazy"
-                src={PemanduAds}
-                className="relative w-[100%] object-cover rounded-2xl shadow-lg"
-              />
-              {/* </Link> */}
+              <Link to="/destination/add">
+                <h1 className="text-2xl font-medium text-black mb-2">
+                  Kamu Ingin Berkontribusi ?
+                </h1>
+                <img
+                  loading="lazy"
+                  src={PemanduAds}
+                  className="relative w-[100%] object-cover rounded-2xl shadow-lg"
+                />
+              </Link>
             </div>
           </div>
           <BottomNavigation />

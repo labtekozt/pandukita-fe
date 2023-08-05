@@ -1,92 +1,190 @@
-import React, { useEffect, useRef, useState } from "react";
-import { TextLink, Button, InputFile } from "@kiwicom/orbit-components/lib/";
-import { IconArrowNarrowLeft, IconMap2 } from "@tabler/icons-react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useContext, useState } from "react";
+import { TextLink } from "@kiwicom/orbit-components/lib/";
+import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import StepperBtn from "../component/StepperComponent/StepperBtn";
 import Informasi from "../component/StepperComponent/Informasi";
 import Stepper from "../component/StepperComponent/Stepper";
 import Lokasi from "../component/StepperComponent/Lokasi";
 import { StepperContext } from "../component/StepperComponent/StepperContext";
+import useFormData from "../hooks/useFormData";
+import { GlobalContext } from "../store/index";
+import axiosApiInstance from "../services/axios/axiosApi";
+import { useNavigate } from "react-router-dom";
 
 function DestinationAdd() {
-
+  const navigate = useNavigate();
+  const { dispatch } = useContext(GlobalContext);
   const [currentStep, setCurrentStep] = useState(1);
-  const [dataDestination, setDataDestination] = useState('');
-  const [finalData, setFinalData] = useState([]);
+  const { data, handleImageArray, handleChange, handleChangeBulk } =
+    useFormData({
+      name: "",
+      description: "",
+      image: [],
+      category: [],
+      address: "",
+      city: "",
+      province: "",
+      latitude: "",
+      longtitude: "",
+      status: "open",
+    });
 
-  const steps = [
-    "Informasi",
-    "Lokasi"
-  ];
+  console.log(data);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (data.image.length == 0)
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Gambar tidak boleh kosong", type: "error" },
+      });
+    if (data.category.length == 0)
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Kategori tidak boleh kosong", type: "error" },
+      });
+    if (data.name == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Nama tidak boleh kosong", type: "error" },
+      });
+    if (data.description == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Deskripsi tidak boleh kosong", type: "error" },
+      });
+    if (data.address == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Alamat tidak boleh kosong", type: "error" },
+      });
+    if (data.city == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Kota tidak boleh kosong", type: "error" },
+      });
+    if (data.province == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Provinsi tidak boleh kosong", type: "error" },
+      });
+    if (data.latitude == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Latitude tidak boleh kosong", type: "error" },
+      });
+    if (data.longtitude == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Longitude tidak boleh kosong", type: "error" },
+      });
+
+    try {
+      const res = await axiosApiInstance.post("/destinations", data);
+      dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Berhasil Membuat Wisata", type: "success" },
+      });
+      navigate(`/destination/${res.data._id}`);
+    } catch (error) {
+      if (error.name == "AxiosError") {
+        dispatch({
+          type: "SHOW_TOAST",
+          payload: {
+            message: `Gagal Membuat Wisata ${error.response.data.message}`,
+            type: "error",
+          },
+        });
+      }
+    }
+  };
+
+  const steps = ["Informasi", "Lokasi"];
 
   const displayStep = (step) => {
-    switch(step) {
+    switch (step) {
       case 1:
-        return <Informasi />
+        return <Informasi />;
       case 2:
-        return <Lokasi />
+        return <Lokasi />;
       default:
     }
-  }
+  };
 
   const handleClick = (direction) => {
     let newStep = currentStep;
+    if (data.name == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Nama tidak boleh kosong", type: "error" },
+      });
+    if (data.description == "")
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Deskripsi tidak boleh kosong", type: "error" },
+      });
+    if (data.image.length <= 0)
+      return dispatch({
+        type: "SHOW_TOAST",
+        payload: { message: "Alamat tidak boleh kosong", type: "error" },
+      });
 
     direction == "next" ? newStep++ : newStep--;
     //check step
     newStep > 0 && newStep <= steps.length && setCurrentStep(newStep);
-  }
+  };
 
   return (
-  <div>
-    <div className="sticky top-0">
-      <div className="p-2 z-50 shadow-sm bg-white">
-        <div className="flex">
-          <div className="grow h-6">
-            <TextLink href="/">
-              <IconArrowNarrowLeft color="black" />
-            </TextLink>
-          </div>
-          <div className="grow-0 mr-8">Tambah Wisata</div>
-          <div className="grow h-1"></div>
+    <div>
+      <div className="sticky top-0">
+        <div className="p-2 z-50 shadow-sm bg-white">
+          <div className="flex">
+            <div className="grow h-6">
+              <TextLink href="/">
+                <IconArrowNarrowLeft color="black" />
+              </TextLink>
+            </div>
+            <div className="grow-0 mr-8">Tambah Wisata</div>
+            <div className="grow h-1"></div>
           </div>
         </div>
 
-          {/* Stepper */}
-          <div>
-            <Stepper 
-              steps = {steps}
-              currentStep = {currentStep}/>   
-          </div>
-    </div>
+        {/* Stepper */}
+        <div>
+          <Stepper steps={steps} currentStep={currentStep} />
+        </div>
+      </div>
 
-    <div className="containerWisata mt-[-20px] pt-5">
+      <div className="containerWisata mt-[-20px] pt-5">
         <form action="" required={true}>
-            {/* Content */}
-            
-            <div>
-              <StepperContext.Provider value={{
-                dataDestination,
-                setDataDestination,
-                finalData,
-                setFinalData
-              }}>
-                {displayStep(currentStep)}
-              </StepperContext.Provider>
-            </div>
+          {/* Content */}
 
+          <div>
+            <StepperContext.Provider
+              value={{
+                data,
+                handleImageArray,
+                handleChange,
+                currentStep,
+                setCurrentStep,
+                handleChangeBulk,
+              }}
+            >
+              {displayStep(currentStep)}
+            </StepperContext.Provider>
+          </div>
 
-
-            {/* Button Step */}
-            <div className="p-4 z-50 bottom-0 mt-[-80px]">
-                <StepperBtn 
-                  handleClick={handleClick}
-                  currentStep={currentStep}
-                  steps={steps}
-                />
-            </div>
+          {/* Button Step */}
+          <div className="p-4 z-50 bottom-0 mt-[-80px]">
+            <StepperBtn
+              data={data}
+              handleSubmit={handleSubmit}
+              handleClick={handleClick}
+              currentStep={currentStep}
+              steps={steps}
+            />
+          </div>
         </form>
-    </div>
+      </div>
     </div>
   );
 }

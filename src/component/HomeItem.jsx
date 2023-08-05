@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
+import { srcImage } from "../helpers/url";
 
 export default function HomeItem({ item }) {
   return (
@@ -9,7 +10,7 @@ export default function HomeItem({ item }) {
           {/* check if width image is 500px and */}
           <img
             loading="lazy"
-            src={item.image[0].url}
+            src={srcImage(item.image[0].url)}
             className="rounded-lg relative w-[100%] object-cover"
           />
         </Link>

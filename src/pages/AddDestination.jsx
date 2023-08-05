@@ -5,6 +5,7 @@ import { useCallback, useContext, useRef, useState } from "react";
 import NotFoundComponent from "../component/NotFoundComponent";
 import LoadingComponent from "../component/loadingComponent";
 import { PlanContext } from "../store/plan";
+import { srcImage } from "../helpers/url";
 export default function AddDestination() {
   const location = useLocation();
   const id = location.state?.id;
@@ -131,7 +132,7 @@ export default function AddDestination() {
                       <img
                         loading="lazy"
                         className="rounded-lg  w-128"
-                        src={item.image[0].url}
+                        src={srcImage(item.image[0].url)}
                       />
                     </div>
                     {/* center */}
@@ -188,7 +189,7 @@ export default function AddDestination() {
                       <img
                         loading="lazy"
                         className="rounded-lg w-[100%] h-[15em] object-cover"
-                        src={item.image[0].url}
+                        src={srcImage(item.image[0].url)}
                       />
                     </div>
                     {/* center */}

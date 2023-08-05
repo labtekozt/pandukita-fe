@@ -6,6 +6,7 @@ import SearchBar from "../component/SearchBarComponent";
 import { useNavigate } from "react-router-dom";
 import NotFoundComponent from "../component/NotFoundComponent";
 import LoadingComponent from "../component/loadingComponent";
+import { srcImage } from "../helpers/url";
 
 function WisataSearch() {
   const navigate = useNavigate();
@@ -109,7 +110,7 @@ function WisataSearch() {
                       <img
                         loading="lazy"
                         className="rounded-lg relative w-[100%] object-cover"
-                        src={item.image[0].url}
+                        src={srcImage(item.image[0].url)}
                       />
                     </div>
                   </div>
@@ -153,7 +154,7 @@ function WisataSearch() {
                       <img
                         loading="lazy"
                         className="rounded-lg relative w-[100%] object-cover"
-                        src={item.image[0].url}
+                        src={srcImage(item.image[0].url)}
                       />
                     </div>
                   </div>

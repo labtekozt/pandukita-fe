@@ -19,6 +19,7 @@ import axiosApiInstance from "../services/axios/axiosApi";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Onboarding from "../component/OnboardingPage";
 import { useFetch } from "../hooks/useFetch";
+import { srcImage } from "../helpers/url";
 
 function InformasiWisataPage(props) {
   
@@ -68,7 +69,7 @@ function InformasiWisataPage(props) {
             <div className="mb-[-20px] img-box2">
               <img
                 loading="lazy"
-                src={data.image && data.image[0].url}
+                src={data.image && srcImage(data.image[0].url)}
                 className="w-[100%]"
               />
             </div>
@@ -140,7 +141,7 @@ function InformasiWisataPage(props) {
                             <div className="flex img-box">
                               <img
                                 loading="lazy"
-                                src={item.url}
+                                src={srcImage(item.url)}
                                 className="rounded-lg relative w-[100%] object-cover"
                               />
                             </div>

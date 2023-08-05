@@ -19,6 +19,26 @@ const useFormData = (initialState, dataManage = null) => {
     }
   };
 
+  const handleImageArray = async (e) => {
+    const { files, id } = e.target;
+    if (files && files.length > 0) {
+      if (verifyFile(files)) {
+        const currentFile = files[0];
+        const base64Image = await toBase64(currentFile);
+        const image = base64Image;
+        dataManage
+          ? dataManage((prev) => {
+              const newDataImage = prev[id] ? [...prev[id], image] : [image];
+              return { ...prev, [id]: newDataImage };
+            })
+          : setData((prev) => {
+              const newDataImage = prev[id] ? [...prev[id], image] : [image];
+              return { ...prev, [id]: newDataImage };
+            });
+      }
+    }
+  };
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     dataManage
@@ -26,7 +46,19 @@ const useFormData = (initialState, dataManage = null) => {
       : setData((prev) => ({ ...prev, [id]: value }));
   };
 
-  return { data, handleImage, handleChange };
+  const handleChangeBulk = (newData) => {
+    dataManage
+      ? dataManage((prev) => ({ ...prev, ...newData }))
+      : setData((prev) => ({ ...prev, ...newData }));
+  };
+
+  return {
+    data,
+    handleImage,
+    handleImageArray,
+    handleChange,
+    handleChangeBulk,
+  };
 };
 
 export default useFormData;

@@ -22,6 +22,7 @@ import { humanizeDate } from "../helpers/dateTime";
 import axiosApiInstance from "../services/axios/axiosApi";
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../store";
+import { srcImage } from "../helpers/url";
 
 function PlannerAi() {
   const { dispatch } = useContext(GlobalContext);
@@ -209,7 +210,7 @@ function PlannerAi() {
                                   <div className="img-box4 mt-3">
                                     <img
                                       loading="lazy"
-                                      src={plan.distination.image[0].url}
+                                      src={srcImage(plan.distination.image[0].url)}
                                       className="rounded-lg relative w-[100%] object-cover"
                                     />
                                   </div>
