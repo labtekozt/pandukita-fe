@@ -9,6 +9,7 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["**/*"],
+      start_url: "/", // <== don't forget to set this
 
       workbox: {
         // network first strategy
@@ -108,7 +109,6 @@ export default defineConfig({
                 statuses: [0, 200],
               },
 
-              
               backgroundSync: {
                 name: "images-apis-queue",
                 options: {
@@ -117,8 +117,6 @@ export default defineConfig({
               },
             },
           },
-
-
         ],
       },
 
@@ -156,7 +154,7 @@ export default defineConfig({
             type: "image/x-icon",
           },
         ],
-        start_url: ".",
+        start_url: "./",
         display: "standalone",
         theme_color: "#00a388",
         description: "Panduan Wisata Kita - PanduKita",
@@ -165,7 +163,7 @@ export default defineConfig({
         dir: "ltr",
         lang: "id-ID",
         scope: "/",
-        categories: ["travel", "tourism",],
+        categories: ["travel", "tourism"],
         launch_handler: {
           enabled: true,
         },
@@ -178,7 +176,6 @@ export default defineConfig({
       },
       mode: "production",
       strategies: "generateSW",
-
     }),
   ],
   build: {

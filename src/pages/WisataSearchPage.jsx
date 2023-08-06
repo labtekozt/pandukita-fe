@@ -108,6 +108,7 @@ function WisataSearch() {
                   <div>
                     <div className="flex img-box3 mt-[-20px]">
                       <img
+                        alt={item.name}
                         loading="lazy"
                         className="rounded-lg relative w-[100%] object-cover"
                         src={srcImage(item.image[0].url)}
@@ -152,6 +153,7 @@ function WisataSearch() {
                   <div>
                     <div className="flex img-box3 mt-[-20px]">
                       <img
+                        alt={item.name}
                         loading="lazy"
                         className="rounded-lg relative w-[100%] object-cover"
                         src={srcImage(item.image[0].url)}

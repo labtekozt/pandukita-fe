@@ -68,6 +68,7 @@ function InformasiWisataPage(props) {
             </div>
             <div className="mb-[-20px] img-box2">
               <img
+                alt={data.name}
                 loading="lazy"
                 src={data.image && srcImage(data.image[0].url)}
                 className="w-[100%]"
@@ -140,6 +141,7 @@ function InformasiWisataPage(props) {
                           <SwiperSlide key={index}>
                             <div className="flex img-box">
                               <img
+                                alt={data.name}
                                 loading="lazy"
                                 src={srcImage(item.url)}
                                 className="rounded-lg relative w-[100%] object-cover"
@@ -180,6 +182,7 @@ function InformasiWisataPage(props) {
                 Butuh pemandu wisata?
               </h1>
               <img
+                alt="Tour Guide Ads"
                 loading="lazy"
                 src={TourGuideAds}
                 className="relative w-[100%] object-cover rounded-2xl"

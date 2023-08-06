@@ -209,6 +209,8 @@ function PlannerAi() {
                                   </div>
                                   <div className="img-box4 mt-3">
                                     <img
+                                      alt={plan.activity}
+                                      
                                       loading="lazy"
                                       src={srcImage(plan.distination.image[0].url)}
                                       className="rounded-lg relative w-[100%] object-cover"

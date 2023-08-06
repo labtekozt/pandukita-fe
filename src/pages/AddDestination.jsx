@@ -130,6 +130,7 @@ export default function AddDestination() {
                   <div className="trip-text flex-1 relative ">
                     <div className="img-box2">
                       <img
+                        alt={`${item.name}`}
                         loading="lazy"
                         className="rounded-lg  w-128"
                         src={srcImage(item.image[0].url)}
@@ -187,6 +188,8 @@ export default function AddDestination() {
                   <div className="flex-1 relative pb-100">
                     <div className="img-box2">
                       <img
+                        alt={`${item.name}`}
+
                         loading="lazy"
                         className="rounded-lg w-[100%] h-[15em] object-cover"
                         src={srcImage(item.image[0].url)}
@@ -203,7 +206,9 @@ export default function AddDestination() {
                         textAlign: "center",
                       }}
                     >
-                      <h1 className="font-semibold mb-[10px] text-2xl">{item.name}</h1>
+                      <h1 className="font-semibold mb-[10px] text-2xl">
+                        {item.name}
+                      </h1>
                       <h2 className="text-sm">{item.address}</h2>
                       <h1 className="text-sm">
                         {item.description.length > 100

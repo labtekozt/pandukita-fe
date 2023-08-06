@@ -37,6 +37,7 @@ export default function ChatListComponent({
           >
             <div>
               <img
+                alt="profile"
                 className="h-12 w-12 rounded-full"
                 src={srcImage(room.profile)}
               />

@@ -82,6 +82,7 @@ function TripPlannerHome() {
                           <Link to={`/planner/${item._id}`}>
                             <div className="trip-text mb-[-210px]">
                               <img
+                                alt="plannerbanner"
                                 loading="lazy"
                                 className="rounded-lg w-[100%] h-[145px] object-cover brightness-50"
                                 width={"100%"}
@@ -118,6 +119,7 @@ function TripPlannerHome() {
                           <Link to={`/planner/${item._id}`}>
                             <div className="trip-text mb-[-210px]">
                               <img
+                                alt="plannerbanner"
                                 loading="lazy"
                                 className="rounded-lg w-[100%] h-[145px] object-cover brightness-50"
                                 width={"100%"}

@@ -114,6 +114,7 @@ function TourGuideProfile() {
             <div className="flex img-box5">
               <img
                 loading="lazy"
+                alt="profile"
                 src={srcImage(data?.tourGuide?.profile)}
                 className="rounded rounded-md relative w-[100%] object-cover"
               />

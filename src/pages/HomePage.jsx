@@ -38,6 +38,7 @@ function HomePage() {
           <div className="z-50"></div>
           <img
             loading="lazy"
+            alt="header"
             src={HomeHeaderImage}
             className="relative w-[100%] h-[180px] object-cover"
           />
@@ -82,6 +83,7 @@ function HomePage() {
                       <Link to={`/destination/${item._id}`}>
                         {/* check if width image is 500px and */}
                         <img
+                          alt={item.name}
                           loading="lazy"
                           src={srcImage(item.image[0].url)}
                           className="rounded-lg relative w-[100%] object-cover brightness-50 shadow-lg"
@@ -108,6 +110,7 @@ function HomePage() {
               </h1>
               <Link to="/planner">
                 <img
+                  alt="planner"
                   loading="lazy"
                   src={PlannerAds}
                   className="relative w-[100%] object-cover rounded-2xl mb-[35px] shadow-lg"
@@ -147,6 +150,7 @@ function HomePage() {
                           <Link to={`/destination/${item._id}`}>
                             {/* check if width image is 500px and */}
                             <img
+                              alt={item.name}
                               loading="lazy"
                               src={srcImage(item.image[0].url)}
                               className="rounded-lg relative w-[100%] object-cover brightness-50 shadow-lg"
@@ -175,6 +179,7 @@ function HomePage() {
                   Sewa pemandu wisata
                 </h1>
                 <img
+                alt="tourguide"
                   loading="lazy"
                   src={TourGuideAds}
                   className="relative w-[100%] object-cover rounded-2xl shadow-lg"
@@ -187,6 +192,7 @@ function HomePage() {
                   Kamu Ingin Berkontribusi ?
                 </h1>
                 <img
+                alt="pemandu"
                   loading="lazy"
                   src={PemanduAds}
                   className="relative w-[100%] object-cover rounded-2xl shadow-lg"

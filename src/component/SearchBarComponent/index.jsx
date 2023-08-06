@@ -14,6 +14,7 @@ export default function SearchBar({ search, handleSearch, searchHandle }) {
     <>
       <div className="mb-[50px]">
         <img
+          alt="header"
           loading="lazy"
           src={HeaderSearch}
           className="relative w-[100%] h-[148px] object-cover"
