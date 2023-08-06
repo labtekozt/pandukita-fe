@@ -108,8 +108,7 @@ export default defineConfig({
                 statuses: [0, 200],
               },
 
-              networkTimeoutSeconds: 10,
-
+              
               backgroundSync: {
                 name: "images-apis-queue",
                 options: {
