@@ -19,7 +19,7 @@ export const verifyFile = (files) => {
     const currentFileType = currentFile.type;
     const currentFileSize = currentFile.size;
     if (currentFileSize > imageSize) {
-      alert("this no allow To big below 2mb ");
+      alert("please under 2mb")
       return false;
     }
 

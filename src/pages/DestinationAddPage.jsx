@@ -10,11 +10,13 @@ import useFormData from "../hooks/useFormData";
 import { GlobalContext } from "../store/index";
 import axiosApiInstance from "../services/axios/axiosApi";
 import { useNavigate } from "react-router-dom";
+import LoadingOverlayComponent from "../component/LoadingOverlay";
 
 function DestinationAdd() {
   const navigate = useNavigate();
   const { dispatch } = useContext(GlobalContext);
   const [currentStep, setCurrentStep] = useState(1);
+  const [loading, setLoading] = useState(false);
   const { data, handleImageArray, handleChange, handleChangeBulk } =
     useFormData({
       name: "",
@@ -29,54 +31,72 @@ function DestinationAdd() {
       status: "open",
     });
 
-  console.log(data);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (data.image.length == 0)
+    setLoading(true);
+    if (data.image.length == 0) {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Gambar tidak boleh kosong", type: "error" },
       });
-    if (data.category.length == 0)
+    }
+    if (data.category.length == 0) {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Kategori tidak boleh kosong", type: "error" },
       });
-    if (data.name == "")
+    }
+    if (data.name == "") {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Nama tidak boleh kosong", type: "error" },
       });
-    if (data.description == "")
+    }
+    if (data.description == "") {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Deskripsi tidak boleh kosong", type: "error" },
       });
-    if (data.address == "")
+    }
+    if (data.address == "") {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Alamat tidak boleh kosong", type: "error" },
       });
-    if (data.city == "")
+    }
+    if (data.city == "") {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Kota tidak boleh kosong", type: "error" },
       });
-    if (data.province == "")
+    }
+    if (data.province == "") {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Provinsi tidak boleh kosong", type: "error" },
       });
-    if (data.latitude == "")
+    }
+    if (data.latitude == "") {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Latitude tidak boleh kosong", type: "error" },
       });
-    if (data.longtitude == "")
+    }
+    if (data.longtitude == "") {
+      setLoading(false);
       return dispatch({
         type: "SHOW_TOAST",
         payload: { message: "Longitude tidak boleh kosong", type: "error" },
       });
+    }
 
     try {
       const res = await axiosApiInstance.post("/destinations", data);
@@ -84,8 +104,10 @@ function DestinationAdd() {
         type: "SHOW_TOAST",
         payload: { message: "Berhasil Membuat Wisata", type: "success" },
       });
+      setLoading(false);
       navigate(`/destination/${res.data._id}`);
     } catch (error) {
+      setLoading(false);
       if (error.name == "AxiosError") {
         dispatch({
           type: "SHOW_TOAST",
@@ -155,35 +177,34 @@ function DestinationAdd() {
       </div>
 
       <div className="containerWisata mt-[-20px] pt-5">
-        <form action="" required={true}>
-          {/* Content */}
+        {/* Content */}
+        {loading && <LoadingOverlayComponent />}
 
-          <div>
-            <StepperContext.Provider
-              value={{
-                data,
-                handleImageArray,
-                handleChange,
-                currentStep,
-                setCurrentStep,
-                handleChangeBulk,
-              }}
-            >
-              {displayStep(currentStep)}
-            </StepperContext.Provider>
-          </div>
+        <div>
+          <StepperContext.Provider
+            value={{
+              data,
+              handleImageArray,
+              handleChange,
+              currentStep,
+              setCurrentStep,
+              handleChangeBulk,
+            }}
+          >
+            {displayStep(currentStep)}
+          </StepperContext.Provider>
+        </div>
 
-          {/* Button Step */}
-          <div className="p-4 z-50 bottom-0 mt-[-80px]">
-            <StepperBtn
-              data={data}
-              handleSubmit={handleSubmit}
-              handleClick={handleClick}
-              currentStep={currentStep}
-              steps={steps}
-            />
-          </div>
-        </form>
+        {/* Button Step */}
+        <div className="p-4 z-50 bottom-0 mt-[-80px]">
+          <StepperBtn
+            data={data}
+            handleSubmit={handleSubmit}
+            handleClick={handleClick}
+            currentStep={currentStep}
+            steps={steps}
+          />
+        </div>
       </div>
     </div>
   );

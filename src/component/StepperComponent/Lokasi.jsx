@@ -57,6 +57,11 @@ function Lokasi() {
   const MapEvents = () => {
     const map = useMap();
     MapRef.current = map;
+    if (data.latitude)
+      markerRef.current = L.marker({
+        lat: data.latitude,
+        lng: data.longtitude,
+      }).addTo(MapRef.current);
     if (!loadingRef.current) map.on("click", handleOnMapClick);
     return null;
   };
@@ -83,15 +88,16 @@ function Lokasi() {
         <MapContainer
           className="leaflet-container3 cursor-pointer"
           center={
-            data.latitude ? [data.latitude, data.longtitude] : [-5.45, 105.26667]
+            data.latitude
+              ? [data.latitude, data.longtitude]
+              : [-5.45, 105.26667]
           }
           zoom={10}
-          scrollWheelZoom={true}
-          dragging={true}
           doubleClickZoom={true}
           zoomControl={true}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
           <MapEvents />
         </MapContainer>
       </div>

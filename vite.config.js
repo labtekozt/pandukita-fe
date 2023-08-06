@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
+
 const getCache = ({ name, pattern }) => ({
   urlPattern: pattern,
   handler: "CacheFirst",
@@ -23,7 +24,7 @@ const getNetwork = ({ name, pattern }) => ({
     cacheName: name,
     expiration: {
       maxEntries: 500,
-      maxAgeSeconds: 60 * 60 * 24,
+      maxAgeSeconds: 60 * 60 * 24 * 2,
     },
     cacheableResponse: {
       statuses: [200],
@@ -40,6 +41,7 @@ export default defineConfig({
       includeAssets: ["**/*"],
       start_url: "/", // <== don't forget to set this
 
+      // workbox options for generateSW
       workbox: {
         // network first strategy
         // https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_first_network_falling_back_to_cache
@@ -65,15 +67,10 @@ export default defineConfig({
             name: "google-fonts",
             pattern: /^https:\/\/fonts\.googleapis\.com/,
           }),
-          // cache api request from our server https://chatdosen.my.id/api/v1
+          // cache response all request from https://chatdosen.my.id *
           getNetwork({
             name: "api",
-            pattern: /^https:\/\/chatdosen\.my\.id\/api\/v1/,
-          }),
-          // cache api images from our server https://chatdosen.my.id/images
-          getCache({
-            name: "api-images",
-            pattern: /^https:\/\/chatdosen\.my\.id\/images/,
+            pattern: /^https:\/\/chatdosen\.my\.id/,
           }),
         ],
       },
@@ -135,6 +132,7 @@ export default defineConfig({
       mode: "production",
       strategies: "generateSW",
     }),
+
   ],
   build: {
     target: "esnext",
