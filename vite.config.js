@@ -95,12 +95,37 @@ export default defineConfig({
               },
             },
           },
+          // cache Image URL https://chatdosen.my.id/images
+          {
+            urlPattern: new RegExp("^https://chatdosen.my.id/images/(.*)"),
+            handler: "CacheFirst",
+            options: {
+              cacheName: "images-apis",
+              expiration: {
+                maxEntries: 30,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+
+              networkTimeoutSeconds: 10,
+
+              backgroundSync: {
+                name: "images-apis-queue",
+                options: {
+                  maxRetentionTime: 60 * 60,
+                },
+              },
+            },
+          },
+
+
         ],
       },
 
       manifest: {
         short_name: "PanduKita",
-        name: "PanduKita - Panduan Wisata Lampung",
+        name: "PanduKita - Panduan Wisata Kita",
         icons: [
           {
             src: "manifest-icon-192.maskable.png",
@@ -127,7 +152,7 @@ export default defineConfig({
             purpose: "maskable",
           },
           {
-            src: "logo.png",
+            src: "logo2.png",
             sizes: "64x64 32x32 24x24 16x16",
             type: "image/x-icon",
           },
@@ -135,13 +160,13 @@ export default defineConfig({
         start_url: ".",
         display: "standalone",
         theme_color: "#00a388",
-        description: "Panduan Wisata Lampung - PanduKita",
+        description: "Panduan Wisata Kita - PanduKita",
         background_color: "#ffffff",
         orientation: "portrait",
         dir: "ltr",
         lang: "id-ID",
         scope: "/",
-        categories: ["travel", "tourism"],
+        categories: ["travel", "tourism",],
         launch_handler: {
           enabled: true,
         },
@@ -154,6 +179,7 @@ export default defineConfig({
       },
       mode: "production",
       strategies: "generateSW",
+
     }),
   ],
   build: {
