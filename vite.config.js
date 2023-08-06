@@ -1,6 +1,35 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
+const getCache = ({ name, pattern }) => ({
+  urlPattern: pattern,
+  handler: "CacheFirst",
+  options: {
+    cacheName: name,
+    expiration: {
+      maxEntries: 500,
+      maxAgeSeconds: 60 * 60 * 24 * 365 * 2, // 2 years
+    },
+    cacheableResponse: {
+      statuses: [200],
+    },
+  },
+});
+
+const getNetwork = ({ name, pattern }) => ({
+  urlPattern: pattern,
+  handler: "NetworkFirst",
+  options: {
+    cacheName: name,
+    expiration: {
+      maxEntries: 500,
+      maxAgeSeconds: 60 * 60 * 24,
+    },
+    cacheableResponse: {
+      statuses: [200],
+    },
+  },
+});
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,109 +43,38 @@ export default defineConfig({
       workbox: {
         // network first strategy
         // https://developers.google.com/web/tools/workbox/modules/workbox-strategies#network_first_network_falling_back_to_cache
-
-        babelPresetEnvTargets: ["chrome >= 40", "firefox >= 40", "safari >= 7"],
-        maximumFileSizeToCacheInBytes: 5000000,
-        cleanupOutdatedCaches: true,
-        offlineGoogleAnalytics: true,
-        navigateFallback: "/index.html",
         runtimeCaching: [
-          {
-            urlPattern: new RegExp(
-              "^https://fonts.(?:googleapis|gstatic).com/(.*)"
-            ),
-            handler: "CacheFirst",
-            options: {
-              cacheName: "google-fonts",
-              expiration: {
-                maxEntries: 30,
-              },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-            },
-          },
-          {
-            urlPattern: /\.(?:png|gif|jpg|jpeg|svg|ico)$/i,
-            handler: "CacheFirst",
-
-            options: {
-              cacheName: "images",
-              expiration: {
-                maxEntries: 60,
-              },
-            },
-          },
-          {
-            urlPattern: /\.(?:js)$/i,
-            handler: "CacheFirst",
-
-            options: {
-              cacheName: "js",
-              expiration: {
-                maxEntries: 60,
-              },
-            },
-          },
-          {
-            urlPattern: /\.(?:css)$/i,
-            handler: "CacheFirst",
-
-            options: {
-              cacheName: "css",
-              expiration: {
-                maxEntries: 60,
-              },
-
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-            },
-          },
-          // cache RESTAPI URL https://chatdosen.my.id
-          {
-            urlPattern: new RegExp("^https://chatdosen.my.id/(.*)"),
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "api",
-              expiration: {
-                maxEntries: 30,
-              },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-
-              networkTimeoutSeconds: 10,
-
-              backgroundSync: {
-                name: "api-queue",
-                options: {
-                  maxRetentionTime: 60 * 60,
-                },
-              },
-            },
-          },
-          // cache Image URL https://chatdosen.my.id/images
-          {
-            urlPattern: new RegExp("^https://chatdosen.my.id/images/(.*)"),
-            handler: "CacheFirst",
-            options: {
-              cacheName: "images-apis",
-              expiration: {
-                maxEntries: 30,
-              },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-
-              backgroundSync: {
-                name: "images-apis-queue",
-                options: {
-                  maxRetentionTime: 60 * 60,
-                },
-              },
-            },
-          },
+          getCache({
+            name: "images",
+            pattern: /\.(?:png|jpg|jpeg|svg|gif)$/,
+          }),
+          getCache({
+            name: "css",
+            pattern: /\.(?:css)$/,
+          }),
+          getCache({
+            name: "js",
+            pattern: /\.(?:js)$/,
+          }),
+          getCache({
+            name: "fonts",
+            pattern: /\.(?:woff|woff2|ttf|otf|eot)$/,
+          }),
+          // cache google fonts
+          getCache({
+            name: "google-fonts",
+            pattern: /^https:\/\/fonts\.googleapis\.com/,
+          }),
+          // cache api request from our server https://chatdosen.my.id/api/v1
+          getNetwork({
+            name: "api",
+            pattern: /^https:\/\/chatdosen\.my\.id\/api\/v1/,
+          }),
+          // cache api images from our server https://chatdosen.my.id/images
+          getCache({
+            name: "api-images",
+            pattern: /^https:\/\/chatdosen\.my\.id\/images/,
+          }),
         ],
       },
 
