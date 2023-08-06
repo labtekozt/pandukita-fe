@@ -36,6 +36,7 @@ export default function useSocket({ state, dispatch }) {
     socketRef.current.on("connect_error", (err) => {
       if (err.message === "jwt expired") {
         const jwtNew = getCredentials();
+        socketRef.current = SocketIo(jwtNew.access);
         if (jwtNew) {
           dispatch({ type: "SET_JWT", payload: jwtNew.access });
         }
