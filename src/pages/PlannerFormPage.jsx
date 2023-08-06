@@ -73,7 +73,6 @@ function PlannerFormPage() {
     try {
       setLoading(true);
       if (data.name === "" || data.city === "") {
-        console.log("data tidak boleh kosong");
         dispatch({
           type: "SHOW_TOAST",
           payload: {

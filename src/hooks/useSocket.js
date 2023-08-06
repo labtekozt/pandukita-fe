@@ -11,7 +11,6 @@ export default function useSocket({ state, dispatch }) {
   }, []);
 
   const handleReceiveOrderNotification = useCallback((data) => {
-    console.log(data);
     dispatch({ type: "ADD_ORDER_NOTIFICATION", payload: data });
   }, []);
 
@@ -42,14 +41,6 @@ export default function useSocket({ state, dispatch }) {
         }
         return;
       }
-
-      dispatch({
-        type: "SHOW_TOAST",
-        payload: {
-          type: "error",
-          message: err.message,
-        },
-      });
     });
 
     return () => {

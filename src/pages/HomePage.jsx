@@ -23,7 +23,6 @@ function HomePage() {
   const navigate = useNavigate();
 
   if (!loading && error) {
-    console.log(error);
     if (error.status === 401) {
       dispatch({ type: "LOGOUT" });
     }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import { useContext, useEffect, useState, useCallback } from "react";
 import { Button } from "@kiwicom/orbit-components/lib/";
 import { SocketContext } from "../../store";
 import { IconCalendarEvent, IconMap, IconMapPin } from "@tabler/icons-react";
@@ -64,10 +64,9 @@ function ModalConfirm() {
   const acceptOrder = useCallback(() => {
     setShowModal(false);
     socketRef?.current?.emit("comfirm-order-tg", {
-      plannerId: state.orderNotification.data?._id,
-      userId: state.orderNotification.from,
+      plannerId: state.orderNotification?.data?._id,
+      userId: state.orderNotification?.from,
     });
-    console.log("accept order");
     dispatch({
       type: "HIDE_ORDER_NOTIFICATION",
     });

@@ -37,7 +37,7 @@ function InformasiWisataPage(props) {
         url: location.href,
         title: `${data.name}\n${data.address}`,
         text: "Kunjungi wisata ini di PanduKita yuk!"
-      }).then(() => console.log('Successfully shared'))
+      })
       .catch((error) => console.log('Error sharing:', error));
     } else {
       //if navigator share not support

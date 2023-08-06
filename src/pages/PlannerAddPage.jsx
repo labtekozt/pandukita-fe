@@ -29,7 +29,6 @@ function PlannerAdd() {
   const latLong = [location.state?.latitude, location.state?.longtitude];
   const nameLoc = location.state?.name;
   const distination = location.state?.id;
-  // console.log(data);
   const { plan, handleChange } = useContext(PlanContext);
   const handleSubmit = async (e) => {
     e.preventDefault();

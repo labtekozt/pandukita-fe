@@ -22,7 +22,6 @@ function ListChat() {
     onTyping,
   } = useChat(roomId);
 
-  console.log(rooms);
   if (roomId) {
     return (
       <ChatPage

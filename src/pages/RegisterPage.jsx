@@ -35,7 +35,6 @@ const RegisterPage = () => {
   });
   const register = async () => {
     try {
-      console.log();
       // validate data here
       const isValid = validate(data);
       if (isValid) {
@@ -70,7 +69,6 @@ const RegisterPage = () => {
       });
       navigate("/");
     } catch (error) {
-      console.log(error);
       if (error.name == "AxiosError") {
         dispatch({
           type: "SHOW_TOAST",

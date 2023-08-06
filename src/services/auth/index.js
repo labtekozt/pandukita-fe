@@ -5,7 +5,6 @@ import getCredentials from "../../helpers/getCredentials";
 export async function logout(dispatch) {
   try {
     const refresh = await getCredentials();
-    console.log(refresh);
     await axiosApiInstance.post("/logout", { refresh: refresh.refresh });
     dispatch({ type: "LOGOUT" });
     dispatch({
@@ -15,7 +14,6 @@ export async function logout(dispatch) {
     removeCookie("keys");
     return true;
   } catch (error) {
-    console.log(error);
     dispatch({
       type: "SHOW_TOAST",
       payload: { message: "Logout Failed", type: "error" },
